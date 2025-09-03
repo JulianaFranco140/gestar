@@ -1,4 +1,18 @@
+:root {
+    --background: #FAF0F0;
+    --primary-pink: #E8B4B8;
+    --secondary-pink: #f8bbd9;
+    --very-light-pink: #FAF0F0;
+    --light-gray: #6B7C85;
+    --dark-pink: #d4a5a5;
+    --input-color: rgba(255, 255, 255, 0.9);
+}
+
 body{
     margin:0;
-    background-color: #FAF0F0;
+    background-color: var(--background);
+}
+
+main{
+    background-color: var(--background);
 }
