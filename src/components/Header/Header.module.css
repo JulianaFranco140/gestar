@@ -19,33 +19,6 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.headerButtons {
-  display: flex;
-  gap: 15px;
-  margin: 20px 40px;
-}
-
-.registerButton {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #E8B4B8;
-  color: #FAF0F0;
-  cursor: pointer;
-  font-size: 14px;
-  border: None;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.loginButton {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #E8B4B8;
-  color: #FAF0F0;
-  cursor: pointer;
-  font-size: 14px;
-  border: None;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 .headerButton {
   display: flex;
