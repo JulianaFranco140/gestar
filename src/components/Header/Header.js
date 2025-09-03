@@ -15,7 +15,7 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div className={styles.headerButtons}>
+      <div className={styles.headerButton}>
         <Link href="/">
           <button className={styles.BackButton}>Volver a inicio</button>
         </Link>
