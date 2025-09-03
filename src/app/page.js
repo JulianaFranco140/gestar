@@ -37,29 +37,29 @@ export default function Home() {
           <p className={styles.description}>
             La plataforma integral que acompaña cada momento de tu gestación con tecnología, cuidado médico y tranquilidad de inicio.
           </p>
-          
+        </div>
+        <div className={styles.cardsSection}>
           <p className={styles.subtitle}>
             Diseñado para ambos roles.
           </p>
-        </div>
+          <div className={styles.cardsContainer}>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>
+                Para gestante:
+              </h3>
+              <p className={styles.cardDescription}>
+                Un espacio personal con todo lo necesario para cuidar tu bienestar y salud durante el embarazo.
+              </p>
+            </div>
 
-        <div className={styles.cardsContainer}>
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>
-              Para gestante:
-            </h3>
-            <p className={styles.cardDescription}>
-              Un espacio personal con todo lo necesario para cuidar tu bienestar y salud durante el embarazo.
-            </p>
-          </div>
-
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>
-              Para acompañante:
-            </h3>
-            <p className={styles.cardDescription}>
-              Herramientas y recursos para brindar el mejor apoyo durante todo el proceso del embarazo.
-            </p>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>
+                Para acompañante:
+              </h3>
+              <p className={styles.cardDescription}>
+                Herramientas y recursos para brindar el mejor apoyo durante todo el proceso del embarazo.
+              </p>
+            </div>
           </div>
         </div>
       </main>
