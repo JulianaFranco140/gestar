@@ -15,7 +15,7 @@
 
 .imageSection {
   flex: 0.45;
-  background-color: #FAF0F0;
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,13 +32,13 @@
 }
 
 .imageText {
-  color: #E8B4B8;
+  color: var(--primary-pink);
   font-size: 25px;
   text-align: center;
   font-weight: 500;
   max-width: 280px;
   line-height: 1.4;
-  color: #6B7C85;
+  color: var(--light-gray);
   font-family: public-sans, sans-serif;
   
 }
@@ -47,12 +47,12 @@
   flex: 0.55;
   align-items: center;
   justify-content: center;
-  background: #FAF0F0;
+  background: var(--background);
   padding: 1rem;
 }
 
 .formCard {
-  background: #E8B4B8;
+  background: var(--primary-pink);
   border-radius: 25px;
   padding: 2rem 2rem;
   width: 500px;
@@ -112,7 +112,7 @@
 
 .submitButton {
   background: rgba(255, 255, 255, 0.9);
-  color: #E8B4CB;
+  color: var(--primary-pink);
   border: none;
   padding: 1rem;
   border-radius: 10px;
