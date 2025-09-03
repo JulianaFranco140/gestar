@@ -58,6 +58,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
+.loginButton:hover, .registerButton:hover {
+  background-color: #d4a5a5;
+  color: #6B7C85;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 .main {
   padding: 40px;
   position: relative;
@@ -133,6 +140,14 @@
   color: white;
   text-align: center;
   line-height: 1.5;
+}
+
+.card:hover{
+  background: #d4a5a5;
+  color:#6B7C85;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
 }
 
 

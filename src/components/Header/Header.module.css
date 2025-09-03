@@ -25,7 +25,9 @@
   margin: 20px 40px;
 }
 
-.registerButton {
+
+
+.BackButton {
   padding: 10px 20px;
   border-radius: 10px;
   background-color: #E8B4B8;
@@ -36,13 +38,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.loginButton {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: #E8B4B8;
-  color: #FAF0F0;
-  cursor: pointer;
-  font-size: 14px;
-  border: None;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.BackButton:hover{
+  background-color: #d4a5a5;
+  color: #6B7C85;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+

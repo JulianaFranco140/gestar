@@ -1,6 +1,6 @@
 .authContainer {
   display: flex;
-  height: calc(100vh - 80px); 
+  height: calc(100% - 80px); 
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -55,13 +55,13 @@
   background: #E8B4B8;
   border-radius: 25px;
   padding: 2rem 2rem;
-  width: 650px;
+  width: 500px;
   max-width: 650px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 
 .loginCard {
-  margin: 50px 20px;
+  margin: 50px 0 50px 100px;
 }
 
 .signupCard {
@@ -146,3 +146,4 @@
 .footerLink:hover {
   text-decoration: none;
 }
+ 

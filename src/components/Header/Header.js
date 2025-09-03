@@ -15,6 +15,12 @@ const Header = () => {
           />
         </Link>
       </div>
+      <div className={styles.headerButtons}>
+        <Link href="/">
+          <button className={styles.BackButton}>Volver a inicio</button>
+        </Link>
+      </div>
+
     </header>
   );
 };

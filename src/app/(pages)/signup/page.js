@@ -15,7 +15,7 @@ export default function Signup() {
         formType="signup"
         title="Registrarse"
         fields={signupFields}
-        submitText="Registrar"
+        submitText="Registrarse"
         onSubmit={handleSignupSubmit}
         footerText="¿Ya tienes cuenta?"
         footerLink="/login"

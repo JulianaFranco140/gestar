@@ -13,6 +13,11 @@ export const signupFields = [
     name: "password",
     type: "password",
     placeholder: "Contraseña*"
+  },
+  {
+    name: "confirmPassword",
+    type: "password",
+    placeholder: "Confirmar contraseña*"
   }
 ];
 
