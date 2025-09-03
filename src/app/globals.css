@@ -1,11 +1,16 @@
 :root {
-    --background: #ffffff;
+    --background: #FAF0F0;
     --primary-pink: #E8B4B8;
     --secondary-pink: #f8bbd9;
+    --very-light-pink: #FAF0F0;
     --light-gray: #6B7C85;
 }
 
 body{
     margin:0;
-    background-color: #FAF0F0;
+    background-color: var(--background);
+}
+
+main{
+    background-color: var(--background);
 }
