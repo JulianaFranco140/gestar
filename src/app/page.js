@@ -16,12 +16,12 @@ export default function Home() {
         </div>
         <div className={styles.headerButtons}>
           <Link href="/signup">
-            <button className={styles.button}>
+            <button className={styles.registerButton}>
               Regístrate
             </button>
           </Link>
           <Link href="/login">
-            <button className={styles.button}>
+            <button className={styles.loginButton}>
               Inicia sesión
             </button>
           </Link>
