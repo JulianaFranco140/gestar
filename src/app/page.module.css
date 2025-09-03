@@ -24,7 +24,7 @@
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #E8B4B8;
+  color: var(--primary-pink);
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -39,7 +39,7 @@
 .registerButton {
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: #E8B4B8;
+  background-color: var(--primary-pink);
   color: #FAF0F0;
   cursor: pointer;
   font-size: 14px;
@@ -50,7 +50,7 @@
 .loginButton {
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: #E8B4B8;
+  background-color: var(--primary-pink);
   color: #FAF0F0;
   cursor: pointer;
   font-size: 14px;
@@ -76,26 +76,26 @@
 .title {
   font-size: 60px;
   font-weight: bold;
-  color: #6B7C85;
+  color: var(--light-gray);
   margin-bottom: 10px;
   line-height: 1.2;
   margin: 0;
 }
 
 .titleHighlight {
-  color: #E8B4B8;
+  color: var(--primary-pink);
 }
 
 .description {
   font-size: 20px;
-  color: #6B7C85;
+  color: var(--light-gray);
   line-height: 1.6;
   margin-bottom: 40px;
 }
 
 .subtitle {
   font-size: 40px;
-  color: #6B7C85;
+  color: var(--light-gray);
   font-weight: bold;
 
   
@@ -110,7 +110,7 @@
 
 .card {
   flex: 1;
-  background-color: #f8bbd9;
+  background-color: var(--secondary-pink);
   border-radius: 20px;
   padding: 40px 30px;
   min-height: 200px;
