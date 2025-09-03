@@ -1,12 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function Home() {
   return (
-  
     <div className={styles.container}>
       <header className={styles.header}>
-        
         <div className={styles.logo}>
           <Image
             src="/logo.png"
@@ -16,15 +15,18 @@ export default function Home() {
           />
         </div>
         <div className={styles.headerButtons}>
-          <button className={styles.registerButton}>
-            Regístrate
-          </button>
-          <button className={styles.loginButton}>
-            Inicia sesión
-          </button>
+          <Link href="/signup">
+            <button className={styles.registerButton}>
+              Regístrate
+            </button>
+          </Link>
+          <Link href="/login">
+            <button className={styles.loginButton}>
+              Inicia sesión
+            </button>
+          </Link>
         </div>
       </header>
-
 
       <main className={styles.main}>
         <div className={styles.titleSection}>
@@ -61,9 +63,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
- 
-      </div>
-
+    </div>
   );
 }
