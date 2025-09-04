@@ -14,9 +14,9 @@ export async function POST(request) {
     const hashedPassword = await hash(password, 10);
     try {
       const result = await sql`
-        INSERT INTO users (nombres, correo, password, genero, rol)
-        VALUES (${nombres}, ${correo}, ${hashedPassword}, ${genero}, ${rol})
-        RETURNING id, nombres, correo, genero, rol, created_at;
+        INSERT INTO users (nombres, correo, password, genero, rol, id_pareja, semana)
+        VALUES (${nombres}, ${correo}, ${hashedPassword}, ${genero}, ${rol}, NULL, NULL)
+        RETURNING id, nombres, correo, genero, rol, id_pareja, semana, created_at;
       `;
       return NextResponse.json(result[0], { status: 201 });
     } catch (e) {

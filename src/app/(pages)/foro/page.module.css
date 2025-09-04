@@ -1,3 +1,153 @@
+/* ----------- Likes en la lista de temas ----------- */
+.temaLikes {
+  margin-left: 12px;
+  color: var(--primary-pink);
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+/* ----------- Botón volver al foro ----------- */
+.volverForoBtn {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 22px;
+  background: var(--primary-pink);
+  color: #fff;
+  border-radius: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
+}
+.volverForoBtn:hover {
+  background: var(--dark-pink);
+  text-decoration: underline;
+}
+/* ----------- Detalle de tema ----------- */
+.temaDetalle {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(232, 180, 184, 0.13);
+  padding: 36px 38px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.temaTitulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-pink);
+  margin-bottom: 10px;
+}
+.temaMeta {
+  display: flex;
+  gap: 18px;
+  font-size: 15px;
+  color: var(--light-gray);
+  opacity: 0.8;
+  margin-bottom: 18px;
+}
+.temaAutor {
+  font-weight: 500;
+}
+.temaFecha {
+  font-style: italic;
+}
+.temaContenido {
+  font-size: 1.1rem;
+  color: var(--light-gray);
+  line-height: 1.7;
+  margin-top: 10px;
+  white-space: pre-line;
+}
+/* ----------- Temas del foro (vista general) ----------- */
+.temasSection {
+  background: var(--primary-pink-transparent);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px var(--dark-pink) solid;
+  margin-top: 10px;
+}
+
+.temasTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-pink);
+  margin-bottom: 25px;
+}
+
+.temasList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.temaItem {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(232, 180, 184, 0.10);
+  transition: box-shadow 0.2s, transform 0.2s;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+}
+
+.temaItem:hover {
+  box-shadow: 0 6px 24px rgba(232, 180, 184, 0.18);
+  transform: translateY(-2px);
+}
+
+.temaLink {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.temaTitulo {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-pink);
+  margin-bottom: 2px;
+}
+
+.temaMeta {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  color: var(--light-gray);
+  opacity: 0.8;
+}
+
+.temaAutor {
+  font-weight: 500;
+}
+
+.temaFecha {
+  font-style: italic;
+}
+
+.loading {
+  color: var(--primary-pink);
+  font-size: 16px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.noTemas {
+  color: var(--light-gray);
+  font-size: 16px;
+  padding: 20px 0;
+  text-align: center;
+  opacity: 0.7;
+}
 .container {
   min-height: 100vh;
   background-color: var(--background);

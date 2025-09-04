@@ -24,8 +24,13 @@ export default function Signup() {
       });
       if (res.ok) {
         const user = await res.json();
+        // Aseguramos que los campos id_pareja y semana existan en el objeto guardado
         if (typeof window !== 'undefined') {
-          localStorage.setItem('gestarUser', JSON.stringify(user));
+          localStorage.setItem('gestarUser', JSON.stringify({
+            ...user,
+            id_pareja: user.id_pareja ?? null,
+            semana: user.semana ?? null
+          }));
         }
         router.push('/dashboard');
       } else {
