@@ -1,0 +1,57 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './UserHeader.module.css';
+
+const UserHeader = ({ userName = "Usuario" }) => {
+  const userInitial = userName ? userName.charAt(0).toUpperCase() : 'U';
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="GeStar Logo"
+            width={160}
+            height={60}
+          />
+        </Link>
+      </div>
+      
+      <nav className={styles.navigation}>
+        <Link href="/dashboard" className={styles.navLink}>
+          Inicio
+        </Link>
+        <Link href="/foro" className={styles.navLink}>
+          Foro
+        </Link>
+        <Link href="/calendario" className={styles.navLink}>
+          Calendario
+        </Link>
+        <Link href="/mi-perfil" className={styles.navLink}>
+          Mi perfil
+        </Link>
+      </nav>
+
+      <div className={styles.userSection}>
+        <div className={styles.userInfo}>
+          <div className={styles.userAvatar}>
+            {userInitial}
+          </div>
+          <span className={styles.userName}>{userName}</span>
+          <div className={styles.dropdownArrow}>
+            ▼
+          </div>
+        </div>
+
+        <div className={styles.dropdown}>
+          <button className={styles.logoutButton}>
+            Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default UserHeader;

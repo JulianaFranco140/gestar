@@ -1,11 +1,17 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import Header from '../../../components/Header';
 import AuthForm from '../../../components/Auth';
 import { loginFields } from '../../../components/Auth/authConfigs';
 
 export default function Login() {
+  const router = useRouter();
+  
   const handleLoginSubmit = (formData) => {
     console.log('Datos del login:', formData);
+    // Aquí puedes agregar la lógica de autenticación
+    // Por ahora, simplemente redirigimos al dashboard
+    router.push('/dashboard');
   };
 
   return (
