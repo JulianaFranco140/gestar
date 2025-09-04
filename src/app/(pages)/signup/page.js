@@ -7,11 +7,34 @@ import { signupFields } from '../../../components/Auth/authConfigs';
 export default function Signup() {
   const router = useRouter();
   
-  const handleSignupSubmit = (formData) => {
-    console.log('Datos del registro:', formData);
-    // Aquí puedes agregar la lógica de registro
-    // Por ahora, simplemente redirigimos al dashboard
-    router.push('/dashboard');
+  const handleSignupSubmit = async (formData) => {
+    // Mapear campos del frontend a backend
+    const body = {
+      nombres: formData.name,
+      correo: formData.email,
+      password: formData.password,
+      genero: formData.genero,
+      rol: formData.rol || 'gestante'
+    };
+    try {
+      const res = await fetch('http://localhost:3000/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        const user = await res.json();
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('gestarUser', JSON.stringify(user));
+        }
+        router.push('/dashboard');
+      } else {
+        const error = await res.json();
+        alert(error.error || 'Error en el registro');
+      }
+    } catch (e) {
+      alert('Error de red o servidor');
+    }
   };
 
   return (

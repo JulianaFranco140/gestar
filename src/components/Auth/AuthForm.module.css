@@ -1,3 +1,78 @@
+.genderRoleSelector {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.genderOption, .roleOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background: var(--input-color);
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s, transform 0.2s, background 0.2s;
+  font-size: 2.2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  position: relative;
+  outline: none;
+  color: #fff;
+}
+
+.genderOption:hover, .roleOption:hover, .genderOption:focus, .roleOption:focus {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  border: 2px solid var(--primary-pink);
+  z-index: 2;
+}
+
+.genderOption.selected {
+  border: 3px solid #8e44ad;
+  box-shadow: 0 0 0 3px #8e44ad;
+  color: #fff;
+  transform: translateY(-4px) scale(1.05);
+  z-index: 2;
+}
+.roleOption.selected {
+  border: 3px solid #8e44ad !important;
+  box-shadow: 0 0 0 3px #8e44ad !important;
+  color: #fff;
+  transform: translateY(-4px) scale(1.05);
+  z-index: 2;
+}
+
+
+.genderOption.male { background: var(--gender-male, #4A90E2); color: #fff; }
+.genderOption.female { background: var(--gender-female, #FF69B4); color: #fff; }
+.genderOption.other { background: var(--gender-other, #A0A0A0); color: #fff; }
+
+.roleOption.selected {
+  border: 2px solid var(--primary-pink);
+  box-shadow: 0 0 0 2px var(--primary-pink);
+}
+.roleOption.gestante { background: var(--role-gestante, #E8B4B8); color: #fff; }
+.roleOption.gestante {
+  background: #B47AEA;
+  color: #fff;
+}
+.roleOption.acompanante { background: var(--role-acompanante, #6B7C85); color: #fff; }
+
+.genderLabel, .roleLabel {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+  max-width: 80px;
+}
 .authContainer {
   display: flex;
   height: calc(100% - 80px); 
@@ -19,9 +94,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 3rem 2rem 2rem 2rem;
   gap: 1.5rem;
+  min-height: 100%;
 }
 
 .imageContent {

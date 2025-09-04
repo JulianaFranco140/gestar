@@ -1,22 +1,45 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import UserHeader from '../../../components/Header/UserHeader';
 import styles from './page.module.css';
 
+
 export default function Dashboard() {
-  const userName = "Juliana"; 
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const userData = localStorage.getItem('gestarUser');
+      if (userData) {
+        setUser(JSON.parse(userData));
+        setLoading(false);
+      } else {
+        alert('No hay una sesión iniciada. Redirigiendo al login.');
+        router.push('/login');
+      }
+    }
+  }, [router]);
+
+  if (loading) {
+    return <div className={styles.container}><p>Cargando usuario...</p></div>;
+  }
 
   return (
     <div className={styles.container}>
-      <UserHeader userName={userName} />
-      
+      <UserHeader userName={user.nombres} />
       <main className={styles.main}>
         <div className={styles.welcomeSection}>
           <div className={styles.welcomeContent}>
             <h1 className={styles.welcomeTitle}>
-              ¡Hola <span className={styles.nameHighlight}>{userName}</span>!
+              ¡Hola <span className={styles.nameHighlight}>{user.nombres}</span>!
             </h1>
             <p className={styles.welcomeText}>
-              Bienvenida a tu espacio personal de embarazo
+              {user.rol === 'gestante'
+                ? 'Bienvenida a tu espacio personal de embarazo'
+                : 'Bienvenido/a, acompaña y apoya en el proceso de embarazo'}
             </p>
           </div>
           <div className={styles.weekBadge}>
@@ -29,12 +52,10 @@ export default function Dashboard() {
             <button className={styles.carouselArrow + ' ' + styles.arrowLeft}>
               ‹
             </button>
-            
             <div className={styles.carouselContent}>
               <div className={styles.carouselSlide}>
               </div>
             </div>
-            
             <button className={styles.carouselArrow + ' ' + styles.arrowRight}>
               ›
             </button>

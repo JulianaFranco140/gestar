@@ -1,9 +1,19 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import styles from './UserHeader.module.css';
 
 const UserHeader = ({ userName = "Usuario" }) => {
   const userInitial = userName ? userName.charAt(0).toUpperCase() : 'U';
+  const router = useRouter();
+
+  const handleLogout = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('gestarUser');
+      router.push('/');
+    }
+  };
 
   return (
     <header className={styles.header}>
@@ -17,7 +27,6 @@ const UserHeader = ({ userName = "Usuario" }) => {
           />
         </Link>
       </div>
-      
       <nav className={styles.navigation}>
         <Link href="/dashboard" className={styles.navLink}>
           Inicio
@@ -32,7 +41,6 @@ const UserHeader = ({ userName = "Usuario" }) => {
           Mi perfil
         </Link>
       </nav>
-
       <div className={styles.userSection}>
         <div className={styles.userInfo}>
           <div className={styles.userAvatar}>
@@ -43,9 +51,8 @@ const UserHeader = ({ userName = "Usuario" }) => {
             ▼
           </div>
         </div>
-
         <div className={styles.dropdown}>
-          <button className={styles.logoutButton}>
+          <button className={styles.logoutButton} onClick={handleLogout}>
             Cerrar sesión
           </button>
         </div>

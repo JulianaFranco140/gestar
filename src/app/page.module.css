@@ -109,7 +109,7 @@
 
 .card {
   flex: 1;
-  background-color: var(--secondary-pink);
+  background-color: var(--primary-pink);
   border-radius: 20px;
   padding: 40px 30px;
   min-height: 200px;
@@ -135,7 +135,7 @@
 }
 
 .card:hover{
-  background: var(--dark-pink);
+  background: var(--secondary-pink);
   color: var(--light-gray);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);

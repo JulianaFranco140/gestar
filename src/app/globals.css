@@ -1,3 +1,4 @@
+
 :root {
     --background: #FAF0F0;
     --primary-pink: #E8B4B8;
@@ -6,13 +7,29 @@
     --light-gray: #6B7C85;
     --dark-pink: #d4a5a5;
     --input-color: rgba(255, 255, 255, 0.9);
+    /* Gender colors */
+    --gender-male: #4A90E2;
+    --gender-female: #FF69B4;
+    --gender-other: #A0A0A0;
+    /* Role colors */
+    --role-gestante: #E8B4B8;
+    --role-acompanante: #6B7C85;
 }
 
-body{
-    margin:0;
+
+body {
+    margin: 0;
     background-color: var(--background);
+    font-family: Arial, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+    color: #fff;
+}
+
+html {
+    font-family: Arial, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+    color: #fff;
 }
 
 main{
     background-color: var(--background);
+
 }

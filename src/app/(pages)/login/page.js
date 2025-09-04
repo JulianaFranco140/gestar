@@ -7,11 +7,30 @@ import { loginFields } from '../../../components/Auth/authConfigs';
 export default function Login() {
   const router = useRouter();
   
-  const handleLoginSubmit = (formData) => {
-    console.log('Datos del login:', formData);
-    // Aquí puedes agregar la lógica de autenticación
-    // Por ahora, simplemente redirigimos al dashboard
-    router.push('/dashboard');
+  const handleLoginSubmit = async (formData) => {
+    const body = {
+      correo: formData.email,
+      password: formData.password
+    };
+    try {
+      const res = await fetch('http://localhost:3000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        const user = await res.json();
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('gestarUser', JSON.stringify(user));
+        }
+        router.push('/dashboard');
+      } else {
+        const error = await res.json();
+        alert(error.error || 'Error al iniciar sesión');
+      }
+    } catch (e) {
+      alert('Error de red o servidor');
+    }
   };
 
   return (

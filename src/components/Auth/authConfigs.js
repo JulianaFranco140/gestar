@@ -18,6 +18,25 @@ export const signupFields = [
     name: "confirmPassword",
     type: "password",
     placeholder: "Confirmar contraseña*"
+  },
+  {
+    name: "genero",
+    type: "select",
+    placeholder: "Selecciona tu género*",
+    options: [
+      { value: "femenino", label: "Femenino" },
+      { value: "masculino", label: "Masculino" },
+      { value: "otro", label: "Otro" }
+    ]
+  },
+  {
+    name: "rol",
+    type: "select",
+    placeholder: "Selecciona tu rol*",
+    options: [
+      { value: "gestante", label: "Gestante" },
+      { value: "acompañante", label: "Acompañante" }
+    ]
   }
 ];
 
