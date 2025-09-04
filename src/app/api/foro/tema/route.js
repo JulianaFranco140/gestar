@@ -1,3 +1,36 @@
+// POST /api/foro/tema
+export async function POST(request) {
+  try {
+    const body = await request.json();
+    const { titulo, contenido, slug, user_id } = body;
+    if (!titulo || !contenido || !slug || !user_id) {
+      return NextResponse.json({ error: 'Faltan datos requeridos' }, { status: 400 });
+    }
+    // Verificar que el slug no exista
+    const existe = await sql`SELECT id FROM foro_temas WHERE slug = ${slug} LIMIT 1;`;
+    if (existe.length > 0) {
+      return NextResponse.json({ error: 'Ya existe un tema con ese título' }, { status: 409 });
+    }
+    // Insertar el nuevo tema
+    const [nuevoTema] = await sql`
+      INSERT INTO foro_temas (user_id, titulo, slug, contenido)
+      VALUES (${user_id}, ${titulo}, ${slug}, ${contenido})
+      RETURNING id, titulo, slug, contenido, created_at;
+    `;
+    return NextResponse.json({
+      tema: {
+        id: nuevoTema.id,
+        titulo: nuevoTema.titulo,
+        slug: nuevoTema.slug,
+        contenido: nuevoTema.contenido,
+        fecha: nuevoTema.created_at ? nuevoTema.created_at.toISOString().slice(0, 10) : '',
+      }
+    }, { status: 201 });
+  } catch (error) {
+    console.error('Error en POST /api/foro/tema:', error);
+    return NextResponse.json({ error: 'Error al crear el tema', details: error.message }, { status: 500 });
+  }
+}
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
