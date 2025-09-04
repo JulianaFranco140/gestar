@@ -246,6 +246,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import UserHeader from '../../../components/Header/UserHeader';
 import styles from './page.module.css';
+import Link from 'next/link';
 
 export default function Dashboard() {
   // ...existing code...
@@ -484,15 +485,16 @@ export default function Dashboard() {
 
         <div className={styles.cardsSection}>
           <div className={styles.cardsContainer}>
-            <div className={styles.card}>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>Comunidad</h3>
-                <p className={styles.cardDescription}>
-                  Conecta con otras mamás
-                </p>
+            <Link href="/foro">
+              <div className={styles.card}>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>Comunidad</h3>
+                  <p className={styles.cardDescription}>
+                    Conecta con otras mamás
+                  </p>
+                </div>
               </div>
-            </div>
-
+            </Link>
             <div className={styles.card}>
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>Nuevos exámenes</h3>

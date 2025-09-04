@@ -383,7 +383,13 @@ input[type="date"].input:focus {
   gap: 100px;
   max-width: 800px;
   width: 100%;
-  
+}
+
+.cardsContainer a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex: 1;
 }
 
 .card {

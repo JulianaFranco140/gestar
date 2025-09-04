@@ -42,14 +42,19 @@ export default function Home() {
       </header>
 
       <main className={styles.main}>
-        <div className={styles.titleSection}>
-          <h1 className={styles.title}>
-            Tu embarazo <span className={styles.titleHighlight}>conectado</span><br />
-            y <span className={styles.titleHighlight}>cuidado</span>.
-          </h1>
-          <p className={styles.description}>
-            La plataforma integral que acompaña cada momento de tu gestación con tecnología, cuidado médico y tranquilidad de inicio.
-          </p>
+        <div className={styles.titleLogoWrapper}>
+          <div className={styles.titleSection}>
+            <h1 className={styles.title}>
+              Tu embarazo <span className={styles.titleHighlight}>conectado</span><br />
+              y <span className={styles.titleHighlight}>cuidado</span>.
+            </h1>
+            <p className={styles.description}>
+              La plataforma integral que acompaña cada momento de tu gestación con tecnología, cuidado médico y tranquilidad de inicio.
+            </p>
+          </div>
+          <div className={styles.bigLogo}>
+            <Image src="/icono.png" alt="GeStar Logo Grande" width={220} height={320} priority />
+          </div>
         </div>
         <div className={styles.cardsSection}>
           <p className={styles.subtitle}>
