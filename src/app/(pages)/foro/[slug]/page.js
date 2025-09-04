@@ -51,9 +51,8 @@ export default function DetalleTema() {
 
   function tiempoRelativo(fecha) {
     const ahora = new Date();
-    // Convertir la hora local a UTC
     const ahoraUTC = new Date(ahora.getTime() + ahora.getTimezoneOffset() * 60000);
-    const fechaComentario = new Date(fecha); // UTC
+  const fechaComentario = new Date(fecha);
     const diff = (ahoraUTC.getTime() - fechaComentario.getTime()) / 1000;
     if (diff < 60) return 'ahora';
     if (diff < 3600) {
@@ -156,12 +155,26 @@ export default function DetalleTema() {
             <div className={styles.noTemas}>Tema no encontrado.</div>
           ) : (
             <div className={styles.temaDetalle}>
-              <h1 className={styles.temaTitulo}>{tema.titulo}</h1>
-              <div className={styles.temaMeta}>
-                <span className={styles.temaAutor}>Por {tema.autor}</span>
-                <span className={styles.temaFecha}>{tema.fecha}</span>
-              </div>
-              <div className={styles.temaContenido}>{tema.contenido}</div>
+                <h1 className={styles.temaTitulo}>{tema.titulo}</h1>
+                <div className={styles.temaMeta}>
+                  <span className={styles.temaAutor}>Por {tema.autor}</span>
+                  <span className={styles.temaFecha}>{tema.fecha}</span>
+                  {user?.id && tema.user_id === user.id && (
+                    <button
+                      className={styles.eliminarBtn}
+                      title="Eliminar tema"
+                      onClick={() => {
+                        if (window.confirm('¿Estás seguro de que quieres eliminar este tema? Esta acción no se puede deshacer.')) {
+                          fetch(`/api/foro/tema?id=${tema.id}`, { method: 'DELETE' })
+                            .then(res => res.ok ? window.location.href = '/foro' : alert('Error al eliminar tema'));
+                        }
+                      }}
+                    >
+                      Eliminar
+                    </button>
+                  )}
+                </div>
+                <div className={styles.temaContenido}>{tema.contenido}</div>
             </div>
           )}
           <div className={styles.comentariosSection}>
@@ -184,7 +197,6 @@ export default function DetalleTema() {
                         <button className={styles.responderBtn} onClick={() => { setRespondiendoId(com.id); setRespuesta(''); setErrorRespuesta(''); }}>
                           Responder
                         </button>
-                        {/* Respuestas */}
                         <ul className={styles.respuestasList}>
                           {comentarios.filter(r => r.parent_id === com.id).map(r => (
                             <li key={r.id} className={styles.comentarioItem}>
@@ -196,7 +208,6 @@ export default function DetalleTema() {
                             </li>
                           ))}
                         </ul>
-                        {/* Formulario de respuesta */}
                         {respondiendoId === com.id && (
                           <div className={styles.responderForm}>
                             <textarea
@@ -222,7 +233,6 @@ export default function DetalleTema() {
                 )}
               </>
             )}
-            {/* Formulario de nuevo comentario */}
             <div className={styles.nuevoComentarioForm}>
               <textarea
                 className={styles.comentarioTextarea}

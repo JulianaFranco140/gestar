@@ -45,7 +45,6 @@ const AuthForm = ({
           <form onSubmit={handleSubmit} className={styles.form}>
 
 
-            {/* Render other fields except genero and rol */}
             {fields.filter(f => f.name !== 'genero' && f.name !== 'rol').map((field) => (
               <div key={field.name} className={styles.fieldGroup}>
                 <input

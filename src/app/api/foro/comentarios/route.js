@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
 const sql = neon(process.env.DATABASE_URL);
-
-// GET /api/foro/comentarios?tema_id=123
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const tema_id = searchParams.get('tema_id');
@@ -21,8 +19,6 @@ export async function GET(request) {
     return NextResponse.json({ error: 'Error al obtener comentarios', details: error.message }, { status: 500 });
   }
 }
-
-// POST /api/foro/comentarios
 export async function POST(request) {
   try {
     const body = await request.json();

@@ -51,7 +51,6 @@ export default function ForoTemas() {
       setTitulo('');
       setContenido('');
       setError('');
-      // Recargar la página para actualizar la lista
       window.location.reload();
     } catch (e) {
       setError(e.message);
@@ -63,7 +62,6 @@ export default function ForoTemas() {
       const userData = localStorage.getItem('gestarUser');
       if (userData) {
         const parsedUser = JSON.parse(userData);
-        // Obtener datos frescos del backend
         fetch(`/api/users/get-user?id=${parsedUser.id}`)
           .then(res => res.json())
           .then(freshUser => {
@@ -118,7 +116,31 @@ export default function ForoTemas() {
                       <div className={styles.temaMeta}>
                         <span className={styles.temaAutor}>Por {tema.autor}</span>
                         <span className={styles.temaFecha}>{tema.fecha}</span>
-                        <span className={styles.temaLikes} title="Likes">❤️ {tema.likes}</span>
+                        <span className={styles.temaLikes} title="Likes">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle'}}>
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="var(--primary-pink)" strokeWidth="2" fill="#fff"/>
+                          </svg>
+                          {tema.likes}
+                        </span>
+                        {user?.id && tema.user_id === user.id && (
+                          <button
+                            className={styles.eliminarBtn}
+                            title="Eliminar tema"
+                            onClick={e => {
+                              e.preventDefault();
+                              if (window.confirm('¿Estás seguro de que quieres eliminar este tema? Esta acción no se puede deshacer.')) {
+                                fetch(`/api/foro/tema?id=${tema.id}`, { method: 'DELETE' })
+                                  .then(res => res.ok ? window.location.reload() : alert('Error al eliminar tema'));
+                              }
+                            }}
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22" style={{verticalAlign: 'middle'}}>
+                              <path d="M3 6H21M5 6V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V6M8 6V4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4V6" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                              <path d="M14 11V17" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                              <path d="M10 11V17" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                            </svg>
+                          </button>
+                        )}
                       </div>
                     </Link>
                   </li>
