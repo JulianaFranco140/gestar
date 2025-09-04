@@ -9,8 +9,6 @@ export default function Login() {
   
   const handleLoginSubmit = (formData) => {
     console.log('Datos del login:', formData);
-    // Aquí puedes agregar la lógica de autenticación
-    // Por ahora, simplemente redirigimos al dashboard
     router.push('/dashboard');
   };
 

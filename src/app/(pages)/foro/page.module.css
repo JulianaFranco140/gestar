@@ -1,0 +1,202 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--background);
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.forumContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.forumTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--light-gray);
+  margin: 0;
+  text-align: left;
+}
+
+.shareSection {
+  background: var(--primary-pink-transparent);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px var(--dark-pink) solid;
+}
+
+.shareSectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-pink);
+  margin: 0 0 20px 0;
+}
+
+.postForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.postTextarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  font-size: 16px;
+  color: var(--light-gray);
+  resize: none;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.postTextarea::placeholder {
+  color: var(--light-gray);
+  opacity: 0.7;
+}
+
+.postTextarea:focus {
+  outline: none;
+  box-shadow: 0 2px 15px rgba(232, 180, 184, 0.3);
+}
+
+.postActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.publishButton {
+  background-color: var(--primary-pink);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 180, 184, 0.3);
+}
+
+.publishButton:hover {
+  background-color: var(--dark-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 180, 184, 0.4);
+}
+
+.postsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  background: white;
+  border-radius: 20px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.userAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.postUserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.postUserName {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--light-gray);
+}
+
+.postTime {
+  font-size: 14px;
+  color: var(--light-gray);
+  opacity: 0.7;
+}
+
+.postContent {
+  margin-bottom: 20px;
+}
+
+.postText {
+  font-size: 16px;
+  color: var(--light-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.respondButton {
+  background: none;
+  border: none;
+  color: var(--primary-pink);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.respondButton:hover {
+  color: var(--dark-pink);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 20px;
+  }
+  
+  .shareSection,
+  .post {
+    padding: 20px;
+  }
+  
+  .forumTitle {
+    font-size: 24px;
+  }
+  
+  .postTextarea {
+    min-height: 80px;
+    padding: 12px 15px;
+  }
+  
+  .publishButton {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
