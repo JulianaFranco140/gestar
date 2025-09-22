@@ -15,7 +15,8 @@
     "next": "15.5.2",
     "psql": "^0.0.1",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "together-ai": "^0.22.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
