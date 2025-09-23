@@ -274,7 +274,7 @@ const HospitalesPage = () => {
         <UserHeader userName={user?.nombres || "Usuario"} />
         <div className={styles.container}>
           <div className={styles.header}>
-            <h1 className={styles.title}>🏥 Hospitales Cercanos</h1>
+            <h1 className={styles.title}>Hospitales Cercanos</h1>
             <p className={styles.subtitle}>
               Encuentra centros médicos especializados en maternidad cerca de ti
             </p>
