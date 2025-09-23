@@ -253,7 +253,7 @@ import HospitalIcon from '../../../components/Icons/HospitalIcon';
 import MentalHealthIcon from '../../../components/Icons/MentalHealthIcon';
 
 export default function Dashboard() {
-  // ...existing code...
+  // Hook principal de la página Dashboard
   const handleActualizarFecha = async () => {
     setFechaError("");
     if (!nuevaFecha) return;
@@ -287,7 +287,7 @@ export default function Dashboard() {
   const [definiendoFecha, setDefiniendoFecha] = useState(false);
   const [nuevaFecha, setNuevaFecha] = useState("");
   const [fechaError, setFechaError] = useState("");
-  // Calcular semana actual a partir de la fecha guardada
+  // Calcula la semana actual a partir de la fecha guardada
   useEffect(() => {
     if (!fechaUltimaMenstruacion) return;
     const fecha = new Date(fechaUltimaMenstruacion);
@@ -297,7 +297,7 @@ export default function Dashboard() {
     setSemana(semanaActual > 0 ? semanaActual : "");
   }, [fechaUltimaMenstruacion]);
 
-  // Consejo de la semana
+  // Obtiene el consejo de la semana actual
   const consejoSemana = semana && consejosPorSemana[semana] ? consejosPorSemana[semana] : null;
   const [parejaNombre, setParejaNombre] = useState("");
   const router = useRouter();

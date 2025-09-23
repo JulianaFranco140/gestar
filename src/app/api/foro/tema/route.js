@@ -24,21 +24,19 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Ya existe un tema con ese título' }, { status: 409 });
     }
 
-    // Crear el tema
+  // Crear el tema en la base de datos
     const [nuevoTema] = await sql`
       INSERT INTO foro_temas (user_id, titulo, slug, contenido)
       VALUES (${user_id}, ${titulo}, ${slug}, ${contenido})
       RETURNING id, titulo, slug, contenido, created_at;
     `;
 
-    // Si se solicitó respuesta de IA, generarla y comentar
+  // Si se solicitó respuesta automática, generarla y comentar
     if (generar_respuesta_ia) {
       try {
-        // Usar Together AI para generar respuesta
         const together = new Together({
           apiKey: process.env.TOGETHER_API_KEY,
         });
-
         const response = await together.chat.completions.create({
           messages: [
             {
@@ -54,19 +52,15 @@ export async function POST(request) {
           max_tokens: 700,
           temperature: 0.7,
         });
-
         const iaRespuesta = response.choices[0]?.message?.content;
-        
         if (iaRespuesta) {
-          // Crear comentario automático con la respuesta de IA
           await sql`
             INSERT INTO foro_comentarios (tema_id, user_id, contenido)
             VALUES (${nuevoTema.id}, ${999999}, ${`Respuesta generada por GeStar IA:\n\n${iaRespuesta}`})
           `;
         }
       } catch (iaError) {
-        console.error('Error al generar respuesta de IA:', iaError);
-        // No fallar la creación del tema si la IA falla
+        console.error('Error al generar respuesta automática:', iaError);
       }
     }
 
