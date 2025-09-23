@@ -34,6 +34,9 @@ const UserHeader = ({ userName = "Usuario" }) => {
         <Link href="/foro" className={styles.navLink}>
           Foro
         </Link>
+        <Link href="/hospitales" className={styles.navLink}>
+          Hospitales
+        </Link>
         <Link href="/calendario" className={styles.navLink}>
           Calendario
         </Link>
