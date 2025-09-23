@@ -1,11 +1,32 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import UserHeader from '../../../components/Header/UserHeader';
 import styles from './page.module.css';
 
 export default function ApoyoPsicologico() {
-  const userName = "Juliana";
+  const [user, setUser] = useState(null);
   const [activeFilter, setActiveFilter] = useState('Todos');
+
+  useEffect(() => {
+    // Cargar información del usuario desde localStorage
+    if (typeof window !== 'undefined') {
+      const userData = localStorage.getItem('gestarUser');
+      if (userData) {
+        const parsedUser = JSON.parse(userData);
+        // Obtener información actualizada del usuario
+        fetch(`/api/users/get-user?id=${parsedUser.id}`)
+          .then(res => res.json())
+          .then(freshUser => {
+            const updatedUser = { ...parsedUser, ...freshUser };
+            setUser(updatedUser);
+            localStorage.setItem('gestarUser', JSON.stringify(updatedUser));
+          })
+          .catch(() => {
+            setUser(parsedUser);
+          });
+      }
+    }
+  }, []);
 
   const allResources = [
     {
@@ -163,7 +184,7 @@ export default function ApoyoPsicologico() {
 
   return (
     <div className={styles.container}>
-      <UserHeader userName={userName} />
+      <UserHeader userName={user?.nombres || "Usuario"} />
       
       <main className={styles.main}>
         <div className={styles.heroSection}>
@@ -172,7 +193,7 @@ export default function ApoyoPsicologico() {
               <h1 className={styles.mainTitle}>Apoyo Psicológico y Bienestar Mental</h1>
             </div>
             <p className={styles.subtitle}>Tu salud mental es tan importante como tu salud física</p>
-            <p className={styles.quote}>"Un embarazo saludable incluye cuidar tanto tu cuerpo como tu mente"</p>
+            <p className={styles.quote}>&ldquo;Un embarazo saludable incluye cuidar tanto tu cuerpo como tu mente&rdquo;</p>
           </div>
         </div>
 

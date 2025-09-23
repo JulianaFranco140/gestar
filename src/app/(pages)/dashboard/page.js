@@ -246,7 +246,11 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import UserHeader from '../../../components/Header/UserHeader';
 import styles from './page.module.css';
+
 import Link from 'next/link';
+import MessageIcon from '../../../components/Icons/MessageIcon';
+import HospitalIcon from '../../../components/Icons/HospitalIcon';
+import MentalHealthIcon from '../../../components/Icons/MentalHealthIcon';
 
 export default function Dashboard() {
   // ...existing code...
@@ -468,43 +472,37 @@ export default function Dashboard() {
         </section>
       )}
 
-        <div className={styles.carouselSection}>
-          <div className={styles.carouselContainer}>
-            <button className={styles.carouselArrow + ' ' + styles.arrowLeft}>
-              ‹
-            </button>
-            <div className={styles.carouselContent}>
-              <div className={styles.carouselSlide}>
-              </div>
-            </div>
-            <button className={styles.carouselArrow + ' ' + styles.arrowRight}>
-              ›
-            </button>
-          </div>
-        </div>
 
-        <div className={styles.cardsSection}>
-          <div className={styles.cardsContainer}>
-            <Link href="/foro">
-              <div className={styles.card}>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>Comunidad</h3>
-                  <p className={styles.cardDescription}>
-                    Conecta con otras mamás
-                  </p>
+
+        {/* Card Carousel for App Sections */}
+        <section className={styles.cardCarouselSection}>
+          <h2 className={styles.cardCarouselTitle}>Explora las secciones principales</h2>
+          <div className={styles.cardCarouselContainer}>
+            <div className={styles.cardCarousel}>
+              <Link href="/foro" className={styles.cardLink}>
+                <div className={styles.cardCarouselCard}>
+                  <div className={styles.cardIcon}><MessageIcon color="#E8B4B8" size={40} /></div>
+                  <h3 className={styles.cardCarouselCardTitle}>Foro</h3>
+                  <p className={styles.cardCarouselCardDesc}>Comparte dudas, experiencias y recibe apoyo de la comunidad y expertos.</p>
                 </div>
-              </div>
-            </Link>
-            <div className={styles.card}>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>Nuevos exámenes</h3>
-                <p className={styles.cardDescription}>
-                  Sube tus últimos resultados
-                </p>
-              </div>
+              </Link>
+              <Link href="/hospitales" className={styles.cardLink}>
+                <div className={styles.cardCarouselCard}>
+                  <div className={styles.cardIcon}><HospitalIcon color="#E8B4B8" size={40} /></div>
+                  <h3 className={styles.cardCarouselCardTitle}>Mapa de Hospitales</h3>
+                  <p className={styles.cardCarouselCardDesc}>Encuentra hospitales y centros de salud cercanos con información real y actualizada.</p>
+                </div>
+              </Link>
+              <Link href="/apoyo-psicologico" className={styles.cardLink}>
+                <div className={styles.cardCarouselCard}>
+                  <div className={styles.cardIcon}><MentalHealthIcon color="#E8B4B8" size={40} /></div>
+                  <h3 className={styles.cardCarouselCardTitle}>Apoyo Psicológico</h3>
+                  <p className={styles.cardCarouselCardDesc}>Accede a recursos y orientación profesional para tu bienestar emocional.</p>
+                </div>
+              </Link>
             </div>
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );

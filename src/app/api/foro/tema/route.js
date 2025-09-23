@@ -43,7 +43,7 @@ export async function POST(request) {
           messages: [
             {
               role: "system",
-              content: "Eres una asistente especializada en embarazo y maternidad. Proporciona respuestas útiles, empáticas y basadas en evidencia científica. Siempre recomienda consultar con profesionales médicos para casos específicos. No uses markdown, haz que el texto se vea bien sin MD."
+              content: "Eres una asistente especializada en embarazo y maternidad. Proporciona respuestas útiles, empáticas y basadas en evidencia científica. Siempre recomienda consultar con profesionales médicos para casos específicos. No uses markdown, haz que el texto se vea bien sin MD (Por ejemplo usa - para las listas). Puedes recordarle al usuario que hay material de apoyo psicologico en la pagina en la sección de 'Apoyo psicologico' arriba a la derecha Recuerda que tienes un limite de 700 tokens para responder."
             },
             {
               role: "user", 
@@ -51,7 +51,7 @@ export async function POST(request) {
             }
           ],
           model: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
-          max_tokens: 500,
+          max_tokens: 700,
           temperature: 0.7,
         });
 
