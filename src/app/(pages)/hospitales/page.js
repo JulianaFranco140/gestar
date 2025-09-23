@@ -192,7 +192,7 @@ const HospitalesPage = () => {
         },
         async (error) => {
           console.error('Error obteniendo ubicación:', error);
-          setError('No se pudo obtener tu ubicación. Mostrando hospitales de ejemplo en Bogotá.');
+          setError('No se pudo obtener tu ubicación. Mostrando hospitales de ejemplo en Bogotá. (Dale acceso a tu ubicación al navegador y recarga la página).');
           
           // Usar ubicación por defecto (Bogotá) si no se puede obtener la ubicación
           const bogotaLocation = { lat: 4.6097, lng: -74.0817 };
