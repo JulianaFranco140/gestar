@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import UserHeader from '../../../components/Header/UserHeader';
+import HospitalIcon from '../../../components/Icons/HospitalIcon';
 import styles from './page.module.css';
 
 // Importar el mapa dinámicamente para evitar problemas de SSR
@@ -336,13 +337,13 @@ const HospitalesPage = () => {
               <div className={styles.hospitalHeader}>
                 <h3 className={styles.hospitalName}>
                   {hospital.nombre}
-                  {hospital.tipo === 'hospital' && <span className={styles.hospitalBadge}>🏥</span>}
-                  {hospital.tipo === 'clinic' && <span className={styles.hospitalBadge}>🏪</span>}
+                  {hospital.tipo === 'hospital' && <span className={styles.hospitalBadge}><HospitalIcon color="#E8B4B8" size={22} /></span>}
+                  {hospital.tipo === 'clinic' && <span className={styles.hospitalBadge}><HospitalIcon color="#E8B4B8" size={22} /></span>}
                 </h3>
                 <div className={styles.hospitalMeta}>
                   {hospital.distancia && (
                     <span className={styles.distance}>
-                      📍 {formatDistancia(hospital.distancia)}
+                      {formatDistancia(hospital.distancia)}
                     </span>
                   )}
                   <span className={styles.rating}>
@@ -353,14 +354,14 @@ const HospitalesPage = () => {
               
               <div className={styles.hospitalInfo}>
                 <p className={styles.address}>
-                  📍 {hospital.direccion}
+                  {hospital.direccion}
                 </p>
                 <p className={styles.phone}>
-                  📞 {hospital.telefono}
+                  {hospital.telefono}
                 </p>
                 {hospital.operador && (
                   <p className={styles.operator}>
-                    🏢 {hospital.operador}
+                    {hospital.operador}
                   </p>
                 )}
                 {hospital.especialidades && hospital.especialidades.length > 0 && (
@@ -422,7 +423,7 @@ const HospitalesPage = () => {
                 </div>
               )}
               <div className={styles.dataSource}>
-                <small>📍 Datos obtenidos de OpenStreetMap</small>
+                <small>Datos obtenidos de OpenStreetMap</small>
               </div>
             </div>
             <div className={styles.modalActions}>
@@ -430,7 +431,7 @@ const HospitalesPage = () => {
                 className={styles.primaryButton}
                 onClick={() => abrirEnOpenStreetMap(selectedHospital)}
               >
-                🗺️ Ver en OpenStreetMap
+                Ver en OpenStreetMap
               </button>
             </div>
           </div>
