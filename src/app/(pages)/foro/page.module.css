@@ -195,6 +195,35 @@
   font-size: 14px;
   margin-bottom: 6px;
 }
+
+.checkboxContainer {
+  margin: 8px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkboxText {
+  font-size: 14px;
+  color: var(--light-gray);
+  user-select: none;
+}
 .nuevoTemaBtn {
   background: var(--primary-pink) !important;
   color: #fff;

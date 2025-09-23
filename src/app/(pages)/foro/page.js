@@ -14,6 +14,7 @@ export default function ForoTemas() {
   const [contenido, setContenido] = useState('');
   const [publicando, setPublicando] = useState(false);
   const [error, setError] = useState('');
+  const [respuestaIA, setRespuestaIA] = useState(false);
 
   function generarSlug(texto) {
     return texto
@@ -43,6 +44,7 @@ export default function ForoTemas() {
           contenido,
           slug,
           user_id: user?.id,
+          generar_respuesta_ia: respuestaIA,
         }),
       });
       const data = await res.json();
@@ -50,6 +52,7 @@ export default function ForoTemas() {
       setShowModal(false);
       setTitulo('');
       setContenido('');
+      setRespuestaIA(false);
       setError('');
       window.location.reload();
     } catch (e) {
@@ -174,6 +177,20 @@ export default function ForoTemas() {
                   disabled={publicando}
                 />
               </label>
+              <div className={styles.checkboxContainer}>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    type="checkbox"
+                    checked={respuestaIA}
+                    onChange={e => setRespuestaIA(e.target.checked)}
+                    disabled={publicando}
+                    className={styles.checkbox}
+                  />
+                  <span className={styles.checkboxText}>
+                    ¿Deseas recibir una respuesta generada por IA?
+                  </span>
+                </label>
+              </div>
               {error && <div className={styles.modalError}>{error}</div>}
               <div className={styles.modalActions}>
                 <button
