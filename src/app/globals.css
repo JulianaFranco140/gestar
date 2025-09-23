@@ -15,6 +15,11 @@
     /* Role colors */
     --role-gestante: #E8B4B8;
     --role-acompanante: #6B7C85;
+    /* Colores para el tipo de contenido :p*/
+    --type-pdf: #e53e3e;
+    --type-video: #3182ce;
+    --type-libro: #d69e2e;
+    --type-audio: #805ad5
 }
 
 

@@ -31,17 +31,17 @@ const UserHeader = ({ userName = "Usuario" }) => {
         <Link href="/dashboard" className={styles.navLink}>
           Inicio
         </Link>
+        <Link href="/mi-perfil" className={styles.navLink}>
+          Mi Perfil
+        </Link>
         <Link href="/foro" className={styles.navLink}>
           Foro
         </Link>
         <Link href="/hospitales" className={styles.navLink}>
           Hospitales
         </Link>
-        <Link href="/calendario" className={styles.navLink}>
-          Calendario
-        </Link>
-        <Link href="/mi-perfil" className={styles.navLink}>
-          Mi perfil
+        <Link href="/apoyo-psicologico" className={styles.navLink}>
+          Apoyo Psicológico
         </Link>
       </nav>
       <div className={styles.userSection}>
