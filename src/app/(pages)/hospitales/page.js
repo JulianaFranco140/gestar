@@ -281,8 +281,8 @@ const HospitalesPage = () => {
           </div>
           <div className={styles.loadingContainer}>
             <div className={styles.spinner}></div>
-            <p>🗺️ Obteniendo tu ubicación...</p>
-            <p>🏥 Buscando hospitales reales cercanos...</p>
+            <p>Obteniendo tu ubicación...</p>
+            <p>Buscando hospitales cercanos...</p>
             <small>Consultando OpenStreetMap</small>
           </div>
         </div>
