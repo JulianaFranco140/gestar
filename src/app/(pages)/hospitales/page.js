@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import UserHeader from '../../../components/Header/UserHeader';
 import HospitalIcon from '../../../components/Icons/HospitalIcon';
+import StarRating from '../../../components/StarRating';
 import styles from './page.module.css';
 
 // Importar el mapa dinámicamente para evitar problemas de SSR
@@ -32,125 +33,85 @@ const HospitalesPage = () => {
     return distance; // Distancia en km
   }, []);
 
-  const buscarHospitalesOSM = useCallback(async (lat, lng, radio = 10000) => {
+  const buscarHospitalesGooglePlaces = useCallback(async (lat, lng, radio = 10000) => {
     try {
-      // Query de Overpass para buscar hospitales, clínicas y centros médicos
-      const overpassQuery = `
-        [out:json][timeout:25];
-        (
-          node["amenity"="hospital"](around:${radio},${lat},${lng});
-          way["amenity"="hospital"](around:${radio},${lat},${lng});
-          relation["amenity"="hospital"](around:${radio},${lat},${lng});
-          node["amenity"="clinic"](around:${radio},${lat},${lng});
-          way["amenity"="clinic"](around:${radio},${lat},${lng});
-          relation["amenity"="clinic"](around:${radio},${lat},${lng});
-          node["healthcare"="hospital"](around:${radio},${lat},${lng});
-          way["healthcare"="hospital"](around:${radio},${lat},${lng});
-          relation["healthcare"="hospital"](around:${radio},${lat},${lng});
-          node["healthcare"="clinic"](around:${radio},${lat},${lng});
-          way["healthcare"="clinic"](around:${radio},${lat},${lng});
-          relation["healthcare"="clinic"](around:${radio},${lat},${lng});
-        );
-        out center;
-      `;
-
-      const response = await fetch('https://overpass-api.de/api/interpreter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        },
-        body: overpassQuery
-      });
+      // Usar nuestra API route que consulta Google Places (30 km de radio)
+      const url = `/api/hospitales/nearby?lat=${lat}&lng=${lng}&radio=${radio}`;
+      
+      const response = await fetch(url);
 
       if (!response.ok) {
-        throw new Error('Error al consultar OpenStreetMap');
+        throw new Error('Error al consultar la API de hospitales');
       }
 
       const data = await response.json();
       
-      // Procesar los resultados
-      const hospitalesProcesados = data.elements.map(element => {
-        const elementLat = element.lat || (element.center && element.center.lat);
-        const elementLng = element.lon || (element.center && element.center.lon);
+      if (data.status !== 'OK' && data.status !== 'ZERO_RESULTS') {
+        throw new Error(`Google Places API error: ${data.status}`);
+      }
+
+      if (data.status === 'ZERO_RESULTS' || !data.results || data.results.length === 0) {
+        return [];
+      }
+      
+      // Procesar los resultados de Google Places
+      const hospitalesProcesados = data.results.map(place => {
+        const elementLat = place.geometry?.location?.lat;
+        const elementLng = place.geometry?.location?.lng;
         
         if (!elementLat || !elementLng) return null;
 
         const distancia = calcularDistancia(lat, lng, elementLat, elementLng);
         
-        // Determinar especialidades basadas en tags de OSM
-        const especialidades = [];
-        if (element.tags?.['healthcare:speciality']) {
-          especialidades.push(...element.tags['healthcare:speciality'].split(';'));
-        }
-        if (element.tags?.['medical:speciality']) {
-          especialidades.push(...element.tags['medical:speciality'].split(';'));
-        }
-        
-        // Agregar especialidades relevantes para embarazo si no hay especificadas
-        if (especialidades.length === 0) {
-          if (element.tags?.amenity === 'hospital') {
-            especialidades.push('Medicina General', 'Urgencias');
-          } else if (element.tags?.amenity === 'clinic') {
-            especialidades.push('Consulta Externa');
-          }
+        // Determinar tipo de establecimiento
+        let tipo = 'medical';
+        if (place.types?.includes('hospital')) {
+          tipo = 'hospital';
+        } else if (place.types?.includes('doctor') || place.types?.includes('health')) {
+          tipo = 'clinic';
         }
 
-        return {
-          id: element.id,
-          nombre: element.tags?.name || element.tags?.['name:es'] || 'Centro Médico',
-          direccion: formatearDireccion(element.tags),
-          telefono: element.tags?.phone || element.tags?.['contact:phone'] || 'No disponible',
-          especialidades: especialidades.slice(0, 3), // Máximo 3 especialidades
+        // Construir objeto del hospital
+        const hospital = {
+          id: place.place_id,
+          nombre: place.name || 'Centro Médico',
+          direccion: place.vicinity || 'Dirección no disponible',
           lat: elementLat,
           lng: elementLng,
           distancia: distancia,
-          rating: generarRatingAleatorio(), // OSM no tiene ratings, generamos uno simulado
-          tipo: element.tags?.amenity || element.tags?.healthcare || 'medical',
-          sitioWeb: element.tags?.website || element.tags?.['contact:website'],
-          operador: element.tags?.operator || element.tags?.brand
+          rating: place.rating || generarRatingAleatorio(),
+          tipo: tipo,
+          userRatingsTotal: place.user_ratings_total || 0
         };
+
+        // Solo agregar teléfono si está disponible (priorizar formato local)
+        if (place.formatted_phone_number) {
+          hospital.telefono = place.formatted_phone_number;
+        } else if (place.international_phone_number) {
+          hospital.telefono = place.international_phone_number;
+        }
+
+        return hospital;
       }).filter(hospital => hospital !== null);
 
-      // Ordenar por distancia y limitar a 20 resultados
-      return hospitalesProcesados
-        .sort((a, b) => a.distancia - b.distancia)
-        .slice(0, 20);
+      // Ordenar por distancia (más cercano a más lejano) - sin límite
+      return hospitalesProcesados.sort((a, b) => a.distancia - b.distancia);
 
     } catch (error) {
-      console.error('Error buscando hospitales en OSM:', error);
+      console.error('Error buscando hospitales en Google Places:', error);
       throw error;
     }
   }, [calcularDistancia]);
-
-  const formatearDireccion = (tags) => {
-    const componentes = [];
-    
-    if (tags?.['addr:street'] && tags?.['addr:housenumber']) {
-      componentes.push(`${tags['addr:street']} ${tags['addr:housenumber']}`);
-    } else if (tags?.['addr:street']) {
-      componentes.push(tags['addr:street']);
-    }
-    
-    if (tags?.['addr:city']) {
-      componentes.push(tags['addr:city']);
-    }
-    
-    if (tags?.['addr:state']) {
-      componentes.push(tags['addr:state']);
-    }
-
-    return componentes.length > 0 ? componentes.join(', ') : 'Dirección no disponible';
-  };
 
   const generarRatingAleatorio = () => {
     // Generar un rating entre 3.5 y 4.8 para simular calificaciones realistas
     return Math.round((3.5 + Math.random() * 1.3) * 10) / 10;
   };
 
-  const abrirEnOpenStreetMap = (hospital) => {
-    // URL de OpenStreetMap con las coordenadas del hospital
-    const osmUrl = `https://www.openstreetmap.org/?mlat=${hospital.lat}&mlon=${hospital.lng}&zoom=16&layers=M`;
-    window.open(osmUrl, '_blank', 'noopener,noreferrer');
+  const abrirEnGoogleMaps = (hospital) => {
+    // URL de Google Maps con las coordenadas del hospital
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${hospital.lat},${hospital.lng}&query_place_id=${hospital.id}`;
+    window.open(googleMapsUrl, '_blank', 'noopener,noreferrer');
   };
 
   useEffect(() => {
@@ -174,8 +135,8 @@ const HospitalesPage = () => {
           
           try {
             setError(null);
-            // Buscar hospitales reales usando OpenStreetMap
-            const hospitalesReales = await buscarHospitalesOSM(location.lat, location.lng);
+            // Buscar hospitales reales usando Google Places API
+            const hospitalesReales = await buscarHospitalesGooglePlaces(location.lat, location.lng);
             setHospitales(hospitalesReales);
           } catch (err) {
             console.error('Error obteniendo hospitales:', err);
@@ -200,7 +161,7 @@ const HospitalesPage = () => {
           setUserLocation(bogotaLocation);
           
           try {
-            const hospitalesReales = await buscarHospitalesOSM(bogotaLocation.lat, bogotaLocation.lng);
+            const hospitalesReales = await buscarHospitalesGooglePlaces(bogotaLocation.lat, bogotaLocation.lng);
             setHospitales(hospitalesReales);
           } catch (err) {
             console.error('Error obteniendo hospitales de ejemplo:', err);
@@ -215,7 +176,7 @@ const HospitalesPage = () => {
       setHospitales(getHospitalesEjemplo());
       setLoading(false);
     }
-  }, [buscarHospitalesOSM, calcularDistancia]);
+  }, [buscarHospitalesGooglePlaces, calcularDistancia]);
 
   const getHospitalesEjemplo = () => {
     return [
@@ -265,9 +226,7 @@ const HospitalesPage = () => {
       `${distancia.toFixed(1)}km`;
   };
 
-  const formatRating = (rating) => {
-    return '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '');
-  };
+  // Ya no necesitamos formatRating, usamos el componente StarRating directamente
 
   if (loading) {
     return (
@@ -284,7 +243,7 @@ const HospitalesPage = () => {
             <div className={styles.spinner}></div>
             <p>Obteniendo tu ubicación...</p>
             <p>Buscando hospitales cercanos...</p>
-            <small>Consultando OpenStreetMap</small>
+            <small>Consultando Google Places</small>
           </div>
         </div>
       </>
@@ -320,7 +279,7 @@ const HospitalesPage = () => {
           <h2 className={styles.resultsTitle}>
             {error ? 
               'Hospitales de ejemplo en Bogotá' : 
-              userLocation ? 'Hospitales reales ordenados por distancia' : 'Hospitales en tu ciudad'
+              userLocation ? 'Hospitales cercanos' : 'Hospitales en tu ciudad'
             }
             <span className={styles.resultCount}>({hospitales.length} encontrados)</span>
           </h2>
@@ -347,7 +306,7 @@ const HospitalesPage = () => {
                     </span>
                   )}
                   <span className={styles.rating}>
-                    {formatRating(hospital.rating)} ({hospital.rating})
+                    <StarRating rating={hospital.rating} size={16} showNumber={true} />
                   </span>
                 </div>
               </div>
@@ -356,23 +315,10 @@ const HospitalesPage = () => {
                 <p className={styles.address}>
                   {hospital.direccion}
                 </p>
-                <p className={styles.phone}>
-                  {hospital.telefono}
-                </p>
-                {hospital.operador && (
-                  <p className={styles.operator}>
-                    {hospital.operador}
+                {hospital.telefono && (
+                  <p className={styles.phone}>
+                    {hospital.telefono}
                   </p>
-                )}
-                {hospital.especialidades && hospital.especialidades.length > 0 && (
-                  <div className={styles.specialties}>
-                    <span className={styles.specialtiesLabel}>Especialidades:</span>
-                    {hospital.especialidades.map((esp, index) => (
-                      <span key={index} className={styles.specialty}>
-                        {esp}
-                      </span>
-                    ))}
-                  </div>
                 )}
               </div>
 
@@ -395,43 +341,26 @@ const HospitalesPage = () => {
             </div>
             <div className={styles.modalBody}>
               <p><strong>Dirección:</strong> {selectedHospital.direccion}</p>
-              <p><strong>Teléfono:</strong> {selectedHospital.telefono}</p>
-              <p><strong>Rating:</strong> {formatRating(selectedHospital.rating)} ({selectedHospital.rating})</p>
+              {selectedHospital.telefono && (
+                <p><strong>Teléfono:</strong> {selectedHospital.telefono}</p>
+              )}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                <strong style={{ color: 'var(--light-gray)' }}>Calificación:</strong>
+                <StarRating rating={selectedHospital.rating} size={20} showNumber={true} />
+              </div>
               {selectedHospital.distancia && (
                 <p><strong>Distancia:</strong> {formatDistancia(selectedHospital.distancia)}</p>
               )}
-              {selectedHospital.operador && (
-                <p><strong>Operador:</strong> {selectedHospital.operador}</p>
-              )}
-              {selectedHospital.sitioWeb && (
-                <p><strong>Sitio web:</strong> 
-                  <a href={selectedHospital.sitioWeb} target="_blank" rel="noopener noreferrer" className={styles.websiteLink}>
-                    {selectedHospital.sitioWeb}
-                  </a>
-                </p>
-              )}
-              {selectedHospital.especialidades && selectedHospital.especialidades.length > 0 && (
-                <div className={styles.modalSpecialties}>
-                  <strong>Especialidades:</strong>
-                  <div className={styles.specialtyTags}>
-                    {selectedHospital.especialidades.map((esp, index) => (
-                      <span key={index} className={styles.specialtyTag}>
-                        {esp}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
               <div className={styles.dataSource}>
-                <small>Datos obtenidos de OpenStreetMap</small>
+                <small>Datos obtenidos de Google Places</small>
               </div>
             </div>
             <div className={styles.modalActions}>
               <button 
                 className={styles.primaryButton}
-                onClick={() => abrirEnOpenStreetMap(selectedHospital)}
+                onClick={() => abrirEnGoogleMaps(selectedHospital)}
               >
-                Ver en OpenStreetMap
+                Ver en Google Maps
               </button>
             </div>
           </div>

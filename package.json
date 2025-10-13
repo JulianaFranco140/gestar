@@ -12,12 +12,10 @@
     "@neondatabase/serverless": "^1.0.1",
     "bcryptjs": "^3.0.2",
     "dotenv": "^17.2.2",
-    "leaflet": "^1.9.4",
     "next": "15.5.2",
     "psql": "^0.0.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-leaflet": "^5.0.0",
     "together-ai": "^0.22.0"
   },
   "devDependencies": {
