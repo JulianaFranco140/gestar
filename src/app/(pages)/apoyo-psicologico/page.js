@@ -8,12 +8,10 @@ export default function ApoyoPsicologico() {
   const [activeFilter, setActiveFilter] = useState('Todos');
 
   useEffect(() => {
-    // Cargar información del usuario desde localStorage
     if (typeof window !== 'undefined') {
       const userData = localStorage.getItem('gestarUser');
       if (userData) {
         const parsedUser = JSON.parse(userData);
-        // Obtener información actualizada del usuario
         fetch(`/api/users/get-user?id=${parsedUser.id}`)
           .then(res => res.json())
           .then(freshUser => {
@@ -204,13 +202,22 @@ export default function ApoyoPsicologico() {
           
           <div className={styles.helpOptions}>
             <div className={styles.helpCard}>
-              <div className={styles.helpIcon}>📞</div>
-              <h3 className={styles.helpNumber}>+57 1 323-2425</h3>
-              <p className={styles.helpDescription}>Línea Nacional de Salud Mental (Colombia)</p>
-            </div>
+  <div className={styles.helpIcon}>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.271 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59524 1.99522 8.06607 2.16708 8.43513 2.48353C8.80418 2.79999 9.04644 3.23945 9.10999 3.72C9.22832 4.68007 9.47138 5.62273 9.82999 6.53C9.94454 6.88792 9.9613 7.27691 9.86803 7.64382C9.77476 8.01074 9.57504 8.34252 9.28999 8.59L8.08999 9.79C9.51355 12.4135 11.5865 14.4864 14.21 15.91L15.41 14.71C15.6575 14.4249 15.9893 14.2252 16.3562 14.132C16.7231 14.0387 17.1121 14.0555 17.47 14.17C18.3773 14.5286 19.3199 14.7717 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="#f8bbd9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </div>
+  <h3 className={styles.helpNumber}>+57 1 323-2425</h3>
+  <p className={styles.helpDescription}>Línea Nacional de Salud Mental (Colombia)</p>
+</div>
             
             <div className={styles.helpCard}>
-              <div className={styles.helpIcon}>📱</div>
+              <div className={styles.helpIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"  stroke="#f8bbd9" strokeWidth="1.5"/>
+                  <path d="M8 10h8M8 14h6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
               <h3 className={styles.helpNumber}>WhatsApp</h3>
               <p className={styles.helpDescription}>Chat de Crisis: +57 300-754-8933</p>
             </div>
@@ -265,25 +272,44 @@ export default function ApoyoPsicologico() {
               className={`${styles.filterTab} ${activeFilter === 'PDFs' ? styles.active : ''}`}
               onClick={() => handleFilterClick('PDFs')}
             >
-              📄 PDFs
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="#6B7C85" stroke="#374151" strokeWidth="1"/>
+                <path d="M14 2v6h6" stroke="#6b7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M8 13h8M8 17h8M8 9h2" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+              PDFs
             </button>
             <button 
               className={`${styles.filterTab} ${activeFilter === 'Videos' ? styles.active : ''}`}
               onClick={() => handleFilterClick('Videos')}
             >
-              🎬 Videos
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="3" width="20" height="14" rx="2" fill="#6B7C85" stroke="#374151" strokeWidth="1"/>
+                <path d="M10 8.5l4 2.5-4 2.5v-5z" fill="white"/>
+              </svg>
+              Videos
             </button>
             <button 
               className={`${styles.filterTab} ${activeFilter === 'Libros' ? styles.active : ''}`}
               onClick={() => handleFilterClick('Libros')}
             >
-              📖 Libros
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="#6B7C85" stroke="#374151" strokeWidth="1"/>
+                <path d="M8 7h8M8 11h6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+              Libros
             </button>
             <button 
               className={`${styles.filterTab} ${activeFilter === 'Audio' ? styles.active : ''}`}
               onClick={() => handleFilterClick('Audio')}
             >
-              🎧 Audio
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z" fill="#6B7C85"/>
+                <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" fill="#374151"/>
+              </svg>
+              Audio
             </button>
           </div>
 
@@ -306,7 +332,11 @@ export default function ApoyoPsicologico() {
                   >
                     {resource.buttonText}
                   </button>
-                  <span className={styles.favoriteIcon}>❤️</span>
+                  <span className={styles.favoriteIcon}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#FF69B4" strokeWidth="1"/>
+                    </svg>
+                  </span>
                   <span className={styles.resourcePages}>{resource.pages}</span>
                 </div>
               </div>
