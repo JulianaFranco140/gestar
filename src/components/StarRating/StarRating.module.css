@@ -9,3 +9,17 @@
   color: var(--light-gray);
   font-weight: 500;
 }
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .starRating {
+    gap: 1px;
+    font-size: 14px;
+  }
+
+  .starNumber {
+    margin-left: 4px;
+    font-size: 13px;
+  }
+}
+

@@ -441,3 +441,13 @@
     font-size: 1.2rem;
   }
 }
+/* Mejoras responsive adicionales */
+@media (max-width: 768px) {
+  .resultsTitle {
+    font-size: 1.3rem;
+  }
+  .hospitalCard {
+    padding: 18px;
+  }
+}
+

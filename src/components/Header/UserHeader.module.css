@@ -121,3 +121,148 @@
   background-color: var(--very-light-pink);
   color: var(--primary-pink);
 }
+
+/* Hamburger menu - oculto en desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 101;
+}
+
+.hamburgerLine {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-pink);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Sección de usuario en menú móvil - oculta en desktop */
+.mobileUserSection {
+  display: none;
+}
+
+/* Overlay para cerrar menú móvil */
+.overlay {
+  display: none;
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 70px);
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 99;
+  }
+
+  .navigation.mobileMenuOpen {
+    right: 0;
+  }
+
+  .navLink {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .navLink:hover {
+    background-color: var(--very-light-pink);
+  }
+
+  /* Mostrar usuario en menú móvil */
+  .mobileUserSection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 25px;
+    border-top: 1px solid rgba(232, 180, 184, 0.3);
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .mobileUserInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .mobileUserSection .logoutButton {
+    background-color: var(--primary-pink);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .mobileUserSection .logoutButton:hover {
+    background-color: var(--dark-pink);
+  }
+
+  /* Ocultar usuario desktop en móvil */
+  .userSection {
+    display: none;
+  }
+
+  /* Overlay activo */
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .navigation {
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 100%;
+  }
+
+  .overlay {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+}

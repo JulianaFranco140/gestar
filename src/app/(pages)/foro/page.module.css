@@ -591,6 +591,156 @@
     padding: 10px 25px;
     font-size: 14px;
   }
+
+  .postGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .modalContent {
+    padding: 24px 20px;
+    min-width: 300px;
+  }
+
+  .comentariosSection {
+    padding: 20px 18px;
+  }
+
+  .comentarioItem {
+    padding: 15px 16px;
+  }
+
+  .nuevoTemaBtn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .main {
+    padding: 15px;
+  }
+
+  .shareSection,
+  .post {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .forumTitle {
+    font-size: 20px;
+  }
+
+  .shareTitle {
+    font-size: 16px;
+  }
+
+  .postTextarea {
+    min-height: 70px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .publishButton {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .nuevoTemaBtn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .postGrid {
+    gap: 15px;
+  }
+
+  .postTitle {
+    font-size: 18px;
+  }
+
+  .postPreview {
+    font-size: 14px;
+  }
+
+  .postMeta {
+    font-size: 12px;
+  }
+
+  .modalContent {
+    padding: 20px 16px;
+    min-width: 280px;
+    width: 90%;
+  }
+
+  .modalInput,
+  .modalTextarea {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .modalActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .publicarBtn,
+  .cancelarBtn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .comentariosSection {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+
+  .comentariosTitle {
+    font-size: 1.1rem;
+  }
+
+  .comentarioItem {
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+
+  .comentarioMeta {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+
+  .comentarioContenido {
+    font-size: 0.95rem;
+  }
+
+  .comentarioTextarea {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .responderBtn,
+  .publicarBtn,
+  .cancelarBtn {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .eliminarBtn {
+    top: 8px;
+    right: 8px;
+    padding: 2px 8px;
+    font-size: 16px;
+  }
+
+  .eliminarBtnn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .checkboxContainer {
+    font-size: 13px;
+  }
 }
 
 

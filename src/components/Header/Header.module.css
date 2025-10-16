@@ -9,6 +9,7 @@
   position: relative;
   z-index: 10;
   box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .logo {
@@ -17,6 +18,7 @@
   color: var(--primary-pink);
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  flex-shrink: 0;
 }
 
 
@@ -35,6 +37,7 @@
   font-size: 14px;
   border: None;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
 }
 
 .BackButton:hover{
@@ -42,4 +45,44 @@
   color: var(--light-gray);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .headerButton {
+    margin: 10px 20px;
+    gap: 10px;
+  }
+
+  .BackButton {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .headerButton {
+    margin: 5px 10px;
+    gap: 8px;
+  }
+
+  .BackButton {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }

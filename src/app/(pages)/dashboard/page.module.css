@@ -390,19 +390,6 @@ input[type="date"].input:focus {
   }
 }
 
-@media (max-width: 768px) {
-  .cardCarousel {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-  }
-  .cardCarouselCard {
-    max-width: 100%;
-    min-width: 140px;
-    padding: 20px 8px 18px 8px;
-  }
-}
-
 .cardsSection {
   display: flex;
   justify-content: center;
@@ -466,18 +453,224 @@ input[type="date"].input:focus {
   .main {
     padding: 20px;
   }
-  
+
   .welcomeSection {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+    padding: 20px 25px;
   }
-  
-  .cardsContainer {
-    flex-direction: column;
-  }
-  
+
   .welcomeTitle {
     font-size: 24px;
+  }
+
+  .welcomeText {
+    font-size: 16px;
+  }
+
+  .weekBadge {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .consejoSection {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .consejoTitle {
+    font-size: 1.3rem;
+  }
+
+  .consejoSemana {
+    font-size: 1rem;
+  }
+
+  .consejoList {
+    font-size: 0.95rem;
+  }
+
+  .vinculaParejaSection {
+    padding: 2rem 1.5rem;
+  }
+
+  .vinculaParejaSection h2 {
+    font-size: 1.4rem;
+  }
+
+  .vinculaForm {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vinculaForm input[type="number"] {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .cardCarousel {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .cardCarouselCard {
+    max-width: 100%;
+    min-width: 140px;
+    padding: 20px 8px 18px 8px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .main {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .welcomeSection {
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+
+  .welcomeTitle {
+    font-size: 20px;
+  }
+
+  .welcomeText {
+    font-size: 14px;
+  }
+
+  .weekBadge {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .consejoSection {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .consejoTitle {
+    font-size: 1.2rem;
+  }
+
+  .consejoCard {
+    padding: 1rem;
+  }
+
+  .consejoSemana {
+    font-size: 0.95rem;
+  }
+
+  .consejoList {
+    font-size: 0.9rem;
+    gap: 0.4rem;
+  }
+
+  .infoText {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .vinculaParejaSection {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .vinculaParejaSection h2 {
+    font-size: 1.2rem;
+  }
+
+  .vinculaParejaSection p {
+    font-size: 0.95rem;
+  }
+
+  .vinculaForm input[type="number"] {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .vinculaForm button {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .parejaText {
+    font-size: 1rem;
+  }
+
+  .cardCarouselSection {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .cardCarouselTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardCarouselCard {
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+
+  .cardIcon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .cardCarouselCardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardCarouselCardDesc {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    border-radius: 15px;
+  }
+
+  .cardContent {
+    padding: 25px 20px;
+    min-height: 100px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardDescription {
+    font-size: 14px;
+  }
+
+  .definirSemanaCard {
+    padding: 2rem 1.5rem;
+    min-width: 280px;
+    border-radius: 15px;
+  }
+
+  .definirSemanaCard h3 {
+    font-size: 1.1rem;
+  }
+
+  .input[type="date"],
+  input[type="date"].input {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .submitButton,
+  .definirSemanaBtn,
+  .cancelButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
   }
 }

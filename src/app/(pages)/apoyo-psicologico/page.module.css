@@ -382,3 +382,105 @@
     gap: 10px;
   }
 }
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .main {
+    padding: 15px;
+    gap: 25px;
+  }
+
+  .heroSection,
+  .emergencySection,
+  .quickHelpSection,
+  .librarySection {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .mainTitle {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .quote {
+    font-size: 14px;
+  }
+
+  .emergencyTitle {
+    font-size: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+
+  .helpOptions {
+    gap: 15px;
+  }
+
+  .helpCard {
+    padding: 20px;
+  }
+
+  .helpNumber {
+    font-size: 18px;
+  }
+
+  .helpDescription {
+    font-size: 13px;
+  }
+
+  .emotionCards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .emotionCard {
+    padding: 25px 15px;
+  }
+
+  .emotionIcon {
+    font-size: 40px;
+  }
+
+  .emotionTitle {
+    font-size: 18px;
+  }
+
+  .emotionDescription {
+    font-size: 13px;
+  }
+
+  .filterTabs {
+    gap: 8px;
+  }
+
+  .filterTab {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .resourceCard {
+    padding: 15px;
+  }
+
+  .resourceTitle {
+    font-size: 16px;
+  }
+
+  .resourceDescription {
+    font-size: 13px;
+  }
+
+  .resourceMeta {
+    font-size: 12px;
+  }
+
+  .resourceButton {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
