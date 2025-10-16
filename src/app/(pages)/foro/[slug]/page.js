@@ -161,7 +161,7 @@ export default function DetalleTema() {
                   <span className={styles.temaFecha}>{tema.fecha}</span>
                   {user?.id && tema.user_id === user.id && (
                     <button
-                      className={styles.eliminarBtn}
+                      className={styles.eliminarBtnn}
                       title="Eliminar tema"
                       onClick={() => {
                         if (window.confirm('¿Estás seguro de que quieres eliminar este tema? Esta acción no se puede deshacer.')) {
