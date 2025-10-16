@@ -17,7 +17,7 @@ export default function Signup() {
       rol: formData.rol || 'gestante'
     };
     try {
-      const res = await fetch('http://localhost:3000/api/auth/register', {
+      const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
@@ -38,6 +38,7 @@ export default function Signup() {
         alert(error.error || 'Error en el registro');
       }
     } catch (e) {
+      console.error('Error en signup:', e);
       alert('Error de red o servidor');
     }
   };
