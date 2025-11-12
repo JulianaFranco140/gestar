@@ -2,87 +2,87 @@
 const consejosPorSemana = {
   1: {
     titulo: '🌟 El Milagro Comienza',
-    bebe: 'Aún no está concebido, pero tu cuerpo prepara el óvulo.',
-    alimentacion: 'Ácido fólico (espinaca, brócoli, lentejas) y proteínas.',
-    cuidados: 'Evita alcohol, tabaco y medicamentos sin receta.'
+    bebe: 'Tu cuerpo está preparando el óvulo que podría convertirse en tu bebé. Aunque técnicamente aún no estás embarazada, este es el punto de partida que los médicos usan para calcular las semanas de gestación. Tu útero se está preparando con un revestimiento rico que nutrirá al futuro embrión.',
+    alimentacion: 'Comienza a tomar ácido fólico (400-800 mcg diarios) para prevenir defectos del tubo neural. Incluye alimentos ricos en folatos como espinacas, brócoli, lentejas, espárragos y cereales fortificados. Consume proteínas de calidad (carnes magras, pescado, huevos, legumbres) y mantén una dieta balanceada rica en vitaminas y minerales.',
+    cuidados: 'Elimina completamente el alcohol, tabaco y drogas recreativas. Evita medicamentos sin prescripción médica. Mantén un peso saludable y comienza rutinas de ejercicio suave si no las tienes. Reduce el estrés y asegúrate de dormir 7-9 horas diarias. Es el momento ideal para una consulta preconcepcional con tu médico.'
   },
   2: {
-    titulo: '🌟 El Milagro Comienza',
-    bebe: 'Aún no está concebido, pero tu cuerpo prepara el óvulo.',
-    alimentacion: 'Ácido fólico (espinaca, brócoli, lentejas) y proteínas.',
-    cuidados: 'Evita alcohol, tabaco y medicamentos sin receta.'
+    titulo: '🌟 Preparación Perfecta',
+    bebe: 'Tu cuerpo continúa preparándose para la posible concepción. Los folículos ováricos están madurando y tu endometrio se está engrosando para crear el ambiente perfecto para la implantación. Los niveles hormonales fluctúan preparando tu sistema reproductivo.',
+    alimentacion: 'Mantén la suplementación con ácido fólico. Incluye alimentos ricos en hierro como carnes rojas magras, pollo, pescado, espinacas y legumbres, acompañados de vitamina C (cítricos, fresas, tomates) para mejorar la absorción. Consume lácteos o alternativas fortificadas para obtener calcio. Bebe mucha agua y limita la cafeína.',
+    cuidados: 'Si estás planificando quedarte embarazada, este es tu periodo fértil más probable. Mantén relaciones sin protección si buscas concebir. Continúa evitando alcohol, tabaco y sustancias tóxicas. Practica técnicas de relajación y mantén un estilo de vida activo pero sin excesos. Toma vitaminas prenatales recomendadas por tu médico.'
   },
   3: {
     titulo: '🎯 La Concepción',
-    bebe: 'El óvulo fecundado viaja al útero.',
-    alimentacion: 'Hierro (carnes magras, lentejas) + vitamina C.',
-    cuidados: 'No te expongas a calor extremo (saunas, jacuzzis).'
+    bebe: 'Si la concepción ha ocurrido, el óvulo fertilizado (ahora llamado cigoto) comienza su increíble viaje hacia el útero a través de las trompas de Falopio. Se divide rápidamente, duplicando sus células cada 12 horas. Al final de esta semana, se habrá convertido en un blastocisto listo para implantarse.',
+    alimentacion: 'El hierro es crucial ahora para la formación de glóbulos rojos adicionales. Consume carnes magras, pescado, lentejas, espinacas y tofu. Combina con vitamina C de naranjas, fresas, pimientos y brócoli para maximizar la absorción. Incluye granos integrales ricos en vitaminas B. Evita pescados altos en mercurio como tiburón, pez espada y caballa gigante.',
+    cuidados: 'Evita exposición a temperaturas extremas como saunas, jacuzzis y baños muy calientes que pueden afectar la implantación. Limita el ejercicio intenso y evita deportes de contacto. Continúa tomando ácido fólico religiosamente. Reduce el estrés ya que puede afectar la implantación. Si fumas, es absolutamente crucial dejarlo ahora mismo.'
   },
   4: {
-    titulo: '🎉 Implantación',
-    bebe: 'El embrión se adhiere al útero.',
-    alimentacion: 'Comidas ligeras y frecuentes para prevenir náuseas.',
-    cuidados: 'Hazte la prueba de embarazo.'
+    titulo: '🎉 Implantación Exitosa',
+    bebe: 'El blastocisto se ha implantado exitosamente en el revestimiento uterino y ahora se llama embrión. Mide apenas 0.2 mm pero ya está produciendo la hormona hCG que detectarán las pruebas de embarazo. Se están formando las capas celulares que se convertirán en todos los órganos y sistemas de tu bebé.',
+    alimentacion: 'Las náuseas pueden comenzar, así que come pequeñas cantidades frecuentemente. Prueba con galletas saladas, jengibre fresco, plátanos y arroz. Evita alimentos grasos o muy condimentados. Mantén la hidratación con agua, jugos naturales diluidos o infusiones suaves. Los alimentos ricos en vitamina B6 como pollo, pescado y plátanos pueden ayudar con las náuseas.',
+    cuidados: 'Puedes hacerte una prueba de embarazo casera, preferiblemente con la primera orina de la mañana para mayor precisión. Programa tu primera cita prenatal. Comienza un diario de síntomas para compartir con tu médico. Descansa más si te sientes fatigada, es normal. Evita rayos X innecesarios y informa a cualquier profesional médico sobre tu posible embarazo.'
   },
   5: {
-    titulo: '💓 Primer Latido',
-    bebe: 'Su corazón late, aunque aún no se escucha.',
-    alimentacion: 'Snacks suaves (galletas, arroz, plátano).',
-    cuidados: 'Programa tu primera cita prenatal.'
+    titulo: '💓 Primer Latido del Corazón',
+    bebe: 'El corazón de tu bebé comienza a latir esta semana, aunque es demasiado pronto para escucharlo. Se está formando el tubo neural que se convertirá en el cerebro y la médula espinal. Ya mide aproximadamente 2 mm y se pueden distinguir la cabeza del cuerpo. Los brotes de brazos y piernas empiezan a aparecer.',
+    alimentacion: 'Si tienes náuseas matutinas, prueba con snacks suaves como galletas integrales, pretzels, o cereales secos antes de levantarte. El jengibre es muy efectivo: puedes tomarlo como té, galletas o caramelos. Come plátanos ricos en potasio y vitamina B6. Evita olores fuertes que puedan desencadenar náuseas y come en lugares bien ventilados.',
+    cuidados: 'Programa tu primera cita prenatal para confirmar el embarazo y establecer tu fecha de parto. Comienza a tomar vitaminas prenatales con ácido fólico, hierro y calcio. Descansa cuando te sientas cansada - la fatiga es normal debido a los cambios hormonales. Evita cambiar la caja de arena del gato para prevenir toxoplasmosis. Mantén buenos hábitos de higiene.'
   },
   6: {
-    titulo: '🥰 Desarrollo Inicial',
-    bebe: 'Como una lenteja, ya se forman cerebro y corazón.',
-    alimentacion: 'Omega-3 (pescado bajo en mercurio, nueces).',
-    cuidados: 'Evita estómago vacío, descansa bastante.'
+    titulo: '🥰 Desarrollo Acelerado',
+    bebe: 'Tu bebé mide ahora 4-6 mm (como una lenteja). Su corazón late a 140-150 latidos por minuto, el doble que el tuyo. Se están formando las estructuras faciales básicas: ojos, nariz y boca. El cerebro se está desarrollando rápidamente y los brotes de extremidades son más evidentes. El cordón umbilical se está formando.',
+    alimentacion: 'Los omega-3 son cruciales para el desarrollo cerebral. Consume pescados seguros como salmón, sardinas, anchoas y trucha (2-3 porciones por semana). Si eres vegetariana, incluye nueces, semillas de chía y aceite de linaza. Las náuseas pueden hacer difícil comer, así que enfócate en alimentos que toleres bien y toma vitaminas prenatales para llenar vacíos nutricionales.',
+    cuidados: 'Nunca tengas el estómago completamente vacío, ya que esto puede empeorar las náuseas. Come algo pequeño cada 2-3 horas. Descansa mucho - tu cuerpo está trabajando arduamente creando la placenta. Evita multitudes y personas enfermas para reducir el riesgo de infecciones. Informa a tu jefe sobre el embarazo si tu trabajo involucra químicos o radiación.'
   },
   7: {
-    titulo: '🌱 Crecimiento Rápido',
-    bebe: 'Como un arándano, su cerebro se desarrolla mucho.',
-    alimentacion: 'Calcio (leche, queso fresco, almendras).',
-    cuidados: 'Café con moderación (máx. 1 taza).'
+    titulo: '🌱 Crecimiento Cerebral Intensivo',
+    bebe: 'Tu bebé mide aproximadamente 10 mm (como un arándano) y está creciendo a un ritmo increíble. Su cerebro se está desarrollando a una velocidad asombrosa, produciendo 100,000 neuronas por minuto. Los rasgos faciales son más definidos, con párpados que cubren los ojos en desarrollo. Los brazos y piernas están más formados y pueden moverse.',
+    alimentacion: 'El calcio es esencial ahora para el desarrollo óseo y dental. Consume 3-4 porciones diarias de lácteos: leche, yogur natural, queso fresco. Si eres intolerante a la lactosa, prueba productos sin lactosa o alternativas fortificadas como leche de almendras o soja. Incluye almendras, sardinas con huesos y vegetales de hoja verde oscura como fuentes adicionales de calcio.',
+    cuidados: 'Si consumes café, redúcelo a máximo 200 mg de cafeína al día (aproximadamente una taza pequeña). Esto incluye té, chocolate y bebidas energéticas. El exceso de cafeína se ha asociado con bajo peso al nacer. Comienza a usar ropa más holgada si sientes molestias. Mantén una rutina de ejercicio suave como caminar 30 minutos diarios si te sientes bien.'
   },
   8: {
-    titulo: '🖐 Deditos Formándose',
-    bebe: 'Como una frambuesa, brazos y piernas ya se ven.',
-    alimentacion: 'Frutas cítricas para absorber hierro.',
-    cuidados: 'Usa zapatos cómodos, tu circulación cambia.'
+    titulo: '🖐 Formación de Extremidades',
+    bebe: 'Tu bebé mide alrededor de 14-20 mm (como una frambuesa). Sus brazos y piernas están bien definidos, y los dedos de manos y pies están comenzando a separarse. Los rasgos faciales son más humanos, con una nariz pequeña visible. Sus órganos internos continúan desarrollándose y especializándose rápidamente.',
+    alimentacion: 'Las frutas cítricas ricas en vitamina C (naranjas, mandarinas, kiwis, fresas) ayudan a absorber el hierro y fortalecen tu sistema inmunológico. Combínalas con alimentos ricos en hierro en las mismas comidas. La vitamina C también es importante para la formación del colágeno en los tejidos de tu bebé. Evita jugos no pasteurizados que podrían contener bacterias dañinas.',
+    cuidados: 'Tu circulación sanguínea está cambiando para acomodar el aumento del volumen sanguíneo. Usa zapatos cómodos y con buen soporte, evita tacones altos. Eleva las piernas cuando descanses para mejorar la circulación. Si trabajas sentada mucho tiempo, levántate y camina cada hora. Comienza a dormir de lado, preferiblemente el izquierdo, para mejorar el flujo sanguíneo al útero.'
   },
   9: {
     titulo: '🎪 Primeros Movimientos',
-    bebe: 'Como una cereza, ya se mueve aunque no lo notes.',
-    alimentacion: 'Hierro (espinaca, lentejas) y agua suficiente.',
-    cuidados: 'Camina o haz yoga suave.'
+    bebe: 'Tu bebé mide alrededor de 22-30 mm (como una cereza). Aunque ya se mueve constantemente, flexionando brazos y piernas, aún es demasiado pequeño para que sientas sus movimientos. Sus órganos principales están formados y ahora entran en un período de crecimiento y refinamiento. Los párpados están fusionados protegiendo los ojos en desarrollo.',
+    alimentacion: 'El hierro es fundamental para prevenir la anemia, común en el embarazo. Incluye espinacas, carnes rojas magras, lentejas, garbanzos y quinoa. Asegúrate de beber al menos 8-10 vasos de agua al día para mantener el volumen sanguíneo en aumento. Los alimentos ricos en vitamina B12 (carnes, pescados, lácteos) son esenciales para el desarrollo del sistema nervioso.',
+    cuidados: 'Incorpora actividad física suave como caminar, nadar o yoga prenatal para mantener tu energía y estado de ánimo. Evita deportes de contacto o actividades con riesgo de caídas. Las náuseas pueden estar en su punto máximo, así que descansa cuando lo necesites. Mantén la casa bien ventilada y evita olores fuertes que puedan desencadenar malestar.'
   },
   10: {
-    titulo: '✨ Ya Tiene Dedos',
-    bebe: 'Como una aceituna, se forman deditos.',
-    alimentacion: 'Evita alimentos crudos.',
-    cuidados: 'Usa ropa cómoda y holgada.'
+    titulo: '✨ Formación de Dedos Completa',
+    bebe: 'Tu bebé mide aproximadamente 31-42 mm (como una aceituna grande). Sus dedos de manos y pies están completamente formados, incluyendo las uñas diminutas. Los rasgos faciales están más definidos y las orejas externas están comenzando a formarse. Su estómago produce jugos digestivos y los riñones producen orina.',
+    alimentacion: 'Evita completamente carnes, pescados y huevos crudos o poco cocidos para prevenir salmonela, listeria y toxoplasmosis. Esto incluye sushi crudo, carpaccio, huevos pochados, mayonesa casera y quesos blandos no pasteurizados. Opta por carnes bien cocidas, pescados seguros y pasteurizados, y huevos completamente cocidos.',
+    cuidados: 'Tu ropa regular puede empezar a sentirse ajustada, especialmente en la cintura y el pecho. Comienza a usar ropa más holgada y cómoda. Los sostenes pueden necesitar una talla más grande debido al crecimiento mamario. Evita ropa que comprima el abdomen. Considera invertir en algunas prendas de maternidad básicas para mayor comodidad.'
   },
   11: {
-    titulo: '🌀 Se Mueve Más',
-    bebe: 'Como un higo, comienza a mover sus extremidades.',
-    alimentacion: 'Omega-3 (salmón, semillas de chía).',
-    cuidados: 'Hidrata tu piel para prevenir estrías.'
+    titulo: '🌀 Movimientos Activos',
+    bebe: 'Tu bebé mide entre 44-60 mm (como un higo grande) y pesa aproximadamente 8 gramos. Sus extremidades están completamente formadas y se mueve activamente, aunque todavía no puedas sentirlo. La cabeza representa casi la mitad de su longitud total. Sus huesos se están endureciendo y los folículos pilosos se están formando.',
+    alimentacion: 'Los ácidos grasos omega-3, especialmente el DHA, son cruciales para el desarrollo cerebral y ocular. Consume salmón, sardinas, anchoas y trucha (pescados bajos en mercurio). Si eres vegetariana, incluye semillas de chía, nueces, aceite de linaza y considera suplementos de algas marinas ricos en DHA. Evita atún, pez espada y otros pescados altos en mercurio.',
+    cuidados: 'Es el momento perfecto para comenzar a usar cremas hidratantes especiales para prevenir estrías en abdomen, senos, muslos y caderas. Masajea suavemente estas áreas dos veces al día. El aceite de coco, aceite de almendras dulces o cremas específicas para embarazo son excelentes opciones. Mantén la piel bien hidratada bebiendo mucha agua.'
   },
   12: {
     titulo: '🎉 Fin del Primer Trimestre',
-    bebe: 'Como una ciruela, tiene órganos principales formados.',
-    alimentacion: 'Variedad de frutas, verduras, granos y proteínas.',
-    cuidados: 'Primera ecografía importante.'
+    bebe: 'Tu bebé mide entre 61-70 mm (como una ciruela grande) y pesa alrededor de 14 gramos. Todos sus órganos principales están formados y funcionando. Sus intestinos se están moviendo desde el cordón umbilical hacia el abdomen. Puede abrir y cerrar los puños, y sus riñones están produciendo orina que se convierte en líquido amniótico.',
+    alimentacion: 'Con las náuseas generalmente disminuyendo, es momento de enfocarse en una dieta equilibrada y variada. Incluye 5-9 porciones de frutas y verduras de diferentes colores diariamente, granos integrales, proteínas magras y lácteos. Las verduras de hoja verde oscura (espinacas, kale, brócoli) son especialmente nutritivas. Evita alimentos procesados y azúcares refinados.',
+    cuidados: 'Programa tu primera ecografía importante (ecografía de translucencia nucal) si no la has hecho. Esta puede detectar posibles anomalías cromosómicas. El riesgo de aborto espontáneo disminuye significativamente después de esta semana. Muchas mujeres eligen compartir la noticia del embarazo después de esta marca. Continúa evitando alcohol, tabaco y medicamentos no prescritos.'
   },
   13: {
-    titulo: '🌈 Más Energía',
-    bebe: 'Como una vaina de guisante, se forman cuerdas vocales.',
-    alimentacion: 'Frutas ricas en agua (sandía, melón).',
-    cuidados: 'Probablemente tengas más energía, aprovecha para caminar.'
+    titulo: '🌈 Segundo Trimestre - Nueva Energía',
+    bebe: 'Tu bebé mide aproximadamente 74-87 mm (como una vaina de guisantes) y pesa cerca de 25 gramos. Sus cuerdas vocales se están formando, aunque no podrá hacer sonidos hasta después del nacimiento debido al líquido amniótico. Su cabeza es más proporcionada al cuerpo. Los intestinos se mueven completamente hacia el abdomen.',
+    alimentacion: 'Las frutas con alto contenido de agua como sandía, melón, naranjas y uvas te ayudarán a mantenerte hidratada y a combatir la retención de líquidos. Estas frutas también proporcionan vitaminas esenciales y fibra. Incluye frutas en cada comida y como snacks entre comidas. Los smoothies naturales son una excelente manera de consumir múltiples frutas.',
+    cuidados: 'Muchas mujeres experimentan un aumento de energía durante el segundo trimestre. Aprovecha este momento para ejercitarte regularmente - caminar, nadar, yoga prenatal o clases de ejercicio específicas para embarazadas. El ejercicio mejora el estado de ánimo, reduce la hinchazón, previene el exceso de peso y te prepara para el parto. Consulta con tu médico antes de comenzar cualquier rutina nueva.'
   },
   14: {
-    titulo: '😍 Más Expresivo',
-    bebe: 'Como un limón, hace expresiones faciales.',
-    alimentacion: 'Calcio y vitamina D (lácteos, sol moderado).',
-    cuidados: 'Usa bloqueador solar, tu piel puede estar sensible.'
+    titulo: '😍 Expresiones Faciales',
+    bebe: 'Tu bebé mide entre 90-100 mm (como un limón) y pesa aproximadamente 45 gramos. Puede hacer expresiones faciales como fruncir el ceño, hacer muecas e incluso sonreír. Sus brazos están creciendo proporcionalmente y puede chuparse el pulgar. El lanugo (vello fino) comienza a cubrir su cuerpo para mantener la temperatura.',
+    alimentacion: 'El calcio y la vitamina D trabajan juntos para desarrollar huesos y dientes fuertes. Consume 3-4 porciones de lácteos diarios: leche, yogur, queso. La vitamina D se obtiene de la exposición moderada al sol (15-20 minutos diarios), pescados grasos y alimentos fortificados. Si vives en áreas con poco sol, considera suplementos de vitamina D según recomendación médica.',
+    cuidados: 'Tu piel puede volverse más sensible a la radiación UV debido a los cambios hormonales. Usa protector solar de factor 30 o superior diariamente, incluso en días nublados. Evita exposición prolongada al sol y usa sombreros y ropa protectora. Algunas mujeres desarrollan melasma (manchas oscuras en la cara), que generalmente se desvanece después del parto.'
   },
   15: {
     titulo: '👂 Escucha Tu Voz',
