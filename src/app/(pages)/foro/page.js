@@ -105,7 +105,93 @@ export default function ForoTemas() {
               Publicar nuevo tema
             </button>
           </div>
-          <div className={styles.temasSection}>
+          <div className={styles.contentLayout}>
+            <div className={styles.leftSidebar}>
+              <div className={styles.interestSection}>
+                <h3 className={styles.interestTitle}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#E8B4B8" stroke="#E8B4B8" strokeWidth="1"/>
+                  </svg>
+                  Temas de Interés
+                </h3>
+                <div className={styles.interestList}>
+                  <div className={styles.interestItem}>
+                    <div className={styles.interestIcon}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C9.5 2 7.5 4 7.5 6.5C7.5 9 9.5 11 12 11C14.5 11 16.5 9 16.5 6.5C16.5 4 14.5 2 12 2Z" fill="#E8B4B8"/>
+                        <path d="M12 13C8 13 5 15.5 5 18.5V22H19V18.5C19 15.5 16 13 12 13Z" fill="#E8B4B8"/>
+                        <ellipse cx="12" cy="16" rx="3" ry="2" fill="#FFF"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4>Lactancia materna</h4>
+                      <p>Consejos y experiencias</p>
+                    </div>
+                  </div>
+                  <div className={styles.interestItem}>
+                    <div className={styles.interestIcon}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="8" r="6" fill="#E8B4B8"/>
+                        <circle cx="10" cy="6.5" r="1" fill="#333"/>
+                        <circle cx="14" cy="6.5" r="1" fill="#333"/>
+                        <path d="M10 9C10.5 9.5 11.2 10 12 10C12.8 10 13.5 9.5 14 9" stroke="#333" strokeWidth="1" strokeLinecap="round"/>
+                        <path d="M12 14C8 14 6 16 6 18V22H18V18C18 16 16 14 12 14Z" fill="#F8BBD9"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4>Desarrollo del bebé</h4>
+                      <p>Etapas y cuidados</p>
+                    </div>
+                  </div>
+                  <div className={styles.interestItem}>
+                    <div className={styles.interestIcon}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 14L6 17L9 20M15 14L18 17L15 20" stroke="#E8B4B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <circle cx="12" cy="8" r="6" fill="#E8B4B8"/>
+                        <path d="M10 6C10.5 5.5 11.2 5 12 5C12.8 5 13.5 5.5 14 6" stroke="#FFF" strokeWidth="1.5" strokeLinecap="round"/>
+                        <circle cx="10.5" cy="7" r="0.5" fill="#FFF"/>
+                        <circle cx="13.5" cy="7" r="0.5" fill="#FFF"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4>Ejercicio prenatal</h4>
+                      <p>Rutinas seguras</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className={styles.newsSection}>
+                <h3 className={styles.newsTitle}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="16" rx="2" fill="#E8B4B8" stroke="#E8B4B8" strokeWidth="1"/>
+                    <rect x="6" y="7" width="8" height="2" fill="#FFF"/>
+                    <rect x="6" y="10" width="12" height="1" fill="#FFF"/>
+                    <rect x="6" y="12" width="10" height="1" fill="#FFF"/>
+                    <rect x="6" y="14" width="6" height="1" fill="#FFF"/>
+                    <circle cx="18" cy="16" r="1.5" fill="#FFF"/>
+                  </svg>
+                  Noticias
+                </h3>
+                <div className={styles.newsList}>
+                  <div className={styles.newsItem}>
+                    <span className={styles.newsDate}>Nov 12</span>
+                    <p>Nuevas recomendaciones de nutrición prenatal</p>
+                  </div>
+                  <div className={styles.newsItem}>
+                    <span className={styles.newsDate}>Nov 10</span>
+                    <p>Webinar gratuito sobre preparación al parto</p>
+                  </div>
+                  <div className={styles.newsItem}>
+                    <span className={styles.newsDate}>Nov 8</span>
+                    <p>Actualización de servicios hospitalarios</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.mainContent}>
+              <div className={styles.temasSection}>
             <h2 className={styles.temasTitle}>Temas recientes</h2>
             {loading ? (
               <div className={styles.loading}>Cargando temas...</div>
@@ -152,6 +238,8 @@ export default function ForoTemas() {
               </ul>
             )}
           </div>
+        </div>
+      </div>
         </div>
         {showModal && (
           <div className={styles.modalOverlay}>
