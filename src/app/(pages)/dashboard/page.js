@@ -1,5 +1,4 @@
 "use client";
-// Consejos por semana
 const consejosPorSemana = {
   1: {
     titulo: '🌟 El Milagro Comienza',
@@ -368,27 +367,7 @@ export default function Dashboard() {
     <div className={styles.container}>
       <UserHeader userName={user.nombres} />
       <main className={styles.main}>
-        {!user.id_pareja && (
-          <div className={styles.vinculaParejaSection}>
-            <h2>Vincula tu pareja</h2>
-            <p>Tu código único: <b>{user.id}</b></p>
-            <div className={styles.vinculaForm}>
-              <input
-                type="number"
-                placeholder="Código de tu pareja"
-                value={parejaCode}
-                onChange={e => setParejaCode(e.target.value)}
-                className={styles.input}
-                disabled={vinculando}
-              />
-              <button onClick={handleVincular} disabled={vinculando || !parejaCode} className={styles.submitButton}>
-                {vinculando ? 'Vinculando...' : 'Vincular'}
-              </button>
-            </div>
-            {vinculaError && <p className={styles.errorText}>{vinculaError}</p>}
-          </div>
-        )}
-  <div className={styles.welcomeSection}>
+        <div className={styles.welcomeSection}>
           <div className={styles.welcomeContent}>
             <h1 className={styles.welcomeTitle}>
               {user.genero === 'masculino' && 'Bienvenido'}
@@ -410,17 +389,13 @@ export default function Dashboard() {
           <div className={styles.weekBadge}>
             {fechaUltimaMenstruacion ? (
               <>Semana {semana}</>
-            ) : user.id_pareja ? (
+            ) : (
               <button
                 className={styles.definirSemanaBtn}
                 onClick={() => setDefiniendoFecha(true)}
               >
                 Definir semana actual de embarazo
               </button>
-            ) : (
-              <span className={styles.infoText}>
-                Vincula a tu pareja para definir la semana de embarazo
-              </span>
             )}
           </div>
           {definiendoFecha && (
@@ -458,6 +433,30 @@ export default function Dashboard() {
           )}
         </div>
 
+        {!user.id_pareja && (
+          <div className={styles.vinculaParejaSection}>
+            <h2>Vincula tu pareja (opcional)</h2>
+            <p>Comparte esta experiencia con tu pareja. Tu código único: <b>{user.id}</b></p>
+            <div className={styles.vinculaForm}>
+              <input
+                type="number"
+                placeholder="Código de tu pareja"
+                value={parejaCode}
+                onChange={e => setParejaCode(e.target.value)}
+                className={styles.input}
+                disabled={vinculando}
+              />
+              <button onClick={handleVincular} disabled={vinculando || !parejaCode} className={styles.submitButton}>
+                {vinculando ? 'Vinculando...' : 'Vincular'}
+              </button>
+            </div>
+            {vinculaError && <p className={styles.errorText}>{vinculaError}</p>}
+            <p className={styles.infoText}>
+              Puedes usar todas las funciones de Gestar sin vincular pareja
+            </p>
+          </div>
+        )}
+
       {consejoSemana && (
         <section className={styles.consejoSection}>
           <h2 className={styles.consejoTitle}>Consejo de la semana</h2>
@@ -474,7 +473,6 @@ export default function Dashboard() {
 
 
 
-        {/* Card Carousel for App Sections */}
         <section className={styles.cardCarouselSection}>
           <h2 className={styles.cardCarouselTitle}>Explora las secciones principales</h2>
           <div className={styles.cardCarouselContainer}>
