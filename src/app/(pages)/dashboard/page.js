@@ -433,6 +433,20 @@ export default function Dashboard() {
           )}
         </div>
 
+        {consejoSemana && (
+          <section className={styles.consejoSection}>
+            <h2 className={styles.consejoTitle}>Consejo de la semana</h2>
+            <div className={styles.consejoCard}>
+              <h3 className={styles.consejoSemana}>{consejoSemana.titulo}</h3>
+              <ul className={styles.consejoList}>
+                <li><b>👶 Bebé:</b> {consejoSemana.bebe}</li>
+                <li><b>🍎 Alimentación:</b> {consejoSemana.alimentacion}</li>
+                <li><b>💡 Cuidados:</b> {consejoSemana.cuidados}</li>
+              </ul>
+            </div>
+          </section>
+        )}
+
         {!user.id_pareja && (
           <div className={styles.vinculaParejaSection}>
             <h2>Vincula tu pareja (opcional)</h2>
@@ -456,20 +470,6 @@ export default function Dashboard() {
             </p>
           </div>
         )}
-
-      {consejoSemana && (
-        <section className={styles.consejoSection}>
-          <h2 className={styles.consejoTitle}>Consejo de la semana</h2>
-          <div className={styles.consejoCard}>
-            <h3 className={styles.consejoSemana}>{consejoSemana.titulo}</h3>
-            <ul className={styles.consejoList}>
-              <li><b>👶 Bebé:</b> {consejoSemana.bebe}</li>
-              <li><b>🍎 Alimentación:</b> {consejoSemana.alimentacion}</li>
-              <li><b>💡 Cuidados:</b> {consejoSemana.cuidados}</li>
-            </ul>
-          </div>
-        </section>
-      )}
 
 
 
