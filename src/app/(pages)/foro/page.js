@@ -174,18 +174,40 @@ export default function ForoTemas() {
                   Noticias
                 </h3>
                 <div className={styles.newsList}>
-                  <div className={styles.newsItem}>
-                    <span className={styles.newsDate}>Nov 12</span>
-                    <p>Nuevas recomendaciones de nutrición prenatal</p>
-                  </div>
-                  <div className={styles.newsItem}>
-                    <span className={styles.newsDate}>Nov 10</span>
-                    <p>Webinar gratuito sobre preparación al parto</p>
-                  </div>
-                  <div className={styles.newsItem}>
-                    <span className={styles.newsDate}>Nov 8</span>
-                    <p>Actualización de servicios hospitalarios</p>
-                  </div>
+                  <Link href="https://www.elespectador.com/cromos/maternidad/como-volver-al-trabajo-despues-de-tener-un-bebe-esto-aconsejan-los-expertos/" target="_blank" rel="noopener noreferrer" className={styles.newsLink}>
+                    <div className={styles.newsItem}>
+                      <span className={styles.newsDate}>El Espectador</span>
+                      <p>¿Cómo volver al trabajo después de tener un bebé?</p>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.externalIcon}>
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <polyline points="15,3 21,3 21,9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </Link>
+                  <Link href="https://www.elespectador.com/cromos/maternidad/como-cuidar-el-sistema-inmune-de-un-nino/" target="_blank" rel="noopener noreferrer" className={styles.newsLink}>
+                    <div className={styles.newsItem}>
+                      <span className={styles.newsDate}>El Espectador</span>
+                      <p>¿Cómo cuidar el sistema inmune de un niño?
+</p>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.externalIcon}>
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <polyline points="15,3 21,3 21,9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </Link>
+                  <Link href="https://www.natalben.com/noticias/embarazadas-comen-mal-ejercicio-fisico" target="_blank" rel="noopener noreferrer" className={styles.newsLink}>
+                    <div className={styles.newsItem}>
+                      <span className={styles.newsDate}>Natalben</span>
+                      <p>Hábitos sanos de las embarazadas</p>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.externalIcon}>
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <polyline points="15,3 21,3 21,9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
