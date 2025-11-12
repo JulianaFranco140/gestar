@@ -3,6 +3,13 @@
   gap: 1rem;
   justify-content: center;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .genderRoleSelector {
+    gap: 0.8rem;
+  }
 }
 
 .genderOption, .roleOption {
@@ -23,6 +30,22 @@
   position: relative;
   outline: none;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .genderOption, .roleOption {
+    width: 75px;
+    height: 75px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .genderOption, .roleOption {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+  }
 }
 
 .genderOption:hover, .roleOption:hover, .genderOption:focus, .roleOption:focus {
@@ -80,12 +103,27 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 968px) {
+  .authContainer {
+    flex-direction: column !important;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
 .authContainer.normal {
   flex-direction: row;
 }
 
 .authContainer.reverse {
   flex-direction: row-reverse;
+}
+
+@media (max-width: 968px) {
+  .authContainer.normal,
+  .authContainer.reverse {
+    flex-direction: column;
+  }
 }
 
 .imageSection {
@@ -99,6 +137,23 @@
   gap: 1.5rem;
   min-height: 100%;
 }
+
+@media (max-width: 968px) {
+  .imageSection {
+    flex: none;
+    min-height: 200px;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageSection {
+    min-height: 150px;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    gap: 1rem;
+  }
+}
+
 
 .imageContent {
   max-width: 250px;

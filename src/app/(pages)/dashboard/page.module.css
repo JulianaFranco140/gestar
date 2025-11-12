@@ -1,5 +1,4 @@
-/* Consejo de la semana */
- .consejoSection {
+.consejoSection {
   margin: 0 auto;
   max-width: 900px;
   background: #fff;
@@ -10,6 +9,24 @@
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .consejoSection {
+    padding: 1.5rem 1.5rem;
+    margin: 0 16px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .consejoSection {
+    padding: 1rem 1rem;
+    margin: 0 12px;
+    border-radius: 10px;
+  }
 }
 .consejoTitle {
   color: var(--primary-pink);
@@ -17,6 +34,18 @@
   font-weight: 700;
   margin: 0.5rem 0 0.5rem 0;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .consejoTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .consejoTitle {
+    font-size: 1.2rem;
+  }
 }
 .consejoCard {
   background: #fff0f4;
@@ -56,6 +85,23 @@
   margin: 0.5rem 0;
   box-shadow: 0 2px 8px rgba(232, 180, 184, 0.10);
   letter-spacing: 0.01em;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .infoText {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoText {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 10px;
+  }
 }
 .submitButton {
   background: var(--primary-pink);
@@ -166,7 +212,7 @@ input[type="date"].input:focus {
   margin: 0.5rem 0 0.5rem 0;
   letter-spacing: 0.01em;
 }
-/* Sección de vinculación de pareja */
+
 .vinculaParejaSection {
   background: #fff;
   border-radius: 18px;

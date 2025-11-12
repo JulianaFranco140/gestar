@@ -5,6 +5,22 @@
   border-radius: 16px;
   padding: 28px 24px;
 }
+
+@media (max-width: 768px) {
+  .comentariosSection {
+    padding: 20px 16px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comentariosSection {
+    padding: 15px 12px;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+}
 .comentariosTitle {
   font-size: 1.3rem;
   font-weight: 700;
@@ -30,6 +46,14 @@
   font-size: 14px;
   color: var(--light-gray);
   margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .comentarioMeta {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 .comentarioAutor {
   font-weight: 600;
@@ -100,7 +124,7 @@
   padding: 14px 16px;
   box-shadow: 0 1px 4px rgba(232, 180, 184, 0.08);
 }
-/* Modal para publicar nuevo tema */
+
 .modalOverlay {
   position: fixed;
   top: 0;
