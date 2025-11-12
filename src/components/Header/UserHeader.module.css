@@ -109,7 +109,7 @@
 
 .navLink:hover {
   color: var(--dark-pink);
-  background-color: rgba(232, 180, 184, 0.1);
+  background-color: rgba(253, 148, 189, 0.1);
 }
 
 .userSection {
@@ -127,7 +127,7 @@
 }
 
 .userInfo:hover {
-  background-color: rgba(232, 180, 184, 0.1);
+  background-color: rgba(253, 148, 189, 0.1);
 }
 
 .userAvatar {

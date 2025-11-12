@@ -1,4 +1,4 @@
-export default function MentalHealthIcon({ color = '#E8B4B8', size = 40 }) {
+export default function MentalHealthIcon({ color = '#fd94bd', size = 40 }) {
   return (
     <svg fill={color} width={size} height={size} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path fill="none" d="M0 0H24V24H0z" />

@@ -1,4 +1,4 @@
-export default function MessageIcon({ color = '#E8B4B8', size = 40 }) {
+export default function MessageIcon({ color = '#fd94bd', size = 40 }) {
   return (
     <svg fill={color} width={size} height={size} viewBox="0 0 428.428 428.428" xmlns="http://www.w3.org/2000/svg">
       <g>

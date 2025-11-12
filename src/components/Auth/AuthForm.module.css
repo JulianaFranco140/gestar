@@ -79,7 +79,7 @@
   border: 2px solid var(--primary-pink);
   box-shadow: 0 0 0 2px var(--primary-pink);
 }
-.roleOption.gestante { background: var(--role-gestante, #E8B4B8); color: #fff; }
+.roleOption.gestante { background: var(--role-gestante, #fd94bd); color: #ffffff; }
 .roleOption.gestante {
   background: #B47AEA;
   color: #fff;
@@ -117,6 +117,7 @@
 
 .authContainer.reverse {
   flex-direction: row-reverse;
+  background-color: white;
 }
 
 @media (max-width: 968px) {
@@ -128,7 +129,7 @@
 
 .imageSection {
   flex: 0.45;
-  background-color: var(--very-light-pink);
+  background-color: linear-gradient(135deg, var(--white) 0%, var(--very-light-pink) 50%, var(--primary-pink) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -178,8 +179,8 @@
   flex: 0.55;
   align-items: center;
   justify-content: center;
-  background: var(--very-light-pink);
   padding: 1rem;
+  background-color: white;
 }
 
 .formCard {

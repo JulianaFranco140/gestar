@@ -479,21 +479,21 @@ export default function Dashboard() {
             <div className={styles.cardCarousel}>
               <Link href="/foro" className={styles.cardLink}>
                 <div className={styles.cardCarouselCard}>
-                  <div className={styles.cardIcon}><MessageIcon color="#E8B4B8" size={40} /></div>
+                  <div className={styles.cardIcon}><MessageIcon color="#fd94bd" size={40} /></div>
                   <h3 className={styles.cardCarouselCardTitle}>Foro</h3>
                   <p className={styles.cardCarouselCardDesc}>Comparte dudas, experiencias y recibe apoyo de la comunidad y expertos.</p>
                 </div>
               </Link>
               <Link href="/hospitales" className={styles.cardLink}>
                 <div className={styles.cardCarouselCard}>
-                  <div className={styles.cardIcon}><HospitalIcon color="#E8B4B8" size={40} /></div>
+                  <div className={styles.cardIcon}><HospitalIcon color="#fd94bd" size={40} /></div>
                   <h3 className={styles.cardCarouselCardTitle}>Mapa de Hospitales</h3>
                   <p className={styles.cardCarouselCardDesc}>Encuentra hospitales y centros de salud cercanos con información real y actualizada.</p>
                 </div>
               </Link>
               <Link href="/apoyo-psicologico" className={styles.cardLink}>
                 <div className={styles.cardCarouselCard}>
-                  <div className={styles.cardIcon}><MentalHealthIcon color="#E8B4B8" size={40} /></div>
+                  <div className={styles.cardIcon}><MentalHealthIcon color="#fd94bd" size={40} /></div>
                   <h3 className={styles.cardCarouselCardTitle}>Apoyo Psicológico</h3>
                   <p className={styles.cardCarouselCardDesc}>Accede a recursos y orientación profesional para tu bienestar emocional.</p>
                 </div>

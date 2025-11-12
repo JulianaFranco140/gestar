@@ -1,9 +1,9 @@
 .consejoSection {
   margin: 0 auto;
   max-width: 900px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 4px 20px rgba(253, 148, 189, 0.13);
   padding: 2rem 2.5rem 2rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -48,11 +48,11 @@
   }
 }
 .consejoCard {
-  background: #fff0f4;
+  background: #ffe2ed;
   border-radius: 14px;
   padding: 1.2rem 1.2rem 1rem 1.2rem;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.10);
+  box-shadow: 0 2px 8px rgba(253, 148, 189, 0.10);
 }
 .consejoSemana {
   color: var(--primary-pink);
@@ -74,7 +74,7 @@
 }
 .infoText {
   color: var(--primary-pink);
-  background: #fff0f4;
+  background: #ffe2ed;
   border: 1px solid var(--primary-pink);
   border-radius: 12px;
   font-size: 0.85rem;
@@ -83,7 +83,7 @@
   display: block;
   padding: 0.6rem 0.8rem;
   margin: 0.3rem 0;
-  box-shadow: 0 1px 4px rgba(232, 180, 184, 0.08);
+  box-shadow: 0 1px 4px rgba(253, 148, 189, 0.08);
   letter-spacing: 0.01em;
   word-wrap: break-word;
 }
@@ -105,7 +105,7 @@
 }
 .submitButton {
   background: var(--primary-pink);
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 10px;
   padding: 0.7rem 1.5rem;
@@ -113,10 +113,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 2px 8px rgba(253, 148, 189, 0.13);
 }
 .submitButton:disabled {
-  background: #e0bfc2;
+  background: #fd94bd;
   cursor: not-allowed;
 }
 .submitButton:not(:disabled):hover {

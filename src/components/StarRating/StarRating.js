@@ -6,8 +6,8 @@ const StarRating = ({ rating, maxStars = 5, size = 20, showNumber = true }) => {
   
   // Usar colores directamente (las variables CSS se aplicarán vía estilos inline y clases)
   // Valores por defecto que coinciden con las variables globales
-  const primaryPink = '#E8B4B8'; // var(--primary-pink)
-  const emptyStarColor = '#e0e0e0';
+  const primaryPink = '#fd94bd'; // var(--primary-pink)
+  const emptyStarColor = '#d9d9d9';
   
   for (let i = 1; i <= maxStars; i++) {
     let fillPercentage = 0;

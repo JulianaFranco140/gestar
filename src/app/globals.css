@@ -1,25 +1,38 @@
 
 :root {
-    --background: #FAF0F0;
-    --primary-pink: #E8B4B8;
-    --secondary-pink: #f8bbd9;
-    --very-light-pink: #FAF0F0;
-    --light-gray: #6B7C85;
-    --dark-pink: #d4a5a5;
-    --input-color: rgba(255, 255, 255, 0.9);
-    --primary-pink-transparent: rgba(232, 180, 184, 0.2);
-    /* Gender colors */
+    /* Nueva paleta de colores */
+    --background: #ffffff;
+    --primary-pink: #fd94bd;
+    --secondary-pink: #ffe2ed;
+    --very-light-pink: #ffe2ed;
+    --light-gray: #666666;
+    --dark-pink: #fd94bd;
+    --text-black: #000000;
+    --input-color: #ffffff;
+    --primary-pink-transparent: rgba(253, 148, 189, 0.2);
+    --primary-pink-light: rgba(253, 148, 189, 0.1);
+    
+    /* Gender colors - adaptados a nueva paleta */
     --gender-male: #4A90E2;
-    --gender-female: #FF69B4;
-    --gender-other: #A0A0A0;
-    /* Role colors */
-    --role-gestante: #E8B4B8;
-    --role-acompanante: #6B7C85;
-    /* Colores para el tipo de contenido :p*/
+    --gender-female: #fd94bd;
+    --gender-other: #d9d9d9;
+    
+    /* Role colors - adaptados */
+    --role-gestante: #fd94bd;
+    --role-acompanante: #666666;
+    
+    /* Content type colors */
     --type-pdf: #e53e3e;
     --type-video: #3182ce;
     --type-libro: #d69e2e;
-    --type-audio: #805ad5
+    --type-audio: #805ad5;
+    
+    /* Nuevas variables para mejor organización */
+    --card-background: #ffffff;
+    --border-light: #ffe2ed;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --border-gray: #d9d9d9;
 }
 
 
@@ -27,13 +40,13 @@ body {
     margin: 0;
     background-color: var(--background);
     font-family: Arial, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
-    color: #fff;
+    color: var(--text-black);
     overflow-x: hidden; 
 }
 
 html {
     font-family: Arial, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
-    color: #fff;
+    color: var(--text-black);
     box-sizing: border-box; 
 }
 
