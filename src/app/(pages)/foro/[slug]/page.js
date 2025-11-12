@@ -148,7 +148,9 @@ export default function DetalleTema() {
       <UserHeader userName={user?.nombres || ""} />
       <main className={styles.main}>
         <div className={styles.forumContainer}>
-          <Link href="/foro" className={styles.volverForoBtn}>&larr; Volver al foro</Link>
+          <div className={styles.backButtonContainer}>
+            <Link href="/foro" className={styles.volverForoBtn}>&larr; Volver al foro</Link>
+          </div>
           {loading ? (
             <div className={styles.loading}>Cargando tema...</div>
           ) : !tema ? (

@@ -248,20 +248,48 @@
   color: var(--light-gray);
   user-select: none;
 }
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .nuevoTemaBtn {
   background: var(--primary-pink) !important;
   color: #fff;
   border: none;
   border-radius: 18px;
-  padding: 10px 28px;
+  padding: 8px 20px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+  min-width: auto;
+  width: auto;
+  flex-shrink: 0;
 }
+
 .nuevoTemaBtn:hover {
   background: var(--dark-pink);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .headerSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .nuevoTemaBtn {
+    align-self: flex-end;
+  }
 }
 /* ----------- Likes en la lista de temas ----------- */
 .temaLikes {
@@ -274,22 +302,39 @@
   gap: 4px;
 }
 /* ----------- Botón volver al foro ----------- */
+.backButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+
 .volverForoBtn {
   display: inline-block;
-  margin-bottom: 18px;
-  padding: 8px 22px;
+  padding: 6px 16px;
   background: var(--primary-pink);
   color: #fff;
   border-radius: 18px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
+  white-space: nowrap;
+  width: auto;
+  min-width: auto;
 }
+
 .volverForoBtn:hover {
   background: var(--dark-pink);
-  text-decoration: underline;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .backButtonContainer {
+    justify-content: flex-start;
+    margin-bottom: 12px;
+  }
 }
 /* ----------- Detalle de tema ----------- */
 .temaDetalle {
@@ -633,11 +678,6 @@
   .comentarioItem {
     padding: 15px 16px;
   }
-
-  .nuevoTemaBtn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
 }
 
 /* Responsive para móviles */
@@ -668,11 +708,6 @@
 
   .publishButton {
     padding: 8px 20px;
-    font-size: 13px;
-  }
-
-  .nuevoTemaBtn {
-    padding: 8px 16px;
     font-size: 13px;
   }
 

@@ -96,14 +96,15 @@ export default function ForoTemas() {
       <UserHeader userName={user?.nombres || ''} />
       <main className={styles.main}>
         <div className={styles.forumContainer}>
-          <h1 className={styles.forumTitle}>Foro de la comunidad</h1>
-          <button
-            className={styles.nuevoTemaBtn}
-            onClick={() => setShowModal(true)}
-            style={{ marginBottom: '1rem' }}
-          >
-            Publicar nuevo tema
-          </button>
+          <div className={styles.headerSection}>
+            <h1 className={styles.forumTitle}>Foro de la comunidad</h1>
+            <button
+              className={styles.nuevoTemaBtn}
+              onClick={() => setShowModal(true)}
+            >
+              Publicar nuevo tema
+            </button>
+          </div>
           <div className={styles.temasSection}>
             <h2 className={styles.temasTitle}>Temas recientes</h2>
             {loading ? (
