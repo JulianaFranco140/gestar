@@ -6,8 +6,8 @@ const StarRating = ({ rating, maxStars = 5, size = 20, showNumber = true }) => {
   
   // Usar colores directamente (las variables CSS se aplicarán vía estilos inline y clases)
   // Valores por defecto que coinciden con las variables globales
-  const primaryPink = '#fd94bd'; // var(--primary-pink)
-  const emptyStarColor = '#d9d9d9';
+  const primaryPurple = '#7b68a0'; // var(--primary-purple)
+  const emptyStarColor = '#d4c4e8';
   
   for (let i = 1; i <= maxStars; i++) {
     let fillPercentage = 0;
@@ -34,8 +34,8 @@ const StarRating = ({ rating, maxStars = 5, size = 20, showNumber = true }) => {
           {/* Estrella llena (rosado primario con gradiente) */}
           <defs>
             <linearGradient id={`grad-${i}-${rating}`}>
-              <stop offset="0%" stopColor={primaryPink} />
-              <stop offset={`${fillPercentage}%`} stopColor={primaryPink} />
+              <stop offset="0%" stopColor={primaryPurple} />
+              <stop offset={`${fillPercentage}%`} stopColor={primaryPurple} />
               <stop offset={`${fillPercentage}%`} stopColor="transparent" />
               <stop offset="100%" stopColor="transparent" />
             </linearGradient>

@@ -1,6 +1,6 @@
 .comentariosSection {
   margin-top: 32px;
-  background: var(--primary-pink-transparent);
+  background: var(--purple-transparent);
   border-radius: 16px;
   padding: 28px 24px;
 }
@@ -23,7 +23,7 @@
 .comentariosTitle {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   margin-bottom: 18px;
 }
 .comentariosList {
@@ -34,7 +34,7 @@
 .comentarioItem {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.10);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.10);
   margin-bottom: 18px;
   padding: 18px 20px;
   position: relative;
@@ -56,7 +56,7 @@
 }
 .comentarioAutor {
   font-weight: 600;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
 }
 .comentarioFecha {
   font-style: italic;
@@ -71,7 +71,7 @@
   word-break: break-word;
 }
 .responderBtn {
-  background: var(--secondary-pink);
+  background: var(--secondary-purple);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -83,7 +83,7 @@
   transition: background 0.2s;
 }
 .responderBtn:hover {
-  background: var(--primary-pink);
+  background: var(--primary-purple);
 }
 .respuestasList {
   list-style: none;
@@ -92,10 +92,10 @@
 }
 .responderForm {
   margin-top: 10px;
-  background: var(--very-light-pink);
+  background: var(--very-light-purple);
   border-radius: 8px;
   padding: 12px 14px;
-  box-shadow: 0 1px 4px rgba(232, 180, 184, 0.08);
+  box-shadow: 0 1px 4px rgba(123, 104, 160, 0.08);
 }
 .comentarioTextarea {
   width: 100%;
@@ -118,10 +118,10 @@
 }
 .nuevoComentarioForm {
   margin-top: 18px;
-  background: var(--very-light-pink);
+  background: var(--very-light-purple);
   border-radius: 8px;
   padding: 14px 16px;
-  box-shadow: 0 1px 4px rgba(232, 180, 184, 0.08);
+  box-shadow: 0 1px 4px rgba(123, 104, 160, 0.08);
 }
 
 .modalOverlay {
@@ -139,7 +139,7 @@
 .modalContent {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(232, 180, 184, 0.18);
+  box-shadow: 0 4px 24px rgba(123, 104, 160, 0.18);
   padding: 32px 28px;
   min-width: 340px;
   max-width: 95vw;
@@ -179,7 +179,7 @@
   margin-top: 8px;
 }
 .publicarBtn {
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -196,8 +196,8 @@
 }
 .cancelarBtn {
   background: #fff;
-  color: var(--primary-pink);
-  border: 1px solid var(--primary-pink);
+  color: var(--primary-purple);
+  border: 1px solid var(--primary-purple);
   border-radius: 8px;
   padding: 8px 22px;
   font-weight: 600;
@@ -258,7 +258,7 @@
 }
 
 .nuevoTemaBtn {
-  background: var(--primary-pink) !important;
+  background: var(--primary-purple) !important;
   color: #fff;
   border: none;
   border-radius: 18px;
@@ -266,7 +266,7 @@
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.13);
   transition: background 0.2s, transform 0.2s;
   white-space: nowrap;
   min-width: auto;
@@ -275,7 +275,7 @@
 }
 
 .nuevoTemaBtn:hover {
-  background: var(--dark-pink);
+  background: var(--hover-purple);
   transform: translateY(-1px);
 }
 
@@ -292,7 +292,7 @@
 }
 .temaLikes {
   margin-left: 12px;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-weight: 700;
   font-size: 15px;
   display: flex;
@@ -308,21 +308,21 @@
 .volverForoBtn {
   display: inline-block;
   padding: 6px 16px;
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   color: #fff;
   border-radius: 18px;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.13);
   white-space: nowrap;
   width: auto;
   min-width: auto;
 }
 
 .volverForoBtn:hover {
-  background: var(--dark-pink);
+  background: var(--hover-purple);
   text-decoration: none;
   transform: translateY(-1px);
 }
@@ -336,7 +336,7 @@
 .temaDetalle {
   background: white;
   border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 4px 18px rgba(123, 104, 160, 0.13);
   padding: 36px 38px;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -344,7 +344,7 @@
 .temaTitulo {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   margin-bottom: 10px;
 }
 .temaMeta {
@@ -371,16 +371,16 @@
 }
 /* ----------- Temas del foro (vista general) ----------- */
 .temasSection {
-  background: var(--primary-pink-transparent);
+  background: var(--purple-transparent);
   border-radius: 16px;
   padding: 20px;
-  border: 1px var(--dark-pink) solid;
+  border: 1px var(--hover-purple) solid;
 }
 
 .temasTitle {
   font-size: 18px;
   font-weight: 700;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   margin-bottom: 20px;
 }
 
@@ -396,7 +396,7 @@
 .temaItem {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.08);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.08);
   transition: box-shadow 0.2s, transform 0.2s;
   padding: 16px 20px;
   display: flex;
@@ -404,7 +404,7 @@
 }
 
 .temaItem:hover {
-  box-shadow: 0 4px 16px rgba(232, 180, 184, 0.15);
+  box-shadow: 0 4px 16px rgba(123, 104, 160, 0.15);
   transform: translateY(-1px);
 }
 
@@ -420,7 +420,7 @@
 .temaTitulo {
   font-size: 16px;
   font-weight: 600;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   margin-bottom: 2px;
   line-height: 1.3;
 }
@@ -443,7 +443,7 @@
 }
 
 .loading {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 16px;
   padding: 20px 0;
   text-align: center;
@@ -508,13 +508,13 @@
   background: linear-gradient(135deg, #fff0f4 0%, #f8f0ff 100%);
   border-radius: 16px;
   padding: 20px;
-  border: 1px solid rgba(232, 180, 184, 0.2);
+  border: 1px solid rgba(123, 104, 160, 0.2);
 }
 
 .interestTitle {
   font-size: 16px;
   font-weight: 700;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   margin: 0 0 15px 0;
   display: flex;
   align-items: center;
@@ -578,13 +578,13 @@
   background: linear-gradient(135deg, #f0f8ff 0%, #fff0f4 100%);
   border-radius: 16px;
   padding: 20px;
-  border: 1px solid rgba(232, 180, 184, 0.2);
+  border: 1px solid rgba(123, 104, 160, 0.2);
 }
 
 .newsTitle {
   font-size: 16px;
   font-weight: 700;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   margin: 0 0 15px 0;
   display: flex;
   align-items: center;
@@ -625,11 +625,11 @@
 
 .newsItem:hover {
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.15);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.15);
 }
 
 .externalIcon {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   opacity: 0.6;
   margin-top: 2px;
   flex-shrink: 0;
@@ -638,7 +638,7 @@
 .newsDate {
   font-size: 10px;
   font-weight: 600;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   white-space: nowrap;
   min-width: 35px;
 }
@@ -665,16 +665,16 @@
 }
 
 .shareSection {
-  background: var(--primary-pink-transparent);
+  background: var(--purple-transparent);
   border-radius: 20px;
   padding: 30px;
-  border: 1px var(--dark-pink) solid;
+  border: 1px var(--hover-purple) solid;
 }
 
 .shareSectionTitle {
   font-size: 18px;
   font-weight: 600;
-  color: var(--dark-pink);
+  color: var(--hover-purple);
   margin: 0 0 20px 0;
 }
 
@@ -705,7 +705,7 @@
 
 .postTextarea:focus {
   outline: none;
-  box-shadow: 0 2px 15px rgba(232, 180, 184, 0.3);
+  box-shadow: 0 2px 15px rgba(123, 104, 160, 0.3);
 }
 
 .postActions {
@@ -714,7 +714,7 @@
 }
 
 .publishButton {
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -723,13 +723,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(232, 180, 184, 0.3);
+  box-shadow: 0 4px 15px rgba(123, 104, 160, 0.3);
 }
 
 .publishButton:hover {
-  background-color: var(--dark-pink);
+  background-color: var(--hover-purple);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(232, 180, 184, 0.4);
+  box-shadow: 0 6px 20px rgba(123, 104, 160, 0.4);
 }
 
 .postsSection {
@@ -762,7 +762,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -803,7 +803,7 @@
 .respondButton {
   background: none;
   border: none;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -812,7 +812,7 @@
 }
 
 .respondButton:hover {
-  color: var(--dark-pink);
+  color: var(--hover-purple);
   text-decoration: underline;
 }
 
@@ -1008,7 +1008,7 @@
   top: 12px;
   right: 12px;
   padding: 2px 10px;
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   border-radius: 5px;
   border: none;
   font-size: 18px;
@@ -1018,7 +1018,7 @@
 
 .eliminarBtnn{
   color: white;
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   border: none;
   padding: 6px 12px;
   border-radius: 5px;
@@ -1027,13 +1027,13 @@
 
 .eliminarBtn:hover{
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-  background-color: var(--dark-pink);
+  background-color: var(--hover-purple);
   transform: translateY(-2px);
 }
 
 .eliminarBtnn:hover {
   color: #fff;
-  background: var(--dark-pink);
+  background: var(--hover-purple);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); 
   transform: translateY(-2px);
 }
@@ -1105,13 +1105,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 25px;
-  border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+  border-bottom: 1px solid rgba(123, 104, 160, 0.2);
   background: linear-gradient(135deg, #fff0f4 0%, #f8f0ff 100%);
   border-radius: 20px 20px 0 0;
 }
 
 .interestModalHeader h2 {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 24px;
   font-weight: 700;
   margin: 0;
@@ -1134,7 +1134,7 @@
 }
 
 .closeButton:hover {
-  background: rgba(232, 180, 184, 0.1);
+  background: rgba(123, 104, 160, 0.1);
 }
 
 .interestModalBody {
@@ -1143,7 +1143,7 @@
 
 .topicSubtitle {
   font-size: 16px;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-weight: 600;
   margin: 0 0 15px 0;
   font-style: italic;
@@ -1155,9 +1155,9 @@
   line-height: 1.6;
   margin-bottom: 20px;
   padding: 15px;
-  background: rgba(232, 180, 184, 0.05);
+  background: rgba(123, 104, 160, 0.05);
   border-radius: 10px;
-  border-left: 4px solid var(--primary-pink);
+  border-left: 4px solid var(--primary-purple);
 }
 
 .topicSection {
@@ -1166,7 +1166,7 @@
 
 .topicSection h3 {
   font-size: 18px;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-weight: 600;
   margin: 0 0 12px 0;
 }
@@ -1186,7 +1186,7 @@
 
 .topicSection li::before {
   content: "•";
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-weight: bold;
   position: absolute;
   left: 8px;
@@ -1200,7 +1200,7 @@
 }
 
 .developmentStage h4 {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 10px 0;
@@ -1282,3 +1282,6 @@
     padding: 6px 0 6px 20px;
   }
 }
+
+
+

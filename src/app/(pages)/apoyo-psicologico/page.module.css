@@ -108,16 +108,16 @@
 
 .quote {
   font-size: 16px;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-style: italic;
   margin: 0;
 }
 
 .emergencySection {
-  background: rgba(255, 235, 238, 0.7);
+  background: linear-gradient(135deg, var(--white-lavender) 0%, var(--very-light-purple) 50%, var(--accent-purple) 100%);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
 .emergencyHeader {
@@ -230,7 +230,7 @@
 }
 
 .emotionCard {
-  background: var(--very-light-pink);
+  background: var(--very-light-purple);
   border-radius: 15px;
   padding: 30px 20px;
   text-align: center;
@@ -284,7 +284,7 @@
   padding: 12px 24px;
   border: none;
   border-radius: 25px;
-  background-color: var(--very-light-pink);
+  background-color: var(--very-light-purple);
   color: var(--light-gray);
   font-size: 14px;
   cursor: pointer;
@@ -292,12 +292,12 @@
 }
 
 .filterTab.active {
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   color: white;
 }
 
 .filterTab:hover {
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   color: white;
 }
 
@@ -309,7 +309,7 @@
 }
 
 .resourceCard {
-  border: 1px solid rgba(232, 180, 184, 0.3);
+  border: 1px solid rgba(123, 104, 160, 0.3);
   border-radius: 15px;
   padding: 25px;
   transition: all 0.3s ease;
@@ -372,7 +372,7 @@
 
 .resourceAuthor {
   font-size: 14px;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   margin: 0 0 15px 0;
   font-weight: 500;
 }
@@ -396,7 +396,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   color: white;
   font-size: 14px;
   font-weight: 500;
@@ -405,7 +405,7 @@
 }
 
 .resourceButton:hover {
-  background-color: var(--dark-pink);
+  background-color: var(--hover-purple);
   transform: translateY(-1px);
 }
 
@@ -573,3 +573,6 @@
     font-size: 13px;
   }
 }
+
+
+

@@ -3,7 +3,7 @@
   max-width: 900px;
   background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(253, 148, 189, 0.13);
+  box-shadow: 0 4px 20px rgba(123, 104, 160, 0.13);
   padding: 2rem 2.5rem 2rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
   }
 }
 .consejoTitle {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0.5rem 0 0.5rem 0;
@@ -48,14 +48,14 @@
   }
 }
 .consejoCard {
-  background: #ffe2ed;
+  background: #e8dff5;
   border-radius: 14px;
   padding: 1.2rem 1.2rem 1rem 1.2rem;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(253, 148, 189, 0.10);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.10);
 }
 .consejoSemana {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 1.15rem;
   font-weight: 600;
   margin-top: 0;
@@ -67,15 +67,15 @@
   padding: 0;
   margin: 0;
   font-size: 1.05rem;
-  color: var(--light-gray);
+  color: var(--text-medium);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 .infoText {
-  color: var(--primary-pink);
-  background: #ffe2ed;
-  border: 1px solid var(--primary-pink);
+  color: var(--primary-purple);
+  background: #e8dff5;
+  border: 1px solid var(--secondary-purple);
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 500;
@@ -83,7 +83,7 @@
   display: block;
   padding: 0.6rem 0.8rem;
   margin: 0.3rem 0;
-  box-shadow: 0 1px 4px rgba(253, 148, 189, 0.08);
+  box-shadow: 0 1px 4px rgba(123, 104, 160, 0.08);
   letter-spacing: 0.01em;
   word-wrap: break-word;
 }
@@ -104,7 +104,7 @@
   }
 }
 .submitButton {
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -112,19 +112,21 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(253, 148, 189, 0.13);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.20);
 }
 .submitButton:disabled {
-  background: #fd94bd;
+  background: #a89bb8;
   cursor: not-allowed;
+  opacity: 0.6;
 }
 .submitButton:not(:disabled):hover {
-  background: var(--dark-pink);
+  background: var(--hover-purple);
   transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 12px rgba(147, 112, 219, 0.30);
 }
 .definirSemanaCard h3 {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -135,10 +137,10 @@
 input[type="date"].input {
   padding: 0.7rem 1.2rem;
   border-radius: 10px;
-  border: 1.5px solid var(--primary-pink);
+  border: 1.5px solid var(--primary-purple);
   font-size: 1rem;
   background: var(--input-color, #f7f7f7);
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   outline: none;
   transition: border 0.2s;
   margin-bottom: 0.5rem;
@@ -147,10 +149,10 @@ input[type="date"].input {
 }
 .input[type="date"]:focus,
 input[type="date"].input:focus {
-  border: 2px solid var(--primary-pink);
+  border: 2px solid var(--primary-purple);
 }
 .definirSemanaBtn {
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   color: #fff;
   border: none;
   border-radius: 25px;
@@ -158,11 +160,11 @@ input[type="date"].input:focus {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.20);
   transition: background 0.2s, transform 0.2s;
 }
 .definirSemanaBtn:hover {
-  background: var(--dark-pink);
+  background: var(--hover-purple);
   transform: scale(1.04);
 }
 
@@ -181,7 +183,7 @@ input[type="date"].input:focus {
 .definirSemanaCard {
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 4px 20px rgba(123, 104, 160, 0.13);
   padding: 2.5rem 2rem 2rem 2rem;
   display: flex;
   flex-direction: column;
@@ -190,8 +192,8 @@ input[type="date"].input:focus {
   min-width: 320px;
 }
 .cancelButton {
-  background: #eee;
-  color: var(--primary-pink);
+  background: #f0f0f0;
+  color: var(--primary-purple);
   border: none;
   border-radius: 10px;
   padding: 0.7rem 1.5rem;
@@ -201,12 +203,12 @@ input[type="date"].input:focus {
   transition: background 0.2s, color 0.2s;
 }
 .cancelButton:hover {
-  background: #e0bfc2;
+  background: var(--accent-purple);
   color: #fff;
 }
 /* Nombre de la pareja vinculada */
 .parejaText {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0.5rem 0 0.5rem 0;
@@ -216,7 +218,7 @@ input[type="date"].input:focus {
 .vinculaParejaSection {
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0 2px 12px rgba(232, 180, 184, 0.1);
+  box-shadow: 0 2px 12px rgba(123, 104, 160, 0.1);
   padding: 1.5rem 1.5rem 1.2rem 1.5rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -229,7 +231,7 @@ input[type="date"].input:focus {
 }
 
 .vinculaParejaSection h2 {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 1.2rem;
   margin-bottom: 0.1rem;
   font-family: public-sans, sans-serif;
@@ -253,20 +255,20 @@ input[type="date"].input:focus {
 .vinculaForm input[type="number"] {
   padding: 0.5rem 0.8rem;
   border-radius: 8px;
-  border: 1.5px solid var(--primary-pink);
+  border: 1.5px solid var(--accent-purple);
   font-size: 0.9rem;
   width: 150px;
   background: var(--input-color, #f7f7f7);
-  color: var(--light-gray);
+  color: var(--text-dark);
   outline: none;
   transition: border 0.2s;
 }
 .vinculaForm input[type="number"]:focus {
-  border: 2px solid var(--primary-pink);
+  border: 2px solid var(--primary-purple);
 }
 
 .vinculaForm button {
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -275,14 +277,14 @@ input[type="date"].input:focus {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 2px 8px rgba(123, 104, 160, 0.20);
 }
 .vinculaForm button:disabled {
-  background: #e0bfc2;
+  background: #a89bb8;
   cursor: not-allowed;
 }
 .vinculaForm button:not(:disabled):hover {
-  background: var(--dark-pink);
+  background: var(--hover-purple);
   transform: translateY(-2px) scale(1.04);
 }
 
@@ -329,7 +331,7 @@ input[type="date"].input:focus {
 }
 
 .nameHighlight {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
 }
 
 .welcomeText {
@@ -340,13 +342,13 @@ input[type="date"].input:focus {
 }
 
 .weekBadge {
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   color: white;
   padding: 12px 24px;
   border-radius: 25px;
   font-size: 16px;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(232, 180, 184, 0.3);
+  box-shadow: 0 4px 15px rgba(123, 104, 160, 0.30);
 }
 
 .cardCarouselSection {
@@ -354,7 +356,7 @@ input[type="date"].input:focus {
   max-width: 900px;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(232, 180, 184, 0.13);
+  box-shadow: 0 4px 20px rgba(123, 104, 160, 0.15);
   padding: 2rem 1.5rem 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -362,7 +364,7 @@ input[type="date"].input:focus {
   gap: 1.2rem;
 }
 .cardCarouselTitle {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0.5rem 0 1.5rem 0;
@@ -403,13 +405,13 @@ input[type="date"].input:focus {
 }
 .cardCarouselCard:hover {
   transform: translateY(-5px);
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 .cardIcon {
   font-size: 2.5rem;
   margin-bottom: 18px;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
 }
 .cardCarouselCardTitle {
   font-size: 1.25rem;
@@ -469,7 +471,7 @@ input[type="date"].input:focus {
 
 .card:hover {
   transform: translateY(-5px);
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
@@ -722,3 +724,6 @@ input[type="date"].input:focus {
     font-size: 0.95rem;
   }
 }
+
+
+

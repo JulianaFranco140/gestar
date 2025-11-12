@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--very-light-pink);
+  background-color: var(--very-light-purple);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 100;
@@ -32,7 +32,7 @@
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   white-space: nowrap;
@@ -108,8 +108,8 @@
 }
 
 .navLink:hover {
-  color: var(--dark-pink);
-  background-color: rgba(253, 148, 189, 0.1);
+  color: var(--hover-purple);
+  background-color: rgba(184, 165, 208, 0.15);
 }
 
 .userSection {
@@ -127,14 +127,14 @@
 }
 
 .userInfo:hover {
-  background-color: rgba(253, 148, 189, 0.1);
+  background-color: rgba(184, 165, 208, 0.15);
 }
 
 .userAvatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,7 +160,7 @@
   right: 0;
   margin-top: 8px;
   background-color: white;
-  border: 1px solid rgba(232, 180, 184, 0.3);
+  border: 1px solid rgba(123, 104, 160, 0.3);
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -189,8 +189,8 @@
 }
 
 .logoutButton:hover {
-  background-color: var(--very-light-pink);
-  color: var(--primary-pink);
+  background-color: var(--very-light-purple);
+  color: var(--primary-purple);
 }
 
 .hamburger {
@@ -207,7 +207,7 @@
 .hamburgerLine {
   width: 25px;
   height: 3px;
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -259,7 +259,7 @@
   }
 
   .navLink:hover {
-    background-color: var(--very-light-pink);
+    background-color: var(--very-light-purple);
   }
 
   .mobileUserSection {
@@ -267,7 +267,7 @@
     flex-direction: column;
     gap: 15px;
     padding: 20px 25px;
-    border-top: 1px solid rgba(232, 180, 184, 0.3);
+    border-top: 1px solid rgba(123, 104, 160, 0.3);
     margin-top: 10px;
     align-items: center;
   }
@@ -280,7 +280,7 @@
   }
 
   .mobileUserSection .logoutButton {
-    background-color: var(--primary-pink);
+    background-color: var(--primary-purple);
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -289,7 +289,7 @@
   }
 
   .mobileUserSection .logoutButton:hover {
-    background-color: var(--dark-pink);
+    background-color: var(--hover-purple);
   }
 
   /* Ocultar usuario desktop en móvil */
@@ -332,3 +332,6 @@
     height: calc(100vh - 60px);
   }
 }
+
+
+

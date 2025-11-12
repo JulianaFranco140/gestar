@@ -296,8 +296,8 @@ const HospitalesPage = () => {
               <div className={styles.hospitalHeader}>
                 <h3 className={styles.hospitalName}>
                   {hospital.nombre}
-                  {hospital.tipo === 'hospital' && <span className={styles.hospitalBadge}><HospitalIcon color="#fd94bd" size={22} /></span>}
-                  {hospital.tipo === 'clinic' && <span className={styles.hospitalBadge}><HospitalIcon color="#fd94bd" size={22} /></span>}
+                  {hospital.tipo === 'hospital' && <span className={styles.hospitalBadge}><HospitalIcon color="#7b68a0" size={22} /></span>}
+                  {hospital.tipo === 'clinic' && <span className={styles.hospitalBadge}><HospitalIcon color="#7b68a0" size={22} /></span>}
                 </h3>
                 <div className={styles.hospitalMeta}>
                   {hospital.distancia && (

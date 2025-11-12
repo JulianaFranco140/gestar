@@ -20,16 +20,16 @@
   width: 90px;
   height: 90px;
   border-radius: 18px;
-  border: 2px solid transparent;
-  background: var(--input-color);
+  border: 2px solid var(--border-light);
+  background: #ffffff;
   cursor: pointer;
-  transition: border 0.2s, box-shadow 0.2s, transform 0.2s, background 0.2s;
+  transition: border 0.3s, box-shadow 0.3s, transform 0.2s, background 0.3s, color 0.3s;
   font-size: 2.2rem;
   font-weight: bold;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 12px rgba(123, 104, 160, 0.12);
   position: relative;
   outline: none;
-  color: #fff;
+  color: var(--text-medium);
 }
 
 @media (max-width: 768px) {
@@ -50,46 +50,48 @@
 
 .genderOption:hover, .roleOption:hover, .genderOption:focus, .roleOption:focus {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
-  border: 2px solid var(--primary-pink);
+  box-shadow: 0 6px 24px rgba(147, 112, 219, 0.25);
+  border: 2px solid var(--hover-purple);
+  background: rgba(184, 165, 208, 0.12);
+  color: var(--primary-purple);
   z-index: 2;
 }
 
 .genderOption.selected {
-  border: 3px solid #8e44ad;
-  box-shadow: 0 0 0 3px #8e44ad;
+  border: 3px solid var(--primary-purple);
+  box-shadow: 0 0 0 3px var(--accent-purple);
+  background: var(--primary-purple);
   color: #fff;
   transform: translateY(-4px) scale(1.05);
   z-index: 2;
 }
 .roleOption.selected {
-  border: 3px solid #8e44ad !important;
-  box-shadow: 0 0 0 3px #8e44ad !important;
+  border: 3px solid var(--primary-purple) !important;
+  box-shadow: 0 0 0 3px var(--accent-purple) !important;
+  background: var(--primary-purple) !important;
   color: #fff;
   transform: translateY(-4px) scale(1.05);
   z-index: 2;
 }
 
 
-.genderOption.male { background: var(--gender-male, #4A90E2); color: #fff; }
-.genderOption.female { background: var(--gender-female, #FF69B4); color: #fff; }
-.genderOption.other { background: var(--gender-other, #A0A0A0); color: #fff; }
+.genderOption.male { background: #7b9dc0; color: #fff; }
+.genderOption.female { background: var(--secondary-purple); color: #fff; }
+.genderOption.other { background: #a89bb8; color: #fff; }
 
-.roleOption.selected {
-  border: 2px solid var(--primary-pink);
-  box-shadow: 0 0 0 2px var(--primary-pink);
-}
-.roleOption.gestante { background: var(--role-gestante, #fd94bd); color: #ffffff; }
-.roleOption.gestante {
-  background: #B47AEA;
+.roleOption.gestante { 
+  background: var(--secondary-purple);
   color: #fff;
 }
-.roleOption.acompanante { background: var(--role-acompanante, #6B7C85); color: #fff; }
+.roleOption.acompanante { 
+  background: #7b9dc0; 
+  color: #fff; 
+}
 
 .genderLabel, .roleLabel {
   font-size: 0.95rem;
   margin-top: 0.5rem;
-  color: #fff;
+  color: var(--text-dark);
   text-align: center;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -129,7 +131,7 @@
 
 .imageSection {
   flex: 0.45;
-  background-color: linear-gradient(135deg, var(--white) 0%, var(--very-light-pink) 50%, var(--primary-pink) 100%);
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -164,13 +166,12 @@
 }
 
 .imageText {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   font-size: 25px;
   text-align: center;
   font-weight: 500;
   max-width: 280px;
   line-height: 1.4;
-  color: var(--light-gray);
   font-family: public-sans, sans-serif;
   
 }
@@ -184,12 +185,12 @@
 }
 
 .formCard {
-  background: var(--primary-pink);
+  background: var(--primary-purple);
   border-radius: 25px;
   padding: 2rem 2rem;
   width: 500px;
   max-width: 650px;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 20px rgba(123, 104, 160, 0.35);
 }
 
 .loginCard {
@@ -208,7 +209,7 @@
   text-align: center;
   margin: 0;
   margin-bottom: 2rem;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 4px rgba(74, 66, 88, 0.4);
 }
 
 .form {
@@ -229,7 +230,7 @@
   font-size: 1rem;
   background: var(--input-color);
   box-sizing: border-box;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 4px rgba(74, 66, 88, 0.35);
 }
 
 .input::placeholder {
@@ -243,8 +244,8 @@
 }
 
 .submitButton {
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--primary-pink);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--primary-purple);
   border: none;
   padding: 1rem;
   border-radius: 10px;
@@ -253,13 +254,14 @@
   cursor: pointer;
   margin-top: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 4px rgba(74, 66, 88, 0.35);
 }
 
 .submitButton:hover {
   background: white;
-  transform: translateY(2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: var(--hover-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(147, 112, 219, 0.25);
 }
 
 .footer {
@@ -279,7 +281,7 @@
 
 .footerLink:hover {
   text-decoration: none;
-  color: var(--light-gray);
+  color: var(--very-light-purple);
 }
 
 /* Responsive para tablets */

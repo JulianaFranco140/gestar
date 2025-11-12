@@ -40,7 +40,7 @@
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: var(--primary-pink);
+  color: var(--primary-purple);
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -55,8 +55,8 @@
 .button {
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: var(--primary-pink);
-  color: var(--very-light-pink);
+  background-color: var(--primary-purple);
+  color: var(--very-light-purple);
   cursor: pointer;
   font-size: 14px;
   border: None;
@@ -65,7 +65,7 @@
 
 
 .button:hover{
-  background-color: var(--dark-pink);
+  background-color: var(--hover-purple);
   color: var(--light-gray);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -94,7 +94,7 @@
 }
 
 .titleHighlight {
-  color: var(--primary-pink);
+  color: var(--primary-purple);
 }
 
 .description {
@@ -126,7 +126,7 @@
 
 .card {
   flex: 1;
-  background-color: var(--primary-pink);
+  background-color: var(--primary-purple);
   border-radius: 20px;
   padding: 40px 30px;
   min-height: 200px;
@@ -152,7 +152,7 @@
 }
 
 .card:hover{
-  background: var(--dark-pink);
+  background: var(--hover-purple);
   color: var(--light-gray);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -263,3 +263,4 @@
     font-size: 13px;
   }
 }
+
