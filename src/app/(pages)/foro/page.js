@@ -15,6 +15,101 @@ export default function ForoTemas() {
   const [publicando, setPublicando] = useState(false);
   const [error, setError] = useState('');
   const [respuestaIA, setRespuestaIA] = useState(false);
+  
+  const [showInterestModal, setShowInterestModal] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState(null);
+
+  const interestTopics = {
+    lactancia: {
+      title: "Lactancia materna",
+      subtitle: "Consejos y experiencias",
+      content: {
+        intro: "La lactancia materna es uno de los regalos más valiosos que puedes dar a tu bebé. Proporciona todos los nutrientes necesarios y fortalece el vínculo único entre madre e hijo.",
+        benefits: [
+          "Fortalece el sistema inmunológico del bebé",
+          "Reduce el riesgo de infecciones y alergias",
+          "Favorece el desarrollo cognitivo",
+          "Ayuda a la recuperación posparto de la madre",
+          "Reduce el riesgo de cáncer de mama y ovarios"
+        ],
+        tips: [
+          "Busca una posición cómoda para ti y tu bebé",
+          "Asegúrate de que el bebé agarre bien el pezón",
+          "Amamanta con frecuencia, especialmente al inicio",
+          "Mantente hidratada y come nutritivamente",
+          "No dudes en pedir ayuda profesional si tienes dificultades"
+        ],
+        resources: [
+          "Liga de la Leche Internacional - Colombia",
+          "Consulta con especialistas en lactancia",
+          "Grupos de apoyo para madres lactantes"
+        ]
+      }
+    },
+    desarrollo: {
+      title: "Desarrollo del bebé",
+      subtitle: "Etapas y cuidados",
+      content: {
+        intro: "Cada bebé se desarrolla a su propio ritmo, pero conocer las etapas generales te ayudará a entender y apoyar mejor su crecimiento.",
+        stages: [
+          {
+            period: "0-3 meses",
+            milestones: ["Sonrisa social", "Seguimiento visual", "Control de cabeza"]
+          },
+          {
+            period: "4-6 meses",
+            milestones: ["Rodar", "Sentarse con apoyo", "Balbuceo"]
+          },
+          {
+            period: "7-12 meses",
+            milestones: ["Gatear", "Primeras palabras", "Caminar con apoyo"]
+          }
+        ],
+        care: [
+          "Control médico regular",
+          "Estimulación temprana apropiada",
+          "Alimentación adecuada según la edad",
+          "Ambiente seguro y estimulante",
+          "Mucho amor y paciencia"
+        ],
+        warning: "Consulta con tu pediatra si notas retrasos significativos en el desarrollo."
+      }
+    },
+    ejercicio: {
+      title: "Ejercicio prenatal",
+      subtitle: "Rutinas seguras",
+      content: {
+        intro: "El ejercicio durante el embarazo tiene múltiples beneficios tanto para la madre como para el bebé, siempre que se practique de forma segura.",
+        benefits: [
+          "Mejora la circulación sanguínea",
+          "Reduce dolores de espalda",
+          "Ayuda a controlar el peso",
+          "Mejora el estado de ánimo",
+          "Facilita el trabajo de parto"
+        ],
+        safe_exercises: [
+          "Caminar - ideal para todas las etapas",
+          "Natación - ejercicio de bajo impacto",
+          "Yoga prenatal - flexibilidad y relajación",
+          "Ejercicios de Kegel - fortalecen el suelo pélvico",
+          "Estiramientos suaves"
+        ],
+        precautions: [
+          "Consulta siempre con tu médico antes de comenzar",
+          "Evita ejercicios de alto impacto",
+          "No hagas ejercicio si tienes complicaciones",
+          "Mantente hidratada",
+          "Escucha a tu cuerpo y detente si sientes dolor"
+        ],
+        contraindications: "Embarazo de alto riesgo, sangrado, problemas de placenta, entre otros."
+      }
+    }
+  };
+
+  function openInterestModal(topicKey) {
+    setSelectedTopic(interestTopics[topicKey]);
+    setShowInterestModal(true);
+  }
 
   function generarSlug(texto) {
     return texto
@@ -115,7 +210,7 @@ export default function ForoTemas() {
                   Temas de Interés
                 </h3>
                 <div className={styles.interestList}>
-                  <div className={styles.interestItem}>
+                  <div className={styles.interestItem} onClick={() => openInterestModal('lactancia')}>
                     <div className={styles.interestIcon}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2C9.5 2 7.5 4 7.5 6.5C7.5 9 9.5 11 12 11C14.5 11 16.5 9 16.5 6.5C16.5 4 14.5 2 12 2Z" fill="#E8B4B8"/>
@@ -128,7 +223,7 @@ export default function ForoTemas() {
                       <p>Consejos y experiencias</p>
                     </div>
                   </div>
-                  <div className={styles.interestItem}>
+                  <div className={styles.interestItem} onClick={() => openInterestModal('desarrollo')}>
                     <div className={styles.interestIcon}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="8" r="6" fill="#E8B4B8"/>
@@ -143,7 +238,7 @@ export default function ForoTemas() {
                       <p>Etapas y cuidados</p>
                     </div>
                   </div>
-                  <div className={styles.interestItem}>
+                  <div className={styles.interestItem} onClick={() => openInterestModal('ejercicio')}>
                     <div className={styles.interestIcon}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 14L6 17L9 20M15 14L18 17L15 20" stroke="#E8B4B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -318,6 +413,199 @@ export default function ForoTemas() {
                 >
                   Cancelar
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+        
+        {/* Modal de Temas de Interés */}
+        {showInterestModal && selectedTopic && (
+          <div className={styles.modalOverlay}>
+            <div className={styles.interestModalContent}>
+              <div className={styles.interestModalHeader}>
+                <h2>{selectedTopic.title}</h2>
+                <button
+                  className={styles.closeButton}
+                  onClick={() => setShowInterestModal(false)}
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className={styles.interestModalBody}>
+                <p className={styles.topicSubtitle}>{selectedTopic.subtitle}</p>
+                <p className={styles.topicIntro}>{selectedTopic.content.intro}</p>
+                
+                {/* Lactancia */}
+                {selectedTopic.title === "Lactancia materna" && (
+                  <>
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#E8B4B8"/>
+                        </svg>
+                        Beneficios de la lactancia materna
+                      </h3>
+                      <ul>
+                        {selectedTopic.content.benefits.map((benefit, index) => (
+                          <li key={index}>{benefit}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <circle cx="12" cy="12" r="10" fill="#E8B4B8"/>
+                          <path d="M12 6V18M6 12H18" stroke="#FFF" strokeWidth="3" strokeLinecap="round"/>
+                        </svg>
+                        Consejos prácticos
+                      </h3>
+                      <ul>
+                        {selectedTopic.content.tips.map((tip, index) => (
+                          <li key={index}>{tip}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <path d="M16 4H18C19.1 4 20 4.9 20 6V18C20 19.1 19.1 20 18 20H6C4.9 20 4 19.1 4 18V6C4 4.9 4.9 4 6 4H8" stroke="#E8B4B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="#E8B4B8" strokeWidth="2" fill="#E8B4B8"/>
+                          <path d="M9 12H15" stroke="#E8B4B8" strokeWidth="2" strokeLinecap="round"/>
+                          <path d="M9 16H15" stroke="#E8B4B8" strokeWidth="2" strokeLinecap="round"/>
+                        </svg>
+                        Recursos de apoyo
+                      </h3>
+                      <ul>
+                        {selectedTopic.content.resources.map((resource, index) => (
+                          <li key={index}>{resource}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                )}
+                
+                {/* Desarrollo del bebé */}
+                {selectedTopic.title === "Desarrollo del bebé" && (
+                  <>
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <rect x="3" y="4" width="18" height="16" rx="2" fill="#E8B4B8"/>
+                          <rect x="7" y="7" width="2" height="2" fill="#FFF"/>
+                          <rect x="11" y="7" width="2" height="2" fill="#FFF"/>
+                          <rect x="15" y="7" width="2" height="2" fill="#FFF"/>
+                          <rect x="7" y="11" width="2" height="2" fill="#FFF"/>
+                          <rect x="11" y="11" width="2" height="2" fill="#FFF"/>
+                          <rect x="15" y="11" width="2" height="2" fill="#FFF"/>
+                          <rect x="7" y="15" width="2" height="2" fill="#FFF"/>
+                          <rect x="11" y="15" width="2" height="2" fill="#FFF"/>
+                          <rect x="15" y="15" width="2" height="2" fill="#FFF"/>
+                        </svg>
+                        Etapas del desarrollo
+                      </h3>
+                      {selectedTopic.content.stages.map((stage, index) => (
+                        <div key={index} className={styles.developmentStage}>
+                          <h4>{stage.period}</h4>
+                          <ul>
+                            {stage.milestones.map((milestone, idx) => (
+                              <li key={idx}>{milestone}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <path d="M22 11.08V12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C13.18 2 14.29 2.25 15.31 2.69" stroke="#E8B4B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M22 4L12 14.01L9 11.01" stroke="#E8B4B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        Cuidados importantes
+                      </h3>
+                      <ul>
+                        {selectedTopic.content.care.map((care, index) => (
+                          <li key={index}>{care}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className={styles.warningBox}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                        <path d="M12 2L22 20H2L12 2Z" fill="#FFA726"/>
+                        <path d="M12 9V13" stroke="#FFF" strokeWidth="2" strokeLinecap="round"/>
+                        <circle cx="12" cy="17" r="1" fill="#FFF"/>
+                      </svg>
+                      <strong>Importante:</strong> {selectedTopic.content.warning}
+                    </div>
+                  </>
+                )}
+                
+                {/* Ejercicio prenatal */}
+                {selectedTopic.title === "Ejercicio prenatal" && (
+                  <>
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z" fill="#E8B4B8"/>
+                          <polyline points="9,9 9,15" stroke="#FFF" strokeWidth="2" strokeLinecap="round"/>
+                          <polyline points="15,9 15,15" stroke="#FFF" strokeWidth="2" strokeLinecap="round"/>
+                          <circle cx="9" cy="6.5" r="1" fill="#FFF"/>
+                          <circle cx="15" cy="6.5" r="1" fill="#FFF"/>
+                        </svg>
+                        Beneficios del ejercicio
+                      </h3>
+                      <ul>
+                        {selectedTopic.content.benefits.map((benefit, index) => (
+                          <li key={index}>{benefit}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <path d="M22 11.08V12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C13.18 2 14.29 2.25 15.31 2.69" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M22 4L12 14.01L9 11.01" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        Ejercicios seguros
+                      </h3>
+                      <ul>
+                        {selectedTopic.content.safe_exercises.map((exercise, index) => (
+                          <li key={index}>{exercise}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className={styles.topicSection}>
+                      <h3>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                          <path d="M12 2L22 20H2L12 2Z" fill="#FFA726"/>
+                          <path d="M12 9V13" stroke="#FFF" strokeWidth="2" strokeLinecap="round"/>
+                          <circle cx="12" cy="17" r="1" fill="#FFF"/>
+                        </svg>
+                        Precauciones
+                      </h3>
+                      <ul>
+                        {selectedTopic.content.precautions.map((precaution, index) => (
+                          <li key={index}>{precaution}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className={styles.warningBox}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle', marginRight: '8px'}}>
+                        <circle cx="12" cy="12" r="10" fill="#F44336"/>
+                        <line x1="15" y1="9" x2="9" y2="15" stroke="#FFF" strokeWidth="2" strokeLinecap="round"/>
+                        <line x1="9" y1="9" x2="15" y2="15" stroke="#FFF" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                      <strong>Contraindicaciones:</strong> {selectedTopic.content.contraindications}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
