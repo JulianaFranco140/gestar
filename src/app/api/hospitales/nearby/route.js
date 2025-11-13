@@ -36,7 +36,7 @@ export async function GET(request) {
     do {
       const url = nextPageToken 
         ? `https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=${nextPageToken}&key=${GOOGLE_API_KEY}`
-        : `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${radio}&keyword=hospitales+maternidad&language=es&key=${GOOGLE_API_KEY}`;
+        : `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${radio}&keyword=hospitales&language=es&key=${GOOGLE_API_KEY}`;
       
       const response = await fetch(url);
 
