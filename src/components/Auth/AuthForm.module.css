@@ -75,23 +75,23 @@
 }
 
 
-.genderOption.male { background: #7b9dc0; color: #fff; }
-.genderOption.female { background: var(--secondary-purple); color: #fff; }
+.genderOption.male { background: #4A90E2; color: #fff; }
+.genderOption.female { background: #FF69B4; color: #fff; }
 .genderOption.other { background: #a89bb8; color: #fff; }
 
 .roleOption.gestante { 
-  background: var(--secondary-purple);
+  background: #FF1493;
   color: #fff;
 }
 .roleOption.acompanante { 
-  background: #7b9dc0; 
+  background: #00CED1; 
   color: #fff; 
 }
 
 .genderLabel, .roleLabel {
   font-size: 0.95rem;
   margin-top: 0.5rem;
-  color: var(--text-dark);
+  color: #fff;
   text-align: center;
   font-weight: 500;
   letter-spacing: 0.01em;
