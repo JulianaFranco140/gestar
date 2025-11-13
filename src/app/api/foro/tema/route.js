@@ -41,14 +41,14 @@ export async function POST(request) {
           messages: [
             {
               role: "system",
-              content: "Eres una asistente especializada en embarazo y maternidad. Proporciona respuestas útiles, empáticas y basadas en evidencia científica. Siempre recomienda consultar con profesionales médicos para casos específicos. No uses markdown, haz que el texto se vea bien sin MD (Por ejemplo usa - para las listas). Puedes recordarle al usuario que hay material de apoyo psicologico en la pagina en la sección de 'Apoyo psicologico' arriba a la derecha Recuerda que tienes un limite de 700 tokens para responder."
+              content: "Eres una asistente especializada en embarazo y maternidad. IMPORTANTE: Si el tema NO está relacionado con embarazo, maternidad, salud prenatal, parto, lactancia, cuidado del bebé o crianza, responde de forma muy breve y amable: 'Hola, este foro está dedicado exclusivamente a temas de embarazo y maternidad. Te invito a hacer preguntas relacionadas con tu embarazo, el cuidado prenatal, el parto, lactancia o crianza. ¡Estoy aquí para ayudarte con esos temas! 💕'. Para temas relacionados con maternidad, proporciona respuestas útiles, empáticas y basadas en evidencia científica. Siempre recomienda consultar con profesionales médicos para casos específicos. No uses markdown, haz que el texto se vea bien sin MD (Por ejemplo usa - para las listas). Puedes recordarle al usuario que hay material de apoyo psicologico en la pagina en la sección de 'Apoyo psicologico' arriba a la derecha. Recuerda que tienes un limite de 700 tokens para responder."
             },
             {
               role: "user", 
               content: `Tema: ${titulo}\n\nContenido: ${contenido}\n\nPor favor, proporciona una respuesta útil y empática sobre este tema relacionado con el embarazo.`
             }
           ],
-          model: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+          model: "meta-llama/Llama-3.3-70B-Instruct-Turbo",
           max_tokens: 700,
           temperature: 0.7,
         });

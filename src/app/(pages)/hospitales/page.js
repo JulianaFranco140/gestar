@@ -284,8 +284,59 @@ const HospitalesPage = () => {
             <span className={styles.resultCount}>({hospitales.length} encontrados)</span>
           </h2>
           
+          {/* Tarjeta destacada del hospital más cercano */}
+          {hospitales.length > 0 && !error && (
+            <div className={styles.nearestHospitalCard}>
+              <div className={styles.emergencyBadge}>
+                <span className={styles.emergencyText}>MÁS CERCANO EN CASO DE EMERGENCIA</span>
+              </div>
+              <div className={styles.nearestHospitalContent}>
+                <div className={styles.nearestHospitalHeader}>
+                  <h3 className={styles.nearestHospitalName}>{hospitales[0].nombre}</h3>
+                  <div className={styles.nearestHospitalDistance}>
+                    <span className={styles.distanceLabel}>Distancia:</span>
+                    <span className={styles.distanceValue}>{formatDistancia(hospitales[0].distancia)}</span>
+                  </div>
+                </div>
+                <div className={styles.nearestHospitalInfo}>
+                  <div className={styles.nearestInfoRow}>
+                    <strong>Dirección:</strong>
+                    <span>{hospitales[0].direccion}</span>
+                  </div>
+                  {hospitales[0].telefono && (
+                    <div className={styles.nearestInfoRow}>
+                      <strong>Teléfono:</strong>
+                      <span>{hospitales[0].telefono}</span>
+                    </div>
+                  )}
+                  <div className={styles.nearestInfoRow}>
+                    <strong>Calificación:</strong>
+                    <StarRating rating={hospitales[0].rating} size={18} showNumber={true} />
+                  </div>
+                </div>
+                <div className={styles.nearestHospitalActions}>
+                  <button 
+                    className={styles.callButton}
+                    onClick={() => window.location.href = `tel:${hospitales[0].telefono}`}
+                    disabled={!hospitales[0].telefono}
+                  >
+                    LLAMAR AHORA
+                  </button>
+                  <button 
+                    className={styles.directionsButton}
+                    onClick={() => abrirEnGoogleMaps(hospitales[0])}
+                  >
+                    CÓMO LLEGAR
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <h3 className={styles.otherHospitalsTitle}>Otros hospitales cercanos</h3>
+          
           <div className={styles.hospitalesList}>
-            {hospitales.map((hospital) => (
+            {hospitales.slice(1).map((hospital) => (
             <div 
               key={hospital.id} 
               className={`${styles.hospitalCard} ${

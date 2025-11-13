@@ -241,6 +241,249 @@ const consejosPorSemana = {
     cuidados: 'Escucha a tu cuerpo, mantén la calma, sigue indicaciones médicas.'
   }
 };
+
+const consejosAcompañante = {
+  1: {
+    titulo: '🌟 El Comienzo del Viaje Juntos',
+    apoyo: 'Este es el inicio de una etapa maravillosa. Infórmate sobre el proceso de embarazo leyendo libros o artículos para entender mejor lo que ella vivirá. Acompáñala a la consulta preconcepcional si es posible.',
+    alimentacion: 'Ayúdala a mantener una alimentación saludable. Prepara comidas ricas en ácido fólico juntos: ensaladas de espinaca, lentejas, o smoothies con vegetales verdes. Cocinar juntos fortalece el vínculo.',
+    cuidados: 'Crea un ambiente libre de estrés en casa. Apóyala en eliminar hábitos no saludables siendo un ejemplo: si ella debe dejar el alcohol o tabaco, hazlo tú también en solidaridad. Escucha sus inquietudes sin juzgar.'
+  },
+  2: {
+    titulo: '🌟 Preparándose Para la Gran Noticia',
+    apoyo: 'Aprende sobre los primeros síntomas del embarazo para poder identificarlos y ser más comprensivo. Mantén una actitud positiva y emocionada ante la posibilidad de concebir.',
+    alimentacion: 'Asegúrate de que tenga acceso a alimentos nutritivos. Haz las compras incluyendo alimentos ricos en hierro, calcio y vitaminas. Prepara snacks saludables que tenga a mano.',
+    cuidados: 'Reduce las fuentes de estrés en el hogar. Ayuda con las tareas domésticas sin que ella tenga que pedirlo. Mantén un diálogo abierto sobre sus sentimientos y expectativas respecto al embarazo.'
+  },
+  3: {
+    titulo: '🎯 La Espera con Paciencia',
+    apoyo: 'Si están intentando concebir, sé paciente y comprensivo. El proceso puede tomar tiempo y la presión no ayuda. Mantén una actitud relajada y amorosa.',
+    alimentacion: 'Cocina comidas balanceadas que incluyan proteínas, vegetales y frutas. Evita presionarla con restricciones alimenticias; en su lugar, haz que comer saludable sea algo natural y agradable.',
+    cuidados: 'Evita actividades que generen estrés innecesario. Planifica momentos de relajación juntos: caminatas suaves, ver películas, o simplemente conversar. El apoyo emocional es fundamental.'
+  },
+  4: {
+    titulo: '🎉 Posible Confirmación',
+    apoyo: 'Si sospechan del embarazo, acompáñala a comprar la prueba de embarazo. Estate presente cuando se la haga si ella lo desea. Sea cual sea el resultado, reacciona con amor y apoyo.',
+    alimentacion: 'Si confirman el embarazo, ella puede empezar a sentir náuseas. Ten a mano galletas saladas, jengibre, y alimentos suaves. Pregúntale qué se le antoja o qué le cae bien.',
+    cuidados: 'Celebra la noticia del embarazo de manera especial pero íntima. Acompáñala a programar la primera cita prenatal. Comienza a ajustar tu agenda para estar presente en las citas médicas importantes.'
+  },
+  5: {
+    titulo: '💓 Primeros Cambios Juntos',
+    apoyo: 'Edúcate sobre el desarrollo del bebé semana a semana. Comparte con ella datos interesantes sobre cómo el corazón del bebé está comenzando a latir. Esto fortalece el vínculo emocional de ambos con el bebé.',
+    alimentacion: 'Las náuseas matutinas pueden empezar. Ten preparados snacks suaves como galletas, frutas, o lo que ella tolere. No te ofendas si rechaza comidas que preparaste; las náuseas son involuntarias.',
+    cuidados: 'Sé extra comprensivo con sus cambios de humor y fatiga. Ofrece masajes suaves en pies o espalda. Asegúrate de que descanse lo suficiente y no se sobrecargue con tareas del hogar.'
+  },
+  6: {
+    titulo: '🥰 Apoyo en los Síntomas',
+    apoyo: 'Reconoce que aunque no puedes sentir lo que ella siente, puedes validar sus experiencias. Frases como "entiendo que te sientas así" o "¿qué puedo hacer para ayudarte?" son muy valiosas.',
+    alimentacion: 'Prepara comidas pequeñas y frecuentes si tiene náuseas. Experimenta con diferentes alimentos para encontrar qué le cae bien. El jengibre en té o galletas puede ayudar.',
+    cuidados: 'Acomódate a sus necesidades cambiantes. Si ciertos olores la molestan, evítalos. Mantén el ambiente ventilado y limpio. Ofrece tu ayuda de manera proactiva, no esperes a que te lo pida.'
+  },
+  7: {
+    titulo: '🌱 Construyendo la Base Juntos',
+    apoyo: 'Este es un buen momento para comenzar a planificar financieramente la llegada del bebé. Hablen sobre presupuestos, ahorros, y necesidades futuras. Involúcrate activamente en la planificación.',
+    alimentacion: 'Asegúrate de que tenga acceso a alimentos ricos en calcio: lácteos, almendras, vegetales verdes. Si es intolerante a la lactosa, busca alternativas fortificadas juntos.',
+    cuidados: 'Reduce su exposición a cafeína limitando el café en casa. Si tomas café, hazlo discretamente para no tentarla. Apoya sus decisiones sobre qué consumir y qué evitar durante el embarazo.'
+  },
+  8: {
+    titulo: '🖐 Crecimiento y Conexión',
+    apoyo: 'Comienza a hablarle al vientre. Aunque el bebé aún no escucha claramente, es una forma hermosa de conectar y de mostrarle a tu pareja que estás emocionalmente presente.',
+    alimentacion: 'Incluye frutas cítricas en las comidas: naranjas, mandarinas, fresas. Prepara jugos naturales frescos. Estos alimentos ayudan con la absorción de hierro y fortalecen el sistema inmunológico.',
+    cuidados: 'Ayúdala con los zapatos cuando se vuelva incómodo agacharse. Ofrece masajes en pies y piernas para mejorar la circulación. Estos pequeños gestos significan mucho.'
+  },
+  9: {
+    titulo: '🎪 Apoyo Activo y Presente',
+    apoyo: 'Investiga sobre clases prenatales y cursos de preparación al parto. Inscríbanse juntos en uno que les parezca interesante. Tu participación muestra compromiso y le da seguridad a ella.',
+    alimentacion: 'Asegúrate de que se mantenga bien hidratada. Ten siempre agua fresca disponible. Prepara infusiones suaves y naturales que sean seguras durante el embarazo.',
+    cuidados: 'Acompáñala en caminatas suaves o actividades físicas recomendadas. El ejercicio juntos es beneficioso para ambos y fortalece su conexión. Respeta su ritmo y necesidades de descanso.'
+  },
+  10: {
+    titulo: '✨ Celebrando Cada Hito',
+    apoyo: 'Celebra los pequeños logros: cada semana completada, cada ecografía, cada síntoma que mejora. Lleva un diario o álbum del embarazo juntos con fotos y pensamientos.',
+    alimentacion: 'Cocina carnes, pescados y huevos completamente cocidos para evitar riesgos. Revisa las temperaturas de cocción adecuadas y sé meticuloso con la higiene alimentaria.',
+    cuidados: 'Ayúdala a elegir ropa cómoda y holgada. Acompáñala de compras si necesita nuevas prendas. Tu opinión positiva sobre cómo se ve embarazada fortalece su autoestima.'
+  },
+  11: {
+    titulo: '🌀 Preparación Emocional',
+    apoyo: 'Lee sobre la paternidad y el rol del padre/acompañante. Comparte tus descubrimientos con ella. Hablen sobre sus expectativas, miedos y sueños respecto a ser padres.',
+    alimentacion: 'Busca recetas con salmón, sardinas o trucha para incluir omega-3 en la dieta. Si es vegetariana, investiga fuentes alternativas como chía, nueces y aceite de linaza.',
+    cuidados: 'Masajea suavemente su abdomen, senos, muslos y caderas con aceites hidratantes para prevenir estrías. Convierte esto en un ritual diario de conexión y cuidado.'
+  },
+  12: {
+    titulo: '🎉 Fin del Primer Trimestre Juntos',
+    apoyo: 'El riesgo de complicaciones disminuye significativamente. Es un buen momento para compartir la noticia con familiares y amigos si aún no lo han hecho. Planifiquen juntos cómo anunciarlo.',
+    alimentacion: 'Con las náuseas generalmente mejorando, ayúdala a retomar una dieta más variada. Prepara comidas coloridas y nutritivas con abundantes frutas y verduras.',
+    cuidados: 'Acompáñala a la ecografía de translucencia nucal. Ver al bebé en pantalla juntos es un momento mágico que fortalecerá tu vínculo con él y con ella.'
+  },
+  13: {
+    titulo: '🌈 Nueva Etapa de Energía',
+    apoyo: 'Muchas mujeres recuperan energía en el segundo trimestre. Aprovecha para planear actividades juntos: paseos, visitas a tiendas de bebés, o simplemente disfrutar tiempo de calidad.',
+    alimentacion: 'Prepara smoothies y batidos con frutas frescas. Experimenta con combinaciones creativas: sandía-menta, naranja-fresa, melón-jengibre. Que sea divertido y refrescante.',
+    cuidados: 'Apóyala en retomar o mantener una rutina de ejercicio suave. Acompáñala a caminar, a nadar, o a clases de yoga prenatal. Tu participación la motivará.'
+  },
+  14: {
+    titulo: '😍 Conexión Más Profunda',
+    apoyo: 'Imaginen juntos cómo será el bebé. Hablen sobre a quién se parecerá, qué características tendrá. Estas conversaciones fortalecen la conexión emocional con el bebé que viene.',
+    alimentacion: 'Asegura que consuma suficiente calcio y vitamina D. Prepara desayunos con lácteos, planea breves exposiciones al sol juntos (15-20 minutos), y cocina pescados grasos.',
+    cuidados: 'Aplica protector solar antes de salir juntos. Su piel es más sensible ahora. Lleva siempre protector solar en el bolso o auto para reaplicar durante el día.'
+  },
+  15: {
+    titulo: '👂 Hablarle al Bebé',
+    apoyo: 'El bebé comienza a escuchar sonidos. Háblale, cántale o ponle música suave. Lee cuentos en voz alta cerca del vientre. Tu voz se convertirá en algo familiar y reconfortante para el bebé.',
+    alimentacion: 'Incluye proteínas de calidad en cada comida. Prepara platos con pollo, pescado, huevos, legumbres o tofu. Varía las fuentes para que no se aburra de comer lo mismo.',
+    cuidados: 'Crea una playlist especial para el bebé con música relajante o canciones significativas. Escúchenla juntos y conviertan esto en un ritual diario antes de dormir.'
+  },
+  16: {
+    titulo: '🦴 Fortaleciendo Vínculos',
+    apoyo: 'Ella podría empezar a sentir los movimientos del bebé pronto. Mantente atento a ese momento especial. Cuando lo sienta, pide permiso para poner tu mano en su vientre.',
+    alimentacion: 'Prepara snacks ricos en calcio y magnesio: mix de nueces y almendras, yogur con frutas, batidos verdes con espinaca. Ten estos snacks listos para cuando tenga hambre.',
+    cuidados: 'Sé paciente si aún no sientes los movimientos cuando pones tu mano en su vientre. Llegará el momento. Mientras tanto, tu interés y emoción son apoyo emocional importante.'
+  },
+  17: {
+    titulo: '💤 Apoyo en el Descanso',
+    apoyo: 'Ayúdala a encontrar posiciones cómodas para dormir. Acomoda almohadas entre sus piernas, bajo su vientre, o donde las necesite. Tu ayuda para que descanse bien es invaluable.',
+    alimentacion: 'Cocina comidas ricas en hierro: carnes magras, espinacas, lentejas. Acompáñalas con alimentos ricos en vitamina C para mejorar la absorción. Aprende combinaciones efectivas.',
+    cuidados: 'Si trabaja, ayúdala a organizarse para que pueda descansar más. Asume más tareas del hogar sin que tenga que pedírtelo. El descanso es crucial para ella y el bebé.'
+  },
+  18: {
+    titulo: '🖐 Sintiendo las Pataditas',
+    apoyo: 'Si aún no has sentido las pataditas, sé paciente. Cuando las sientas por primera vez, será un momento mágico. Expresa tu emoción y asombro; esto significa mucho para ella.',
+    alimentacion: 'Investiga qué pescados son seguros y bajos en mercurio. Prepara salmón, sardinas o trucha de formas variadas. Busca recetas nuevas para que comer pescado sea interesante.',
+    cuidados: 'Acompáñala a la segunda ecografía importante (ecografía morfológica). Descubrirán más sobre el bebé, quizás incluso el sexo si quieren saberlo. Es un momento especial para estar juntos.'
+  },
+  19: {
+    titulo: '🌟 Desarrollo Emocional Conjunto',
+    apoyo: 'Hablen sobre sus expectativas de crianza. Discutan valores, métodos educativos, y cómo quieren criar al bebé. Es importante estar alineados antes de que llegue.',
+    alimentacion: 'Prepara desayunos completos con cereales integrales, huevos, frutas. Un buen desayuno le dará energía para el día. Haz que las mañanas sean especiales.',
+    cuidados: 'Masajea su espalda baja regularmente. El peso extra causa tensión en esta área. Aprende técnicas de masaje prenatal o busquen juntos videos educativos.'
+  },
+  20: {
+    titulo: '🎯 Mitad del Camino Recorrido',
+    apoyo: 'Celebren este hito importante: ¡ya están a mitad del embarazo! Planea algo especial: una cena romántica, una escapada de fin de semana, o simplemente una noche especial en casa.',
+    alimentacion: 'La fibra es importante ahora para prevenir estreñimiento. Prepara avena con frutas, ensaladas abundantes, pan integral. Haz que las comidas ricas en fibra sean deliciosas.',
+    cuidados: 'Acompáñala a la ecografía morfológica. Esta ecografía revisa en detalle el desarrollo del bebé. Tu presencia le dará tranquilidad y podrán disfrutar juntos ver al bebé.'
+  },
+  21: {
+    titulo: '🎶 Comunicación con el Bebé',
+    apoyo: 'El bebé reconoce voces familiares. Háblale diariamente. Cuéntale sobre tu día, tus sueños para el futuro, cuánto lo esperan. Esta comunicación temprana es preciosa.',
+    alimentacion: 'Asegura una dieta rica en proteínas y calcio. Prepara comidas balanceadas que incluyan lácteos, carnes magras, legumbres. La nutrición es crucial en esta etapa.',
+    cuidados: 'Cántale al bebé. No importa si no cantas bien; lo que importa es tu voz y tu amor. Elige canciones que quieras que sean especiales entre ustedes.'
+  },
+  22: {
+    titulo: '😍 Más Cerca de Conocerlo',
+    apoyo: 'Comiencen a pensar en nombres si aún no lo han hecho. Hagan listas juntos, investiguen significados, compartan opciones. Es una actividad divertida que los acerca.',
+    alimentacion: 'Combina alimentos ricos en hierro con vitamina C: carne con ensalada de tomate, espinacas con jugo de naranja. Explica por qué estas combinaciones ayudan.',
+    cuidados: 'Compra una almohada de embarazo si aún no tienen. Ayúdala a posicionarla para dormir cómodamente. Tu interés en su comodidad demuestra tu cuidado.'
+  },
+  23: {
+    titulo: '🌬 Cuidado y Atención',
+    apoyo: 'Infórmate sobre las señales de parto prematuro para estar alerta. Conoce los síntomas que requieren atención médica inmediata. Estar preparado reduce la ansiedad.',
+    alimentacion: 'Asegura exposición moderada al sol y alimentos ricos en vitamina D: pescado graso, huevos, lácteos fortificados. Planea caminatas matutinas juntos.',
+    cuidados: 'Nota si hay hinchazón en pies y tobillos. Ayúdala a elevar las piernas regularmente. Ofrece masajes suaves en pies. Observa y actúa proactivamente.'
+  },
+  24: {
+    titulo: '👀 Vigilancia de la Salud',
+    apoyo: 'Acompáñala a los controles médicos donde vigilan presión arterial y glucosa. Toma notas de lo que el médico dice. Tu participación activa muestra compromiso.',
+    alimentacion: 'Incluye omega-3 y antioxidantes: frutas rojas, salmón, nueces, arándanos. Prepara smoothie bowls coloridos y nutritivos. Haz que comer saludable sea visualmente atractivo.',
+    cuidados: 'Pregunta al médico qué señales de alarma debes conocer. Asegúrate de entender cuándo deben acudir a urgencias. Es mejor estar sobre-informado que desprevenido.'
+  },
+  25: {
+    titulo: '💃 Actividad y Relajación',
+    apoyo: 'Practiquen juntos técnicas de respiración y relajación para el parto. Inscríbanse en clases de preparación al parto. Tu participación la tranquiliza y te prepara mejor.',
+    alimentacion: 'Asegura consumo adecuado de lácteos o alternativas vegetales fortificadas. Varía las opciones: leche, yogur, queso, leches vegetales con calcio.',
+    cuidados: 'Ayúdala con ejercicios de respiración. Practiquen juntos diariamente. Esto creará una rutina que será útil durante el trabajo de parto.'
+  },
+  26: {
+    titulo: '🗣 Últimos Meses Juntos',
+    apoyo: 'Ayúdala a evitar estar mucho tiempo de pie. Ofrécele tu asiento, alcánzale cosas, reduce su necesidad de caminar largas distancias. Pequeños gestos que alivian.',
+    alimentacion: 'Prepara comidas ricas en proteínas magras y frutos secos: pollo, pescado, almendras, nueces. Ten snacks proteicos listos para cuando necesite energía rápida.',
+    cuidados: 'Instala apps de seguimiento de movimientos del bebé si ella quiere. Ayúdala a contar pataditas. Participa activamente en el monitoreo del bienestar del bebé.'
+  },
+  27: {
+    titulo: '🌟 Preparación Final del Segundo Trimestre',
+    apoyo: 'Asistan juntos a cursos de preparación al parto si aún no lo han hecho. Aprende técnicas de apoyo durante el trabajo de parto: masajes, posiciones, palabras de aliento.',
+    alimentacion: 'Enfócate en comidas ricas en fibra y mantén agua abundante siempre disponible. Prepara jarras con agua fresca, infusiones frías, aguas saborizadas naturalmente.',
+    cuidados: 'Comienza a informarte sobre el proceso de parto. Lee libros, mira videos educativos, habla con otros padres. Cuanto más sepas, mejor apoyo podrás brindar.'
+  },
+  28: {
+    titulo: '💕 Tercer Trimestre - Recta Final',
+    apoyo: 'Acompáñala a la prueba de glucosa para descartar diabetes gestacional. Lleva snacks y agua. Este test puede ser incómodo, tu presencia ayuda.',
+    alimentacion: 'Asegura dieta alta en fibra para combatir el estreñimiento común en esta etapa. Prepara ensaladas abundantes, frutas frescas, cereales integrales.',
+    cuidados: 'Observa señales de cansancio extremo. Asume más responsabilidades en casa. Deja que descanse tanto como necesite; su cuerpo está trabajando arduamente.'
+  },
+  29: {
+    titulo: '💪 Apoyo Físico Intensivo',
+    apoyo: 'El peso del bebé está aumentando rápidamente. Ayúdala con tareas físicas: cargar compras, limpiar, alcanzar objetos altos. No dejes que haga esfuerzos innecesarios.',
+    alimentacion: 'Proteínas y calcio son cruciales ahora. Planifica menús semanales que incluyan estas nutrientes. Cocina por adelantado para que siempre haya opciones saludables.',
+    cuidados: 'Consigue medias de compresión si tiene varices o hinchazón. Ayúdala a ponérselas por la mañana. Investiga productos de maternidad que puedan darle comodidad.'
+  },
+  30: {
+    titulo: '🛌 Comodidad y Descanso',
+    apoyo: 'Ayúdala a descansar con piernas elevadas. Acomoda cojines, trae agua, crea un ambiente relajante. Tu atención a estos detalles mejora significativamente su comodidad.',
+    alimentacion: 'Vitamina C y zinc para fortalecer defensas. Prepara jugos naturales de naranja, ensaladas con pimientos, sopas con ajo y cebolla. La inmunidad es importante cerca del parto.',
+    cuidados: 'Verifica que la posición del bebé sea adecuada en las ecografías. Si está de nalgas, investiga sobre ejercicios de inversión y habla con el médico sobre opciones.'
+  },
+  31: {
+    titulo: '🎶 Conexión Profunda',
+    apoyo: 'Mantén conversaciones diarias con el bebé. El bebé reconoce tu voz. Cuéntale sobre el mundo que lo espera, sobre tu amor por él. Esta conexión temprana es invaluable.',
+    alimentacion: 'Incluye pescados seguros o semillas ricas en omega-3. Prepara salmón al horno, ensaladas con nueces, chía en yogures. Varía las presentaciones.',
+    cuidados: 'Practica ejercicios de respiración juntos diariamente. Esto los prepara para el parto y crea una rutina de conexión y calma que será útil durante el trabajo de parto.'
+  },
+  32: {
+    titulo: '🌟 Preparativos Prácticos',
+    apoyo: 'Comienza a preparar la maleta del hospital juntos. Haz una lista, reúne artículos, verifica que todo esté listo. Tu participación activa reduce la ansiedad de ella.',
+    alimentacion: 'Mucha agua y fibra son esenciales. Mantén botellas de agua fresca siempre a su alcance. Prepara infusiones seguras, aguas frescas naturales.',
+    cuidados: 'Revisa la posición del bebé en la ecografía. Si todo está bien, celebren. Si hay preocupaciones, busquen información juntos y apoyen las decisiones médicas.'
+  },
+  33: {
+    titulo: '💤 Últimas Semanas de Preparación',
+    apoyo: 'Investiga sobre lactancia materna para poder apoyarla después del parto. Asistan a talleres juntos. Tu conocimiento sobre el tema será apoyo práctico invaluable.',
+    alimentacion: 'Hierro para prevenir anemia antes del parto. Cocina carnes magras, espinacas, lentejas. Asegura que tome sus suplementos según prescripción médica.',
+    cuidados: 'Instala la silla del auto del bebé con anticipación. Practica cómo usarla. Verifica que todo esté seguro y listo para cuando llegue el momento.'
+  },
+  34: {
+    titulo: '🤗 Apoyo Emocional Intensivo',
+    apoyo: 'Ella puede sentirse ansiosa sobre el parto. Escucha sus miedos sin minimizarlos. Ofrece palabras de aliento: "Vas a estar increíble", "Estaré a tu lado", "Confío en ti".',
+    alimentacion: 'Comidas pequeñas y nutritivas. Prepara porciones más pequeñas con mayor frecuencia. El espacio en su estómago es limitado por el bebé.',
+    cuidados: 'Practiquen ejercicios de suelo pélvico juntos si es posible. Investiga cómo estos ejercicios ayudan en el parto y recuperación. Apoya su rutina de ejercicios.'
+  },
+  35: {
+    titulo: '🚼 Casi Listos',
+    apoyo: 'Revisa la ruta al hospital, cronometra el tiempo de viaje en diferentes horarios. Ten el tanque de gasolina lleno. Ten un plan B por si hay tráfico. Estar preparado reduce estrés.',
+    alimentacion: 'Proteínas magras y muchas frutas. Prepara smoothies, ensaladas de frutas, carnes ligeras. La digestión es más lenta ahora, alimentos más ligeros ayudan.',
+    cuidados: 'Verifica que la maleta del hospital esté completa. Incluye snacks para ti también; estarás con ella durante el trabajo de parto y necesitarás energía.'
+  },
+  36: {
+    titulo: '🌸 Última Revisión',
+    apoyo: 'Acompaña a los controles médicos semanales. Toma notas de las indicaciones del médico. Haz preguntas si algo no está claro. Tu participación activa muestra compromiso y amor.',
+    alimentacion: 'Evita comidas muy pesadas que puedan causar acidez. Prepara comidas ligeras, sopas suaves, frutas fáciles de digerir. La comodidad digestiva es importante ahora.',
+    cuidados: 'Ten los números de emergencia guardados en tu teléfono. Ten el número del médico, hospital, taxi confiable. Estar preparado para cualquier escenario da tranquilidad.'
+  },
+  37: {
+    titulo: '🎉 Bebé a Término - ¡Puede Llegar!',
+    apoyo: 'El bebé puede nacer en cualquier momento. Mantén tu teléfono cargado y cerca siempre. No te alejes demasiado. Estate disponible y atento a cualquier señal de parto.',
+    alimentacion: 'Hidratación es clave. Ten agua, jugos naturales, bebidas isotónicas listas. Durante el trabajo de parto ella necesitará mantenerse hidratada.',
+    cuidados: 'Aprende a reconocer señales de trabajo de parto: contracciones regulares, pérdida del tapón mucoso, ruptura de fuente. Saber qué buscar te permite actuar con calma.'
+  },
+  38: {
+    titulo: '🍼 Espera Activa',
+    apoyo: 'Mantén la calma. Si ella está ansiosa porque el bebé no ha nacido, tranquilízala: "El bebé llegará cuando esté listo", "Todo está bien", "Estamos preparados".',
+    alimentacion: 'Comidas fáciles de digerir: sopas, frutas, yogur. Ten estos alimentos listos en casa. Después del parto querrás tener opciones simples y nutritivas a mano.',
+    cuidados: 'Asegura que la bolsa del hospital esté en un lugar accesible. Revísala una vez más. Confirma que tienen documentos, ropa para el bebé, artículos de higiene.'
+  },
+  39: {
+    titulo: '🚪 Cuenta Regresiva Final',
+    apoyo: 'Planea actividades ligeras para mantenerla distraída: caminatas cortas, películas, juegos de mesa. La espera puede ser ansiosa; ayúdala a mantenerse ocupada pero relajada.',
+    alimentacion: 'Mucha agua y snacks saludables siempre disponibles. Prepara bolsas con frutos secos, frutas picadas, galletas integrales. Ten opciones listas para cuando tenga hambre.',
+    cuidados: 'Practica técnicas de relajación juntos. Respira con ella, masajea su espalda, crea ambiente tranquilo. Estas prácticas serán útiles durante el trabajo de parto.'
+  },
+  40: {
+    titulo: '🎊 ¡El Día Ha Llegado!',
+    apoyo: 'Cuando comiencen las contracciones, mantén la calma. Cronometra las contracciones. Recuérdale que respire. Dile constantemente: "Lo estás haciendo increíble", "Estoy aquí contigo", "Eres fuerte".',
+    alimentacion: 'Ten snacks ligeros para ambos en la bolsa del hospital. Barras energéticas, frutas, agua. Necesitarás mantener tu energía para apoyarla durante el trabajo de parto.',
+    cuidados: 'Durante el trabajo de parto: sostén su mano, masajea su espalda baja, ayúdala a cambiar de posición, abanicala si tiene calor, humedece sus labios. Tu presencia constante y activa es el mejor apoyo.'
+  }
+};
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import UserHeader from '../../../components/Header/UserHeader';
@@ -296,8 +539,12 @@ export default function Dashboard() {
     setSemana(semanaActual > 0 ? semanaActual : "");
   }, [fechaUltimaMenstruacion]);
 
-  // Obtiene el consejo de la semana actual
-  const consejoSemana = semana && consejosPorSemana[semana] ? consejosPorSemana[semana] : null;
+  // Obtiene el consejo de la semana actual según el rol del usuario
+  const consejoSemana = semana && user ? 
+    (user.rol === 'acompañante' 
+      ? (consejosAcompañante[semana] || null)
+      : (consejosPorSemana[semana] || null))
+    : null;
   const [parejaNombre, setParejaNombre] = useState("");
   const router = useRouter();
 
@@ -439,9 +686,19 @@ export default function Dashboard() {
             <div className={styles.consejoCard}>
               <h3 className={styles.consejoSemana}>{consejoSemana.titulo}</h3>
               <ul className={styles.consejoList}>
-                <li><b>👶 Bebé:</b> {consejoSemana.bebe}</li>
-                <li><b>🍎 Alimentación:</b> {consejoSemana.alimentacion}</li>
-                <li><b>💡 Cuidados:</b> {consejoSemana.cuidados}</li>
+                {user.rol === 'acompañante' ? (
+                  <>
+                    <li><b>💝 Apoyo:</b> {consejoSemana.apoyo}</li>
+                    <li><b>🍎 Alimentación:</b> {consejoSemana.alimentacion}</li>
+                    <li><b>💡 Cuidados:</b> {consejoSemana.cuidados}</li>
+                  </>
+                ) : (
+                  <>
+                    <li><b>👶 Bebé:</b> {consejoSemana.bebe}</li>
+                    <li><b>🍎 Alimentación:</b> {consejoSemana.alimentacion}</li>
+                    <li><b>💡 Cuidados:</b> {consejoSemana.cuidados}</li>
+                  </>
+                )}
               </ul>
             </div>
           </section>

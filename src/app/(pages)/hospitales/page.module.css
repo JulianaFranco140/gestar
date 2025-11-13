@@ -168,6 +168,181 @@
   gap: 20px;
 }
 
+/* Tarjeta destacada del hospital más cercano */
+.nearestHospitalCard {
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe8ee 100%);
+  border: 3px solid var(--primary-pink);
+  border-radius: 16px;
+  padding: 0;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(232, 180, 184, 0.3);
+  overflow: hidden;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(232, 180, 184, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(232, 180, 184, 0.5), 0 0 20px rgba(232, 180, 184, 0.3);
+  }
+}
+
+.emergencyBadge {
+  background: linear-gradient(90deg, #ff4757 0%, #ff6348 100%);
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.emergencyIcon {
+  font-size: 24px;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.emergencyText {
+  font-size: 18px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nearestHospitalContent {
+  padding: 24px;
+}
+
+.nearestHospitalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nearestHospitalName {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-pink);
+  margin: 0;
+  flex: 1;
+}
+
+.nearestHospitalDistance {
+  background: var(--primary-pink);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.distanceLabel {
+  font-size: 12px;
+  opacity: 1;
+  margin-bottom: 4px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+.distanceValue {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.nearestHospitalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.nearestInfoRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--light-gray);
+  font-size: 16px;
+}
+
+.nearestInfoRow strong {
+  color: var(--primary-pink);
+  min-width: 110px;
+  font-weight: 600;
+}
+
+.nearestHospitalActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.callButton,
+.directionsButton {
+  flex: 1;
+  min-width: 150px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.callButton {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, #6a5a8a 100%);
+  color: white;
+}
+
+.callButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(123, 104, 160, 0.4);
+}
+
+.callButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.directionsButton {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, #6a5a8a 100%);
+  color: white;
+}
+
+.directionsButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(123, 104, 160, 0.4);
+}
+
+.otherHospitalsTitle {
+  color: var(--light-gray);
+  font-size: 20px;
+  margin: 30px 0 20px 0;
+  font-weight: 600;
+}
+
 .resultCount {
   font-size: 1rem;
   font-weight: 400;
