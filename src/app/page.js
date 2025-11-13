@@ -53,7 +53,7 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.bigLogo}>
-            <Image src="/icono.png" alt="GeStar Logo Grande" width={220} height={320} priority />
+            <Image src="/incono_gestar.png" alt="GeStar Logo Grande" width={220} height={320} priority />
           </div>
         </div>
         <div className={styles.cardsSection}>
